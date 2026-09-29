@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+:root {
+  /* Alarak Coffee & Bakery Core Brand Palette */
+  --alarak-navy-dark: #070c18;
+  --alarak-navy: #0b1528;
+  --alarak-navy-light: #14223d;
+  --alarak-gold: #c5a059;
+  --alarak-gold-light: #dfbe7a;
+  --alarak-gold-dark: #9e7d3b;
+  --alarak-cream: #faf6f0;
+  --alarak-cream-soft: #f4efea;
+  --alarak-charcoal: #1c1c1c;
+
+  /* Semantic Design Tokens */
+  --background: var(--alarak-navy-dark);
+  --foreground: var(--alarak-cream);
+  --muted-foreground: rgba(250, 246, 240, 0.65);
+  
+  --primary: var(--alarak-gold);
+  --primary-foreground: var(--alarak-navy-dark);
+  
+  --secondary: var(--alarak-navy);
+  --secondary-foreground: var(--alarak-cream);
+  
+  --accent: var(--alarak-gold-light);
+  --accent-foreground: var(--alarak-navy-dark);
+
+  --surface: var(--alarak-navy);
+  --surface-elevated: var(--alarak-navy-light);
+
+  --border-subtle: rgba(197, 160, 89, 0.15);
+  --border-medium: rgba(197, 160, 89, 0.30);
+  --border-strong: rgba(197, 160, 89, 0.60);
+}
+
+@theme inline {
+  --color-alarak-navy-dark: var(--alarak-navy-dark);
+  --color-alarak-navy: var(--alarak-navy);
+  --color-alarak-navy-light: var(--alarak-navy-light);
+  --color-alarak-gold: var(--alarak-gold);
+  --color-alarak-gold-light: var(--alarak-gold-light);
+  --color-alarak-gold-dark: var(--alarak-gold-dark);
+  --color-alarak-cream: var(--alarak-cream);
+  --color-alarak-cream-soft: var(--alarak-cream-soft);
+  --color-alarak-charcoal: var(--alarak-charcoal);
+
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+
+  --font-serif: var(--font-cormorant), Georgia, serif;
+  --font-sans: var(--font-jakarta), system-ui, sans-serif;
+  --font-arabic: var(--font-tajawal), system-ui, sans-serif;
+}
+
+/* Global Base Styles */
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Luxury Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--alarak-navy-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--alarak-navy-light);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--alarak-gold-dark);
+}
+
+/* Focus Ring Accessibility Helper */
+.focus-ring {
+  outline: none;
+}
+.focus-ring:focus-visible {
+  outline: 2px solid var(--alarak-gold);
+  outline-offset: 2px;
+}
+
+/* Editorial Gradient Divider Helper */
+.alarak-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(197, 160, 89, 0.3) 50%,
+    transparent 100%
+  );
+}
+
+/* Prefers Reduced Motion Rules */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
