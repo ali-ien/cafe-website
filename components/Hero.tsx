@@ -108,7 +108,7 @@ export const Hero: React.FC = () => {
               {/* Background image — never shifts position between slides */}
               <Image
                 src={slide.src}
-                alt={slide.alt}
+                alt={t(slide.alt)}
                 fill
                 priority={idx === 0}
                 sizes="100vw"
@@ -176,14 +176,14 @@ export const Hero: React.FC = () => {
               </div>
               <AnimatePresence mode="wait">
                 <motion.span
-                  key={currentSlide.arabicChapter}
+                  key={currentSlide.chapter}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.5 }}
                   className="font-arabic text-xs sm:text-sm text-alarak-gold/80 border-l border-alarak-gold/30 pl-3"
                 >
-                  {currentSlide.arabicChapter}
+                  {t(currentSlide.chapter)}
                 </motion.span>
               </AnimatePresence>
             </motion.div>
@@ -228,20 +228,19 @@ export const Hero: React.FC = () => {
               transition={{ duration: 0.65, delay: 0.85, ease: "easeOut" }}
               className="flex flex-wrap items-center gap-3 sm:gap-4 pt-1"
             >
-              <Button
-                variant="primary"
-                size="lg"
-                icon={
-                  <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                }
-                className="relative overflow-hidden group bg-alarak-gold hover:bg-alarak-gold-light text-alarak-navy-dark font-medium shadow-[0_6px_20px_rgba(212,175,55,0.28)] hover:shadow-[0_10px_28px_rgba(212,175,55,0.45)] hover:-translate-y-[2px] transition-all duration-300 text-sm sm:text-base"
-                onClick={() => {
-                  document.getElementById("story")?.scrollIntoView({ behavior: "smooth" });
-                }}
+              <a
+                href="/media/menu/alarak-menu.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={t("View the menu PDF in a new tab")}
+                className="inline-flex items-center justify-center gap-2.5 rounded-sm font-sans font-medium uppercase tracking-widest focus-ring select-none px-8 py-4 text-sm relative overflow-hidden group bg-alarak-gold hover:bg-alarak-gold-light text-alarak-navy-dark shadow-[0_6px_20px_rgba(212,175,55,0.28)] hover:shadow-[0_10px_28px_rgba(212,175,55,0.45)] hover:-translate-y-[2px] transition-all duration-300 sm:text-base"
               >
                 <span className="relative z-10">{t("Discover Our Menu")}</span>
+                <span className="relative z-10 shrink-0">
+                  <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </span>
                 <span className="absolute inset-0 z-0 bg-gradient-to-r from-transparent via-white/22 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out" />
-              </Button>
+              </a>
 
               <Button
                 variant="outline"

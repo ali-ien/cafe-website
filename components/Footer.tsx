@@ -180,7 +180,7 @@ const ContactMessageForm: React.FC = () => {
   return (
     <form onSubmit={handleSubmit} aria-label={t("Send a message")} className="space-y-2.5">
       <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
-        <label htmlFor="footer-website">Leave this field empty</label>
+        <label htmlFor="footer-website">{t("Leave this field empty")}</label>
         <input id="footer-website" name="website" tabIndex={-1} autoComplete="off" />
       </div>
       <div>
@@ -320,7 +320,7 @@ export const Footer: React.FC = () => {
             </p>
 
             {/* Social icons row */}
-            <div className="mt-6 flex items-center gap-2.5" aria-label="Social media links">
+            <div className="mt-6 flex items-center gap-2.5" aria-label={t("Social media links")}>
               <a
                 href={INSTAGRAM_URL}
                 target="_blank"
@@ -373,8 +373,8 @@ export const Footer: React.FC = () => {
 
           {/* ── Col 2: Explore ───────────────────────────────────────────── */}
           <FooterColumn delay={0.12}>
-            <ColumnHeading>Explore</ColumnHeading>
-            <nav aria-label="Footer navigation">
+            <ColumnHeading>{t("Explore")}</ColumnHeading>
+            <nav aria-label={t("Footer navigation")}>
               <ul className="space-y-3.5">
                 {EXPLORE_LINKS.map((link) => (
                   <li key={link.name}>
@@ -383,7 +383,7 @@ export const Footer: React.FC = () => {
                       className="font-sans text-[13.5px] text-alarak-cream/55 hover:text-alarak-gold transition-colors duration-300 focus-ring rounded-sm relative group inline-block"
                     >
                       <span className="relative">
-                        {link.name}
+                        {t(link.name)}
                         <span className="absolute -bottom-px left-0 w-0 h-px bg-alarak-gold/60 group-hover:w-full transition-all duration-300" />
                       </span>
                     </a>
@@ -395,7 +395,7 @@ export const Footer: React.FC = () => {
 
           {/* ── Col 3: Visit Us ──────────────────────────────────────────── */}
           <FooterColumn delay={0.18} id="visit">
-            <ColumnHeading>Visit Us</ColumnHeading>
+            <ColumnHeading>{t("Visit Us")}</ColumnHeading>
             <address className="not-italic space-y-4 font-sans text-[13.5px] text-alarak-cream/55 font-light">
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-3.5 h-3.5 text-alarak-gold/70 mt-[2px] shrink-0" aria-hidden="true" />
@@ -404,8 +404,8 @@ export const Footer: React.FC = () => {
               <div className="flex items-start gap-2.5">
                 <Clock className="w-3.5 h-3.5 text-alarak-gold/70 mt-[2px] shrink-0" aria-hidden="true" />
                 <div>
-                  <span className="block">Daily</span>
-                  <span className="block text-alarak-cream/70">08:00 – 22:00</span>
+                  <span className="block">{t("Daily")}</span>
+                  <span className="block text-alarak-cream/70">{t("08:00 – 22:00")}</span>
                 </div>
               </div>
               <div className="flex items-start gap-2.5">
@@ -418,7 +418,7 @@ export const Footer: React.FC = () => {
                   rel="noopener noreferrer"
                   className="hover:text-alarak-gold transition-colors duration-300 focus-ring rounded-sm"
                 >
-                  Reservations via Instagram
+                  {t("Reservations via Instagram")}
                 </a>
               </div>
             </address>
@@ -426,7 +426,7 @@ export const Footer: React.FC = () => {
 
           {/* ── Col 4: Follow ────────────────────────────────────────────── */}
           <FooterColumn delay={0.24}>
-            <ColumnHeading>Follow</ColumnHeading>
+            <ColumnHeading>{t("Follow")}</ColumnHeading>
             <ul className="space-y-3.5">
               <li>
                 <a
@@ -447,9 +447,9 @@ export const Footer: React.FC = () => {
 
           {/* ── Col 5: Stay in Touch ─────────────────────────────────────── */}
           <FooterColumn delay={0.30}>
-            <ColumnHeading>Send a message</ColumnHeading>
+            <ColumnHeading>{t("Send a message")}</ColumnHeading>
             <p className="font-sans text-[13.5px] text-alarak-cream/55 font-light leading-[1.75] mb-5 max-w-[240px]">
-              Have a question? Send us a note and we&apos;ll get back to you.
+              {t("Have a question? Send us a note and we'll get back to you.")}
             </p>
             <ContactMessageForm />
           </FooterColumn>
@@ -477,10 +477,10 @@ export const Footer: React.FC = () => {
           {/* Left: Copyright */}
           <div className="flex flex-col items-center sm:items-start gap-0.5 order-2 sm:order-1">
             <p className="font-sans text-[11px] tracking-[0.08em] text-alarak-cream/35">
-              © 2026 Alarak Coffee &amp; Bakery
+              {t("© 2026 Alarak Coffee & Bakery")}
             </p>
             <p className="font-sans text-[10.5px] tracking-[0.06em] text-alarak-cream/25">
-              All rights reserved.
+              {t("All rights reserved.")}
             </p>
           </div>
 
@@ -492,13 +492,13 @@ export const Footer: React.FC = () => {
               <div className="w-10 sm:w-14 h-px bg-alarak-gold/25" />
             </div>
             <p className="font-sans text-[9px] sm:text-[10px] tracking-[0.32em] uppercase text-alarak-gold/60">
-              Good Coffee&nbsp;•&nbsp;Great Moments
+              {t("Good Coffee • Great Moments")}
             </p>
           </div>
 
           {/* Right: Legal links + Back to top */}
           <div className="flex items-center gap-4 order-3">
-            <nav aria-label="Legal links" className="hidden sm:flex items-center">
+            <nav aria-label={t("Legal links")} className="hidden sm:flex items-center">
               {LEGAL_LINKS.map((link, i) => (
                 <React.Fragment key={link.name}>
                   {i > 0 && (
@@ -510,7 +510,7 @@ export const Footer: React.FC = () => {
                     href={link.href}
                     className="font-sans text-[11px] tracking-[0.06em] text-alarak-cream/40 hover:text-alarak-gold transition-colors duration-300 focus-ring rounded-sm"
                   >
-                    {link.name}
+                    {t(link.name)}
                   </a>
                 </React.Fragment>
               ))}
@@ -521,7 +521,7 @@ export const Footer: React.FC = () => {
 
         {/* Legal links — mobile stacked */}
         <nav
-          aria-label="Legal links mobile"
+          aria-label={t("Legal links")}
           className="sm:hidden flex flex-wrap justify-center gap-x-4 gap-y-1.5 mt-4"
         >
           {LEGAL_LINKS.map((link) => (
@@ -530,7 +530,7 @@ export const Footer: React.FC = () => {
               href={link.href}
               className="font-sans text-[11px] tracking-[0.06em] text-alarak-cream/40 hover:text-alarak-gold transition-colors duration-300 focus-ring rounded-sm"
             >
-              {link.name}
+              {t(link.name)}
             </a>
           ))}
         </nav>

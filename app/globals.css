@@ -118,6 +118,29 @@ html[dir="rtl"] body {
   font-family: var(--font-tajawal), var(--font-jakarta), sans-serif;
 }
 
+html[dir="rtl"] .text-left {
+  text-align: right;
+}
+
+html[dir="rtl"] .text-right {
+  text-align: left;
+}
+
+html[dir="rtl"] .border-l {
+  border-left-width: 0;
+  border-right-width: 1px;
+}
+
+html[dir="rtl"] .pl-3 {
+  padding-left: 0;
+  padding-right: 0.75rem;
+}
+
+html[dir="rtl"] .pl-3\.5 {
+  padding-left: 0;
+  padding-right: 0.875rem;
+}
+
 /* Reduce letter spacing consistently across the site's typography utilities. */
 [class*="tracking-"] {
   letter-spacing: calc(var(--tw-tracking, 0em) * 0.8);

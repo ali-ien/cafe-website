@@ -77,7 +77,7 @@ const CategoryBlock: React.FC<{ category: MenuCategory; delay?: number }> = ({
           >
             <Image
               src={category.image.src}
-              alt={category.image.alt}
+              alt={t(category.image.alt)}
               fill
               sizes="(max-width: 1024px) 100vw, 48vw"
               quality={92}
@@ -290,7 +290,7 @@ export const MenuDesserts: React.FC = () => {
                     size="md"
                     className="border-alarak-gold/50 text-alarak-navy-dark hover:border-alarak-navy-dark hover:bg-alarak-navy-dark hover:text-alarak-cream px-7 py-2.5 text-[11px] tracking-[0.24em] uppercase transition-all duration-300 shadow-sm"
                   >
-                    Visit Alarak →
+                    {t("Visit Alarak →")}
                   </Button>
                 </Link>
               </div>

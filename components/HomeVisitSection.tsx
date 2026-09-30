@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Container } from "@/components/ui";
 import { useLanguage } from "@/lib/language";
+import { LocationMap } from "@/components/LocationMap";
 
 function LocationIcon() {
   return (
@@ -48,9 +49,9 @@ const boutiqueInfo = [
   {
     label: "Opening Hours",
     icon: HoursIcon,
-    content: (
+    content: (translate: (text: string) => string) => (
       <p className="text-alarak-navy-dark/60">
-        Monday – Sunday<br />08:00 AM – 10:00 PM
+        {translate("Monday – Sunday")}<br />{translate("08:00 AM – 10:00 PM")}
       </p>
     ),
   },
@@ -59,8 +60,8 @@ const boutiqueInfo = [
     icon: ContactIcon,
     content: (
       <div className="flex flex-col items-start">
-        <a href="tel:+212537000000" className="text-alarak-navy-dark/60 transition-colors hover:text-alarak-gold">
-          +212 537 00 00 00
+        <a href="tel:+212663464174" className="text-alarak-navy-dark/60 transition-colors hover:text-alarak-gold">
+          +212 663 46 41 74
         </a>
         <a href="mailto:contact@alarak.ma" className="text-alarak-navy-dark/60 transition-colors hover:text-alarak-gold">
           contact@alarak.ma
@@ -102,6 +103,10 @@ export function HomeVisitSection() {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="mx-auto mt-5 h-[260px] max-w-3xl overflow-hidden rounded-[2px] border border-[#e7e0d7] shadow-[0_8px_32px_rgba(32,28,20,0.08)] sm:mt-6 sm:h-[330px]">
+          <LocationMap />
         </div>
       </Container>
     </section>

@@ -39,7 +39,7 @@ export const Story: React.FC = () => {
                 >
                   <Image
                     src={ownerAsset.src}
-                    alt={ownerAsset.alt}
+                    alt={t("Alarak Founder & Master Artisan")}
                     fill
                     sizes="(max-width: 1024px) 90vw, 46vw"
                     quality={92}
@@ -68,8 +68,8 @@ export const Story: React.FC = () => {
 
             {/* Arabic subtitle */}
             <EditorialReveal delay={0.15}>
-              <p className="font-arabic text-sm text-alarak-gold/70 leading-relaxed">
-                قصتنا — العناية بالتفاصيل والضيافة الأصيلة
+              <p className="font-sans text-xs tracking-wide text-alarak-gold/70 leading-relaxed">
+                {t("Craft & heartfelt hospitality")}
               </p>
             </EditorialReveal>
 
@@ -100,7 +100,7 @@ export const Story: React.FC = () => {
             <EditorialReveal delay={0.36}>
               <div className="border-l-2 border-alarak-gold/55 pl-5 py-2 bg-[#F4EFE8]/50 pr-4">
                 <p className="font-serif text-lg sm:text-xl text-alarak-navy-dark/80 italic leading-[1.55]">
-                  &ldquo;{t("Coffee and pastry are not simply served ? they are shared moments of genuine warmth.")}&rdquo;
+                  &ldquo;{t("Coffee and pastry are not simply served — they are shared moments of genuine warmth.")}&rdquo;
                 </p>
               </div>
             </EditorialReveal>

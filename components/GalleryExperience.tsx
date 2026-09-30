@@ -115,7 +115,7 @@ export function GalleryExperience() {
       </section>
 
       {activeItem && lightboxIndex !== null && (
-        <div role="dialog" aria-modal="true" aria-label={activeItem.title}
+        <div role="dialog" aria-modal="true" aria-label={t(activeItem.title)}
           onMouseDown={(event) => { if (event.target === event.currentTarget) closeLightbox(); }}
           className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 p-3 backdrop-blur-xl sm:p-6">
           <button type="button" onClick={closeLightbox} aria-label={t("Close photo viewer")} className="absolute right-4 top-4 z-20 rounded-full p-3 text-white/60 transition hover:bg-white/10 hover:text-white sm:right-7 sm:top-7"><X className="h-6 w-6" /></button>
@@ -146,8 +146,8 @@ export function GalleryExperience() {
         <Container className="text-center">
           <span className="mb-4 inline-flex rounded-full bg-white/[0.05] p-3 text-alarak-gold"><Camera className="h-5 w-5" /></span>
           <h2 className="font-serif text-3xl text-alarak-cream sm:text-4xl">{t("Share your Alarak moments")}</h2>
-          <p className="mx-auto mt-3 max-w-lg font-sans text-sm leading-6 text-alarak-cream/55">Tag <span className="text-alarak-gold">@alarak.ma</span> on Instagram to be featured in our community gallery.</p>
-          <a href="https://www.instagram.com/alarak.ma?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" target="_blank" rel="noreferrer" className="mt-7 inline-flex items-center gap-2 border border-alarak-gold/70 px-6 py-3 font-sans text-[9px] uppercase tracking-[0.2em] text-alarak-gold transition hover:bg-alarak-gold hover:text-alarak-navy-dark">Follow @alarak.ma <Camera className="h-3.5 w-3.5" /></a>
+          <p className="mx-auto mt-3 max-w-lg font-sans text-sm leading-6 text-alarak-cream/55">{t("Tag us at")} <span className="text-alarak-gold">@alarak.ma</span> {t("on Instagram to be featured in our community gallery.")}</p>
+          <a href="https://www.instagram.com/alarak.ma?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" target="_blank" rel="noreferrer" className="mt-7 inline-flex items-center gap-2 border border-alarak-gold/70 px-6 py-3 font-sans text-[9px] uppercase tracking-[0.2em] text-alarak-gold transition hover:bg-alarak-gold hover:text-alarak-navy-dark">{t("Follow")} @alarak.ma <Camera className="h-3.5 w-3.5" /></a>
         </Container>
       </section>
 
@@ -158,7 +158,7 @@ export function GalleryExperience() {
           <p className="mx-auto mt-5 max-w-2xl font-sans text-sm leading-7 text-alarak-navy-dark/70">{t("Find us in Fnideq for specialty coffee, freshly baked pastries, and a warm place to pause.")}</p>
           <div className="mt-7 flex flex-wrap justify-center gap-x-8 gap-y-3 font-sans text-[10px] font-medium uppercase tracking-[0.16em] text-alarak-navy-dark/70">
             <span className="flex items-center gap-2"><MapPin className="h-4 w-4 text-alarak-gold" /> {t("Fnideq, Morocco")}</span>
-            <span className="flex items-center gap-2"><Clock3 className="h-4 w-4 text-alarak-gold" /> Daily: 08:00 â€“ 22:00</span>
+            <span className="flex items-center gap-2"><Clock3 className="h-4 w-4 text-alarak-gold" /> {t("Daily")}: 08:00 – 22:00</span>
           </div>
         </Container>
       </section>

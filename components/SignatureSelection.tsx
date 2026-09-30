@@ -6,6 +6,7 @@ import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Container, GoldAccent, EditorialReveal } from "@/components/ui";
+import { useLanguage } from "@/lib/language";
 
 // ── Types ────────────────────────────────────────────────────────────────────
 interface Chapter {
@@ -28,7 +29,7 @@ const CHAPTERS: Chapter[] = [
     category: "Bakery",
     title: "Freshly Baked",
     description: "Golden layers and flaky pastries, baked fresh in-house every morning.",
-    src: "/media/cakes/Gemini_Generated_Image_fbde1bfbde1bfbde.jfif",
+    src: "/media/cakes/signature-bakery.jpg",
     alt: "Alarak Freshly Baked Pastry",
     sizes: "(max-width: 768px) 100vw, 33vw",
     objectPosition: "50% 50%",
@@ -40,7 +41,7 @@ const CHAPTERS: Chapter[] = [
     category: "Pastry",
     title: "Signature Pastries",
     description: "Made slowly. Finished with intention. An elegant touch to your day.",
-    src: "/media/cakes/Gemini_Generated_Image_h0pn95h0pn95h0pn (1).jfif",
+    src: "/media/cakes/signature-pastry.jpg",
     alt: "Alarak Signature Pastry",
     sizes: "(max-width: 768px) 100vw, 33vw",
     objectPosition: "50% 50%",
@@ -52,7 +53,7 @@ const CHAPTERS: Chapter[] = [
     category: "Desserts",
     title: "Fine Desserts",
     description: "A final touch worth staying for — beautiful, seasonal, made with care.",
-    src: "/media/cakes/Gemini_Generated_Image_jag1k2jag1k2jag1.jfif",
+    src: "/media/cakes/signature-dessert.jpg",
     alt: "Alarak Fine Dessert",
     sizes: "(max-width: 768px) 100vw, 33vw",
     objectPosition: "50% 50%",
@@ -64,6 +65,7 @@ const CHAPTERS: Chapter[] = [
 // ── Components ───────────────────────────────────────────────────────────────
 const ChapterCard: React.FC<{ chapter: Chapter; delay: number }> = ({ chapter, delay }) => {
   const shouldReduceMotion = useReducedMotion();
+  const { t } = useLanguage();
 
   return (
     <motion.article
@@ -80,14 +82,14 @@ const ChapterCard: React.FC<{ chapter: Chapter; delay: number }> = ({ chapter, d
         {chapter.number}
       </p>
 
-      <Link href={chapter.href} aria-label={`Explore our ${chapter.category}`} className="block focus-ring rounded-[2px]" tabIndex={0}>
+      <Link href={chapter.href} aria-label={`${t("Explore our")} ${t(chapter.category)}`} className="block focus-ring rounded-[2px]" tabIndex={0}>
         <div
           className="relative w-full overflow-hidden rounded-[2px]"
           style={{ aspectRatio: chapter.ratio }}
         >
           <Image
             src={chapter.src}
-            alt={chapter.alt}
+            alt={t(chapter.alt)}
             fill
             sizes={chapter.sizes}
             quality={90}
@@ -99,21 +101,21 @@ const ChapterCard: React.FC<{ chapter: Chapter; delay: number }> = ({ chapter, d
 
       <div className="mt-5 space-y-1.5">
         <p className="font-sans text-[10px] sm:text-[11px] uppercase tracking-[0.3em] text-alarak-gold font-medium">
-          {chapter.category}
+          {t(chapter.category)}
         </p>
         <h3 className="font-serif text-[22px] sm:text-[26px] font-normal tracking-tight leading-[1.18] text-alarak-navy-dark">
-          {chapter.title}
+          {t(chapter.title)}
         </h3>
         <p className="font-sans text-[13.5px] sm:text-[14.5px] text-[#3d3228]/70 font-light leading-[1.72] pt-0.5">
-          {chapter.description}
+          {t(chapter.description)}
         </p>
         <div className="pt-2">
           <Link
             href={chapter.href}
             className="inline-flex items-center gap-1.5 font-sans text-[10px] uppercase tracking-[0.26em] text-alarak-charcoal/40 hover:text-alarak-gold transition-colors duration-300 group/link"
-            aria-label={`Explore ${chapter.category}`}
+            aria-label={`${t("Explore")} ${t(chapter.category)}`}
           >
-            <span>Explore</span>
+            <span>{t("Explore")}</span>
             <ArrowRight className="w-2.5 h-2.5 transition-transform duration-300 group-hover/link:translate-x-1" />
           </Link>
         </div>
@@ -124,6 +126,7 @@ const ChapterCard: React.FC<{ chapter: Chapter; delay: number }> = ({ chapter, d
 
 // ── Main Section ──────────────────────────────────────────────────────────────
 export const SignatureSelection: React.FC = () => {
+  const { t } = useLanguage();
   return (
     <section
       id="signature"
@@ -138,21 +141,21 @@ export const SignatureSelection: React.FC = () => {
             <div className="flex items-center gap-3 mb-5">
               <GoldAccent variant="line" width="w-6" />
               <span className="font-sans text-[10px] sm:text-xs uppercase tracking-[0.3em] text-alarak-gold font-medium">
-                Signature Selection
+                {t("Signature Selection")}
               </span>
-              <span className="font-arabic text-sm text-alarak-charcoal/40 border-l border-alarak-gold/20 pl-3" dir="rtl" lang="ar">
-                اختياراتنا
+              <span className="font-arabic text-sm text-alarak-charcoal/40 border-l border-alarak-gold/20 pl-3" dir="auto">
+                {t("Our Selection")}
               </span>
             </div>
           </EditorialReveal>
           <EditorialReveal delay={0.1}>
             <h2 id="signature-heading" className="font-serif text-[36px] sm:text-[46px] lg:text-[54px] font-normal tracking-tight leading-[1.1] text-alarak-navy-dark">
-              Made to Be <span className="italic font-light text-alarak-gold">Savored.</span>
+              {t("Made to Be")} <span className="italic font-light text-alarak-gold">{t("Savored.")}</span>
             </h2>
           </EditorialReveal>
           <EditorialReveal delay={0.18}>
             <p className="mt-4 font-sans text-[15px] sm:text-base text-[#3d3228]/65 font-light leading-[1.78] max-w-lg">
-              From carefully crafted coffee to freshly baked creations, every detail is made to turn an everyday moment into something memorable.
+              {t("From carefully crafted coffee to freshly baked creations, every detail is made to turn an everyday moment into something memorable.")}
             </p>
           </EditorialReveal>
         </div>
@@ -169,7 +172,7 @@ export const SignatureSelection: React.FC = () => {
           <div className="mt-14 sm:mt-16 lg:mt-24 flex items-center justify-between flex-wrap gap-4">
             <GoldAccent variant="line" width="w-12" />
             <Link href="/menu" className="inline-flex items-center gap-2.5 font-sans text-[11px] uppercase tracking-[0.28em] text-alarak-charcoal/50 hover:text-alarak-gold transition-colors duration-300 group">
-              <span>View Full Menu</span>
+              <span>{t("View Full Menu")}</span>
               <span className="w-6 h-px bg-current transition-all duration-300 group-hover:w-10" />
             </Link>
           </div>

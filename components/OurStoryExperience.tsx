@@ -40,22 +40,22 @@ export function OurStoryExperience() {
                 <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.22em] text-alarak-gold">{t("Artisan precision")}</span>
               </div>
               <h2 className="font-serif text-3xl leading-tight text-white sm:text-4xl">
-                The Art of <span className="italic text-alarak-gold">Slow Crafting</span>
+                {t("The Art of ")}<span className="italic text-alarak-gold">{t("Slow Crafting")}</span>
               </h2>
               <p className="font-sans text-sm font-light leading-7 text-alarak-cream/75 sm:text-base">
-                At <strong className="font-medium text-white">ALARAK Coffee &amp; Bakery</strong>, we believe every pastry tells a story of dedication, precision, and refined flavor. Our pastry chefs prepare each signature tartlet with fresh berries, delicate custard, and carefully finished chocolate.
+                {t("At Alarak, every pastry tells a story of dedication, precision, and refined flavor. Our pastry chefs prepare each signature tartlet with fresh berries, delicate custard, and carefully finished chocolate.")}
               </p>
               <p className="font-sans text-sm font-light leading-7 text-alarak-cream/55">
-                Paired with thoughtfully selected specialty coffee, every detail reflects our love of good ingredients and careful craft.
+                {t("Paired with thoughtfully selected specialty coffee, every detail reflects our love of good ingredients and careful craft.")}
               </p>
               <div className="grid grid-cols-2 gap-3 border-t border-white/10 pt-5 sm:gap-4">
                 <div className="rounded-sm border border-white/[0.07] bg-white/[0.035] p-4 sm:p-5">
                   <h3 className="font-serif text-lg text-alarak-gold sm:text-xl">{t("Fresh pastries")}</h3>
-                  <p className="mt-1 font-sans text-[11px] leading-5 text-alarak-cream/50">Baked each morning in Fnideq</p>
+                  <p className="mt-1 font-sans text-[11px] leading-5 text-alarak-cream/50">{t("Baked each morning in Fnideq")}</p>
                 </div>
                 <div className="rounded-sm border border-white/[0.07] bg-white/[0.035] p-4 sm:p-5">
                   <h3 className="font-serif text-lg text-alarak-gold sm:text-xl">{t("Specialty coffee")}</h3>
-                  <p className="mt-1 font-sans text-[11px] leading-5 text-alarak-cream/50">Single-origin beans, carefully brewed</p>
+                  <p className="mt-1 font-sans text-[11px] leading-5 text-alarak-cream/50">{t("Single-origin beans, carefully brewed")}</p>
                 </div>
               </div>
             </div>
@@ -66,7 +66,7 @@ export function OurStoryExperience() {
                 <div className="relative aspect-[4/5] sm:aspect-[5/4] lg:aspect-[4/5]">
                   <Image
                     src={pastryPhoto}
-                    alt="Alarak artisan berry tartlet, prepared with care"
+                    alt={t("Alarak artisan berry tartlet, prepared with care")}
                     fill
                     unoptimized
                     sizes="(max-width: 1024px) 100vw, 48vw"
@@ -75,8 +75,8 @@ export function OurStoryExperience() {
                   />
                   <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[#070c18]/75 via-transparent to-transparent" />
                   <figcaption className="absolute inset-x-0 bottom-0 p-5 sm:p-7">
-                    <p className="font-sans text-[9px] font-semibold uppercase tracking-[0.22em] text-alarak-gold">Handcrafted perfection</p>
-                    <p className="mt-1 font-serif text-xl text-white sm:text-2xl">Fresh berry tartlets, made daily</p>
+                    <p className="font-sans text-[9px] font-semibold uppercase tracking-[0.22em] text-alarak-gold">{t("Handcrafted perfection")}</p>
+                    <p className="mt-1 font-serif text-xl text-white sm:text-2xl">{t("Fresh berry tartlets, made daily")}</p>
                   </figcaption>
                 </div>
               </div>
@@ -90,9 +90,9 @@ export function OurStoryExperience() {
         <Container size="narrow" className="text-center">
           <span className="font-arabic text-2xl font-bold text-alarak-gold sm:text-3xl" lang="ar" dir="rtl">الأرك</span>
           <blockquote className="mt-4 font-serif text-2xl italic leading-snug sm:text-3xl">
-            “Coffee is not just a drink; it’s an invitation to slow down, connect, and savor the finest moments in life.”
+            {t("Coffee is not just a drink; it’s an invitation to slow down, connect, and savor the finest moments in life.")}
           </blockquote>
-          <p className="mt-5 font-sans text-[9px] font-semibold uppercase tracking-[0.25em] text-alarak-navy-dark/55">The Alarak philosophy</p>
+          <p className="mt-5 font-sans text-[9px] font-semibold uppercase tracking-[0.25em] text-alarak-navy-dark/55">{t("The Alarak philosophy")}</p>
         </Container>
       </section>
 
@@ -105,7 +105,7 @@ export function OurStoryExperience() {
                 <div className="relative aspect-[4/5] sm:aspect-[5/4] lg:aspect-[4/5]">
                   <Image
                     src={founderPhoto}
-                    alt="Alarak founder welcoming guests"
+                    alt={t("Alarak founder welcoming guests")}
                     fill
                     sizes="(max-width: 1024px) 100vw, 48vw"
                     className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
@@ -125,7 +125,7 @@ export function OurStoryExperience() {
                 <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.22em] text-alarak-gold">{t("Our vision")}</span>
               </div>
               <h2 className="font-serif text-3xl leading-tight text-white sm:text-4xl">
-                An Elegant Refuge in <span className="italic text-alarak-gold">the Heart of Fnideq</span>
+                {t("An Elegant Refuge in ")}<span className="italic text-alarak-gold">{t("the Heart of Fnideq")}</span>
               </h2>
               <p className="font-sans text-sm font-light leading-7 text-alarak-cream/75 sm:text-base">
                 {t("ALARAK brings contemporary elegance together with the warmth of Moroccan hospitality, creating a welcoming place for coffee lovers and pastry enthusiasts.")}
@@ -134,7 +134,7 @@ export function OurStoryExperience() {
                 {t("Whether you’re stopping in for your morning coffee or meeting friends over something sweet, we hope each visit becomes a small ritual worth returning to.")}
               </p>
               <Link href="/visit" className="group inline-flex items-center gap-3 pt-2 font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-alarak-gold transition-colors hover:text-alarak-cream">
-                Visit our location <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                {t("Visit our location")} <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
           </div>

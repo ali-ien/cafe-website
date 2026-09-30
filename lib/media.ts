@@ -191,7 +191,7 @@ export const mediaAssets: MediaManifest = {
         id: 'hero-1',
         src: '/media/hero/alarak-hero 1.png',
         alt: 'Artisan hands preparing fresh pastries on a warm wooden surface',
-        chapter: 'CHAPTER I â€” ARTISANAL CRAFT',
+        chapter: 'CHAPTER I: ARTISANAL CRAFT',
         arabicChapter: 'Ù‚Ù‡ÙˆØ© Ù…Ø®ØªØµØ© ÙˆÙ…Ø®Ø¨Ø² ÙØ§Ø®Ø±',
         headlineLine1: 'Where',
         headlineHighlight: 'Elegance',
@@ -200,13 +200,13 @@ export const mediaAssets: MediaManifest = {
         // Left side gradient â€” subject (hands/pastry) is center-right, text on left is readable
         overlayGradient: 'from-[#1a0e06]/80 via-[#1a0e06]/45 via-50% to-transparent',
         focalPosition: '35% center',
-        mobileFocalPosition: '40% center'
+        mobileFocalPosition: '85% center'
       },
       {
         id: 'hero-2',
         src: '/media/hero/alarak-hero 2.png',
         alt: 'Specialty latte and artisan pastries beautifully arranged on a cafÃ© table',
-        chapter: 'CHAPTER II â€” COFFEE & PASTRY',
+        chapter: 'CHAPTER II: COFFEE & PASTRY',
         arabicChapter: 'Ù‚Ù‡ÙˆØ© ÙˆØ¹Ø¬Ø§Ø¦Ø¨ Ø§Ù„Ø­Ù„ÙˆÙŠØ§Øª',
         headlineLine1: 'Where',
         headlineHighlight: 'Elegance',
@@ -215,13 +215,13 @@ export const mediaAssets: MediaManifest = {
         // Right side has coffee/pastry subjects, left portion for text
         overlayGradient: 'from-[#1a0e06]/78 via-[#1a0e06]/42 via-45% to-transparent',
         focalPosition: '60% center',
-        mobileFocalPosition: '55% center'
+        mobileFocalPosition: '85% center'
       },
       {
         id: 'hero-3',
         src: '/media/hero/alarak-hero 3.png',
         alt: 'Precision espresso extraction pouring into an Alarak branded cup',
-        chapter: 'CHAPTER III â€” COFFEE EXTRACTION',
+        chapter: 'CHAPTER III: COFFEE EXTRACTION',
         arabicChapter: 'Ø¹Ù†Ø§ÙŠØ© ÙØ§Ø¦Ù‚Ø© Ø¨ØªÙØ§ØµÙŠÙ„ Ø§Ù„Ù‚Ù‡ÙˆØ©',
         headlineLine1: 'Where',
         headlineHighlight: 'Elegance',
@@ -230,13 +230,13 @@ export const mediaAssets: MediaManifest = {
         // Espresso machine on right, keep left text area darker
         overlayGradient: 'from-[#1a0e06]/82 via-[#1a0e06]/48 via-48% to-transparent',
         focalPosition: '58% center',
-        mobileFocalPosition: '60% center'
+        mobileFocalPosition: '85% center'
       },
       {
         id: 'hero-4',
         src: '/media/hero/alarak-hero 4.png',
         alt: 'Exquisite selection of artisan pastries and Moroccan bakery specialties',
-        chapter: 'CHAPTER IV â€” BAKERY TREASURES',
+        chapter: 'CHAPTER IV: BAKERY TREASURES',
         arabicChapter: 'Ø¶ÙŠØ§ÙØ© Ø£ØµÙŠÙ„Ø© ÙˆØ£Ø¬ÙˆØ§Ø¡ Ø±Ø§Ù‚ÙŠØ©',
         headlineLine1: 'Where',
         headlineHighlight: 'Elegance',
@@ -245,7 +245,7 @@ export const mediaAssets: MediaManifest = {
         // Pastries fill the frame, left gradient protects text
         overlayGradient: 'from-[#1a0e06]/80 via-[#1a0e06]/44 via-48% to-transparent',
         focalPosition: '65% center',
-        mobileFocalPosition: '70% center'
+        mobileFocalPosition: '85% center'
       }
     ]
   },
@@ -263,7 +263,7 @@ export const mediaAssets: MediaManifest = {
       notes: 'High-resolution vertical 3:4 portrait photography.'
     },
     cake02: {
-      src: '/media/cakes/Gemini_Generated_Image_fbde1bfbde1bfbde.jfif',
+      src: '/media/cakes/signature-bakery.jpg',
       alt: 'Alarak Signature Pastry 02',
       format: 'jpeg',
       extension: '.jfif',
@@ -275,7 +275,7 @@ export const mediaAssets: MediaManifest = {
       notes: ''
     },
     cake03: {
-      src: '/media/cakes/Gemini_Generated_Image_h0pn95h0pn95h0pn (1).jfif',
+      src: '/media/cakes/signature-pastry.jpg',
       alt: 'Alarak Signature Pastry 03',
       format: 'jpeg',
       extension: '.jfif',
@@ -287,7 +287,7 @@ export const mediaAssets: MediaManifest = {
       notes: ''
     },
     cake04: {
-      src: '/media/cakes/Gemini_Generated_Image_jag1k2jag1k2jag1.jfif',
+      src: '/media/cakes/signature-dessert.jpg',
       alt: 'Alarak Signature Pastry 04',
       format: 'jpeg',
       extension: '.jfif',
