@@ -130,10 +130,10 @@ export const SignatureSelection: React.FC = () => {
       className="relative w-full bg-[#FAF6F0]"
       aria-labelledby="signature-heading"
     >
-      <Container size="wide" className="pt-10 sm:pt-12 pb-20 sm:pb-28 lg:pb-36">
+      <Container size="wide" className="pt-6 sm:pt-8 pb-12 sm:pb-16 lg:pb-24">
 
         {/* Intro */}
-        <div className="mb-16 sm:mb-20 lg:mb-24">
+        <div className="mb-12 sm:mb-16 lg:mb-20">
           <EditorialReveal delay={0}>
             <div className="flex items-center gap-3 mb-5">
               <GoldAccent variant="line" width="w-6" />
@@ -166,7 +166,7 @@ export const SignatureSelection: React.FC = () => {
 
         {/* CTA */}
         <EditorialReveal delay={0.28}>
-          <div className="mt-20 sm:mt-24 lg:mt-32 flex items-center justify-between flex-wrap gap-4">
+          <div className="mt-14 sm:mt-16 lg:mt-24 flex items-center justify-between flex-wrap gap-4">
             <GoldAccent variant="line" width="w-12" />
             <Link href="/menu" className="inline-flex items-center gap-2.5 font-sans text-[11px] uppercase tracking-[0.28em] text-alarak-charcoal/50 hover:text-alarak-gold transition-colors duration-300 group">
               <span>View Full Menu</span>

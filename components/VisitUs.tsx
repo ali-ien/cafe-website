@@ -6,6 +6,7 @@ import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { MapPin, Clock, Phone, ArrowRight, Navigation } from "lucide-react";
 import { Container, EditorialReveal, Button } from "@/components/ui";
+import { useLanguage } from "@/lib/language";
 
 const easeEditorial: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
@@ -28,7 +29,9 @@ const LeafMotif: React.FC<{ className?: string }> = ({ className }) => (
   </svg>
 );
 
-const MapEmbed: React.FC = () => (
+const MapEmbed: React.FC = () => {
+  const { t } = useLanguage();
+  return (
   <div className="relative w-full h-full rounded-[2px] overflow-hidden bg-[#EDE8DF]">
     <svg
       viewBox="0 0 320 260"
@@ -53,27 +56,28 @@ const MapEmbed: React.FC = () => (
       <rect x="81" y="156" width="38" height="43" fill="#D8D0C0" fillOpacity="0.6" rx="1" />
       <rect x="121" y="156" width="38" height="43" fill="#D8D0C0" fillOpacity="0.5" rx="1" />
       <rect x="161" y="101" width="38" height="53" fill="#D8D0C0" fillOpacity="0.55" rx="1" />
-      <text x="207" y="25" fontFamily="serif" fontSize="8" fill="#8B9AAB" letterSpacing="0.5">Kasbah des Oudayas</text>
-      <text x="88" y="90" fontFamily="serif" fontSize="13" fill="#5a5242" letterSpacing="1">Rabat</text>
-      <text x="88" y="230" fontFamily="serif" fontSize="8" fill="#8B9070" letterSpacing="0.4">Medina de Rabat</text>
+      <text x="207" y="25" fontFamily="serif" fontSize="8" fill="#8B9AAB" letterSpacing="0.5">Mediterranean Sea</text>
+      <text x="88" y="90" fontFamily="serif" fontSize="13" fill="#5a5242" letterSpacing="1">{t("Fnideq")}</text>
+      <text x="88" y="230" fontFamily="serif" fontSize="8" fill="#8B9070" letterSpacing="0.4">{t("Morocco")}</text>
       <circle cx="200" cy="128" r="14" fill="#C5A059" fillOpacity="0.18" />
       <circle cx="200" cy="128" r="8" fill="#C5A059" />
       <circle cx="200" cy="128" r="4" fill="#fff" />
       <path d="M200 136 L200 146" stroke="#C5A059" strokeWidth="2" strokeLinecap="round" />
     </svg>
     <a
-      href="https://maps.google.com/?q=Rabat,Morocco"
+      href="https://maps.google.com/?q=Fnideq%2C%20Morocco"
       target="_blank"
       rel="noopener noreferrer"
       className="absolute inset-0 flex items-end justify-end p-3"
-      aria-label="Open Rabat on Google Maps"
+      aria-label={t("Open Fnideq on Google Maps")}
     >
       <span className="font-sans text-[10px] text-alarak-navy-dark/50 bg-white/70 px-1.5 py-0.5 rounded-sm backdrop-blur-sm">
-        View on Maps
+        {t("View on Maps")}
       </span>
     </a>
   </div>
-);
+  );
+};
 
 interface InfoRowProps {
   icon: React.ReactNode;
@@ -82,7 +86,9 @@ interface InfoRowProps {
   delay?: number;
 }
 
-const InfoRow: React.FC<InfoRowProps> = ({ icon, label, children, delay = 0 }) => (
+const InfoRow: React.FC<InfoRowProps> = ({ icon, label, children, delay = 0 }) => {
+  const { t } = useLanguage();
+  return (
   <motion.div
     initial={{ opacity: 0, y: 10 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -93,14 +99,16 @@ const InfoRow: React.FC<InfoRowProps> = ({ icon, label, children, delay = 0 }) =
     <span className="mt-[2px] shrink-0 text-alarak-gold">{icon}</span>
     <div>
       <p className="font-sans text-[9px] sm:text-[10px] uppercase tracking-[0.28em] text-alarak-gold font-medium mb-0.5">
-        {label}
+        {t(label)}
       </p>
       {children}
     </div>
   </motion.div>
-);
+  );
+};
 
 export const VisitUs: React.FC = () => {
+  const { t } = useLanguage();
   const shouldReduceMotion = useReducedMotion();
 
   return (
@@ -203,21 +211,20 @@ export const VisitUs: React.FC = () => {
                   className="font-serif text-[34px] sm:text-[42px] lg:text-[46px] font-normal tracking-[0.04em] leading-[1.1] text-alarak-navy-dark mb-5 sm:mb-6"
                 >
                   Come by,<br />
-                  <span className="italic font-light">stay awhile.</span>
+                  <span className="italic font-light">{t("stay awhile.")}</span>
                 </h1>
               </EditorialReveal>
 
               <EditorialReveal delay={0.12}>
                 <p className="font-sans text-[14px] sm:text-[15px] text-alarak-navy-dark/60 font-light leading-[1.75] mb-8 sm:mb-9 max-w-[340px]">
-                  We&apos;d love to welcome you to Alarak. Enjoy our coffee, fresh pastries and handcrafted cakes in a warm and relaxed atmosphere.
+                  {t("We'd love to welcome you to Alarak. Enjoy our coffee, fresh pastries and handcrafted cakes in a warm and relaxed atmosphere.")}
                 </p>
               </EditorialReveal>
 
               <div className="space-y-5 sm:space-y-6 mb-8 sm:mb-9">
                 <InfoRow icon={<MapPin className="w-4 h-4" />} label="Our Location" delay={0.16}>
                   <p className="font-sans text-[14px] text-alarak-navy-dark/75 font-light leading-snug">
-                    Rabat, Morocco<br />
-                    <span className="text-alarak-navy-dark/50 text-[13px]">123 Avenue Mohammed V, Rabat</span>
+                    Fnideq, Morocco
                   </p>
                 </InfoRow>
 
@@ -246,7 +253,7 @@ export const VisitUs: React.FC = () => {
                 className="flex flex-wrap items-center gap-3 sm:gap-4"
               >
                 <a
-                  href="https://maps.google.com/?q=Rabat,Morocco"
+                  href="https://maps.google.com/?q=Fnideq%2C%20Morocco"
                   target="_blank"
                   rel="noopener noreferrer"
                   id="visit-get-directions-btn"

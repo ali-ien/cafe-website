@@ -7,6 +7,7 @@ import { ArrowRight } from "lucide-react";
 import { Button, Container } from "@/components/ui";
 import { mediaAssets } from "@/lib/media";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/lib/language";
 
 // ─── Slide dot indicator ────────────────────────────────────────────────────
 const SlideDot: React.FC<{ active: boolean; onClick: () => void; index: number }> = ({
@@ -28,6 +29,7 @@ const SlideDot: React.FC<{ active: boolean; onClick: () => void; index: number }
 
 // ─── Main Hero ───────────────────────────────────────────────────────────────
 export const Hero: React.FC = () => {
+  const { t } = useLanguage();
   const slides = mediaAssets.hero.slides;
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [prevSlideIndex, setPrevSlideIndex] = useState<number | null>(null);
@@ -48,21 +50,19 @@ export const Hero: React.FC = () => {
   const goToSlide = useCallback(
     (nextIndex: number) => {
       if (nextIndex === currentSlideIndex || transitioning) return;
-      if (intervalRef.current) clearInterval(intervalRef.current);
       setTransitioning(true);
       setPrevSlideIndex(currentSlideIndex);
       setCurrentSlideIndex(nextIndex);
       setTimeout(() => {
         setPrevSlideIndex(null);
         setTransitioning(false);
-      }, 1800);
+      }, shouldReduceMotion ? 0 : 1800);
     },
-    [currentSlideIndex, transitioning]
+    [currentSlideIndex, transitioning, shouldReduceMotion]
   );
 
-  // Auto-advance every 6 seconds
+  // Keep the hero moving on its own; reduced-motion preferences disable the fade, not autoplay.
   useEffect(() => {
-    if (shouldReduceMotion) return;
     intervalRef.current = setInterval(() => {
       setCurrentSlideIndex((prev) => {
         const next = (prev + 1) % slides.length;
@@ -71,7 +71,7 @@ export const Hero: React.FC = () => {
         setTimeout(() => {
           setPrevSlideIndex(null);
           setTransitioning(false);
-        }, 1800);
+        }, shouldReduceMotion ? 0 : 1800);
         return next;
       });
     }, 6000);
@@ -85,7 +85,7 @@ export const Hero: React.FC = () => {
   return (
     <section
       className="relative w-full h-screen min-h-[600px] max-h-[1000px] overflow-hidden flex flex-col"
-      aria-label="Hero Section"
+      aria-label={t("Hero Section")}
     >
       {/* ====================================================================
           LAYER 1 — IMAGE CAROUSEL (absolute stacking, pure crossfade)
@@ -196,9 +196,9 @@ export const Hero: React.FC = () => {
                 transition={{ duration: 0.8, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
                 className="font-serif text-[44px] sm:text-[64px] md:text-[76px] lg:text-[86px] font-normal tracking-tight leading-[1.05] text-alarak-cream drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)]"
               >
-                Where{" "}
+                {t("Where")}{" "}
                 <span className="text-alarak-gold italic font-light">
-                  Elegance
+                  {t("Elegance")}
                 </span>
               </motion.h1>
               <motion.h1
@@ -207,7 +207,7 @@ export const Hero: React.FC = () => {
                 transition={{ duration: 0.8, delay: 0.56, ease: [0.16, 1, 0.3, 1] }}
                 className="font-serif text-[44px] sm:text-[64px] md:text-[76px] lg:text-[86px] font-normal tracking-tight leading-[1.05] text-alarak-cream drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)]"
               >
-                Meets Flavor
+                {t("Meets Flavor")}
               </motion.h1>
             </div>
 
@@ -218,7 +218,7 @@ export const Hero: React.FC = () => {
               transition={{ duration: 0.65, delay: 0.7, ease: "easeOut" }}
               className="font-sans text-sm sm:text-base md:text-[17px] text-alarak-cream/85 font-light leading-relaxed max-w-[340px] sm:max-w-[400px] drop-shadow-[0_1px_6px_rgba(0,0,0,0.5)]"
             >
-              Artisan pastries, specialty coffee, and moments worth savoring.
+              {t("Artisan pastries, specialty coffee, and moments worth savoring.")}
             </motion.p>
 
             {/* CTAs — static */}
@@ -239,7 +239,7 @@ export const Hero: React.FC = () => {
                   document.getElementById("story")?.scrollIntoView({ behavior: "smooth" });
                 }}
               >
-                <span className="relative z-10">Discover Our Menu</span>
+                <span className="relative z-10">{t("Discover Our Menu")}</span>
                 <span className="absolute inset-0 z-0 bg-gradient-to-r from-transparent via-white/22 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out" />
               </Button>
 
@@ -251,7 +251,7 @@ export const Hero: React.FC = () => {
                   document.getElementById("story")?.scrollIntoView({ behavior: "smooth" });
                 }}
               >
-                Visit Us
+                {t("Visit Us")}
               </Button>
             </motion.div>
 
@@ -280,5 +280,3 @@ export const Hero: React.FC = () => {
     </section>
   );
 };
-
-

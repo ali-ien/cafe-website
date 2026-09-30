@@ -113,3 +113,12 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+html[dir="rtl"] body {
+  font-family: var(--font-tajawal), var(--font-jakarta), sans-serif;
+}
+
+/* Reduce letter spacing consistently across the site's typography utilities. */
+[class*="tracking-"] {
+  letter-spacing: calc(var(--tw-tracking, 0em) * 0.8);
+}

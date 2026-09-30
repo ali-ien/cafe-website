@@ -7,6 +7,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { Container, EditorialReveal, GoldAccent, Button } from "@/components/ui";
 import { dessertsMenu, type MenuCategory } from "@/lib/menu";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/lib/language";
 
 const easeEditorial: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
@@ -48,6 +49,7 @@ const CategoryBlock: React.FC<{ category: MenuCategory; delay?: number }> = ({
   category,
   delay = 0,
 }) => {
+  const { t } = useLanguage();
   const shouldReduceMotion = useReducedMotion();
   const imageFirst = category.layout === "image-left";
 
@@ -87,7 +89,7 @@ const CategoryBlock: React.FC<{ category: MenuCategory; delay?: number }> = ({
         <div className={cn(!imageFirst && "lg:order-1")}>
           <EditorialReveal delay={delay + 0.04}>
             <p className="font-sans text-[9px] sm:text-[10px] uppercase tracking-[0.32em] text-alarak-gold font-medium mb-2">
-              {category.label}
+              {t(category.label)}
             </p>
           </EditorialReveal>
           <EditorialReveal delay={delay + 0.08}>
@@ -95,14 +97,14 @@ const CategoryBlock: React.FC<{ category: MenuCategory; delay?: number }> = ({
               id={`${category.id}-heading`}
               className="font-serif text-[28px] sm:text-[34px] lg:text-[40px] font-normal tracking-[0.06em] uppercase text-alarak-navy-dark leading-[1.12]"
             >
-              {category.label}
+              {t(category.label)}
             </h2>
           </EditorialReveal>
 
           <ul className="mt-8 sm:mt-9 space-y-4 sm:space-y-4.5">
             {category.items.map((item, i) => (
               <motion.li
-                key={item.name}
+                key={t(item.name)}
                 initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 8 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.4 }}
@@ -116,7 +118,7 @@ const CategoryBlock: React.FC<{ category: MenuCategory; delay?: number }> = ({
                 <div className="flex items-start gap-3">
                   <Diamond />
                   <span className="font-serif text-[17px] sm:text-[18px] lg:text-[19px] text-alarak-navy-dark/85 font-light leading-snug group-hover:text-alarak-gold transition-colors duration-200">
-                    {item.name}
+                    {t(item.name)}
                   </span>
                 </div>
               </motion.li>
@@ -129,6 +131,7 @@ const CategoryBlock: React.FC<{ category: MenuCategory; delay?: number }> = ({
 };
 
 export const MenuDesserts: React.FC = () => {
+  const { t } = useLanguage();
   const { eyebrow, title, subtitle, heroImage, ctaImage, categories } = dessertsMenu;
 
   return (
@@ -169,7 +172,7 @@ export const MenuDesserts: React.FC = () => {
               <div className="flex items-center gap-3 mb-2.5">
                 <div className="w-8 h-px bg-alarak-gold/80" />
                 <p className="font-sans text-[10px] sm:text-xs uppercase tracking-[0.32em] text-alarak-gold font-medium">
-                  {eyebrow}
+                  {t(eyebrow)}
                 </p>
               </div>
             </EditorialReveal>
@@ -178,12 +181,12 @@ export const MenuDesserts: React.FC = () => {
                 id="menu-heading"
                 className="font-serif text-[44px] sm:text-[56px] lg:text-[66px] font-normal tracking-[0.04em] uppercase leading-[1.04] text-alarak-navy-dark"
               >
-                {title}
+                {t(title)}
               </h1>
             </EditorialReveal>
             <EditorialReveal delay={0.16}>
               <p className="mt-4 font-serif italic text-[18px] sm:text-[20px] text-alarak-navy-dark/65 font-light">
-                {subtitle}.
+                {t(subtitle)}.
               </p>
             </EditorialReveal>
             <EditorialReveal delay={0.22}>
@@ -197,7 +200,7 @@ export const MenuDesserts: React.FC = () => {
       </section>
 
       {/* ── 2. Category Navigation Bar with side accent lines ── */}
-      <nav aria-label="Dessert categories" className="border-y border-alarak-gold/20 py-4 sm:py-5">
+      <nav aria-label={t("Dessert categories")} className="border-y border-alarak-gold/20 py-4 sm:py-5">
         <Container size="wide">
           <div className="flex items-center justify-center gap-4 sm:gap-8">
             <div className="hidden md:block w-12 lg:w-20 h-px bg-alarak-gold/30" />
@@ -208,7 +211,7 @@ export const MenuDesserts: React.FC = () => {
                     href={`#${category.id}`}
                     className="font-sans text-[11px] sm:text-[12px] uppercase tracking-[0.24em] text-alarak-navy-dark/70 hover:text-alarak-gold transition-colors duration-300 focus-ring font-medium"
                   >
-                    {category.label}
+                    {t(category.label)}
                   </a>
                 </li>
               ))}
@@ -266,7 +269,7 @@ export const MenuDesserts: React.FC = () => {
           <div className="max-w-2xl mx-auto text-center flex flex-col items-center">
             <EditorialReveal>
               <p className="font-sans text-[10px] sm:text-[11px] uppercase tracking-[0.32em] text-alarak-gold font-medium mb-2.5">
-                Something sweet awaits
+                {t("Something sweet awaits")}
               </p>
             </EditorialReveal>
 
@@ -275,7 +278,7 @@ export const MenuDesserts: React.FC = () => {
                 id="menu-cta-heading"
                 className="font-serif text-[28px] sm:text-[34px] lg:text-[40px] font-normal tracking-[0.05em] uppercase leading-[1.15] text-alarak-navy-dark"
               >
-                Come taste it for yourself.
+                {t("Come taste it for yourself.")}
               </h2>
             </EditorialReveal>
 

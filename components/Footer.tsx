@@ -6,20 +6,20 @@ import { motion, useReducedMotion } from "framer-motion";
 import {
   MapPin,
   Clock,
-  Mail,
   ArrowRight,
   ArrowUp,
 } from "lucide-react";
 import { Container } from "@/components/ui";
 import { mediaAssets } from "@/lib/media";
+import { useLanguage } from "@/lib/language";
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
-const INSTAGRAM_URL = "https://www.instagram.com/";
+const INSTAGRAM_URL = "https://www.instagram.com/alarak.ma?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==";
 
 const EXPLORE_LINKS = [
   { name: "Home", href: "/" },
-  { name: "Our Story", href: "/#story" },
+  { name: "Our Story", href: "/our-story" },
   { name: "Menu", href: "/menu" },
   { name: "Contact", href: "/visit" },
 ] as const;
@@ -127,62 +127,99 @@ const FloralMark: React.FC = () => (
 );
 
 /** Column heading label */
-const ColumnHeading: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+const ColumnHeading: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const { t } = useLanguage();
+  return (
   <p className="font-sans text-[10px] sm:text-[11px] uppercase tracking-[0.32em] text-alarak-gold font-medium mb-5 sm:mb-6">
-    {children}
+    {typeof children === "string" ? t(children) : children}
   </p>
 );
+};
 
 // ─── Newsletter Form ──────────────────────────────────────────────────────────
 
-const NewsletterForm: React.FC = () => {
+const ContactMessageForm: React.FC = () => {
+  const { t } = useLanguage();
   const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
+  const [message, setMessage] = useState("");
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [errorText, setErrorText] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!email.trim()) return;
-    setSubmitted(true);
-    setEmail("");
+    setStatus("sending");
+    setErrorText("");
+
+    const formData = new FormData(e.currentTarget);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email,
+          message,
+          website: formData.get("website"),
+        }),
+      });
+
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        setErrorText(typeof result.error === "string" ? result.error : t("We could not send your message. Please try again."));
+        setStatus("error");
+        return;
+      }
+      setEmail("");
+      setMessage("");
+      setStatus("sent");
+    } catch {
+      setErrorText(t("We could not send your message. Please try again."));
+      setStatus("error");
+    }
   };
 
-  if (submitted) {
-    return (
-      <p className="font-sans text-[13px] text-alarak-cream/70 leading-relaxed">
-        <span className="text-alarak-gold">✓</span> Thank you — we&apos;ll be in touch.
-      </p>
-    );
-  }
-
   return (
-    <form onSubmit={handleSubmit} noValidate aria-label="Newsletter signup">
-      <div className="flex items-center border border-alarak-gold/25 rounded-sm overflow-hidden focus-within:border-alarak-gold/55 transition-colors duration-300">
-        <label htmlFor="footer-email" className="sr-only">
-          Your email address
-        </label>
-        <span aria-hidden="true" className="pl-3.5 pr-2.5 flex items-center shrink-0 text-alarak-gold/50">
-          <Mail className="w-3.5 h-3.5" />
-        </span>
+    <form onSubmit={handleSubmit} aria-label={t("Send a message")} className="space-y-2.5">
+      <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
+        <label htmlFor="footer-website">Leave this field empty</label>
+        <input id="footer-website" name="website" tabIndex={-1} autoComplete="off" />
+      </div>
+      <div>
+        <label htmlFor="footer-email" className="sr-only">{t("Your email address")}</label>
         <input
           id="footer-email"
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="Your email address"
+          placeholder={t("Your email address")}
           required
-          aria-required="true"
-          className="flex-1 min-w-0 bg-transparent py-3 pr-2 font-sans text-[13px] text-alarak-cream placeholder-alarak-cream/30 focus:outline-none"
+          className="w-full rounded-sm border border-alarak-gold/25 bg-transparent px-3 py-2.5 font-sans text-xs text-alarak-cream placeholder-alarak-cream/35 transition-colors focus:border-alarak-gold/60 focus:outline-none"
         />
-        <button
-          type="submit"
-          aria-label="Subscribe to newsletter"
-          className="shrink-0 bg-alarak-gold hover:bg-alarak-gold-light text-alarak-navy-dark px-3.5 py-3 flex items-center justify-center transition-colors duration-300 focus-ring"
-        >
-          <ArrowRight className="w-4 h-4" />
-        </button>
       </div>
-      <p className="mt-3 font-sans text-[11px] text-alarak-cream/35 tracking-wide">
-        No spam. Just good coffee.
+      <div>
+        <label htmlFor="footer-message" className="sr-only">{t("Your message")}</label>
+        <textarea
+          id="footer-message"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          placeholder={t("Write your message...")}
+          rows={3}
+          required
+          className="w-full resize-y rounded-sm border border-alarak-gold/25 bg-transparent px-3 py-2.5 font-sans text-xs leading-5 text-alarak-cream placeholder-alarak-cream/35 transition-colors focus:border-alarak-gold/60 focus:outline-none"
+        />
+      </div>
+      <button
+        type="submit"
+        disabled={status === "sending"}
+        className="inline-flex w-full items-center justify-center gap-2 rounded-sm bg-alarak-gold px-3.5 py-2.5 font-sans text-[10px] font-medium uppercase tracking-[0.18em] text-alarak-navy-dark transition-colors duration-300 hover:bg-alarak-gold-light focus-ring"
+      >
+        {status === "sending" ? t("Sending...") : t("Send message")} <ArrowRight className="h-3.5 w-3.5" />
+      </button>
+      <p className="font-sans text-[10px] leading-4 text-alarak-cream/35">
+        {status === "sent"
+          ? t("Your message has been sent. Thank you!")
+          : status === "error"
+            ? errorText
+            : t("Your message will be sent directly to our team.")}
       </p>
     </form>
   );
@@ -190,20 +227,24 @@ const NewsletterForm: React.FC = () => {
 
 // ─── Back to Top ─────────────────────────────────────────────────────────────
 
-const BackToTop: React.FC = () => (
+const BackToTop: React.FC = () => {
+  const { t } = useLanguage();
+  return (
   <button
     type="button"
     onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-    aria-label="Back to top"
+    aria-label={t("Back to top")}
     className="group w-9 h-9 rounded-full border border-alarak-gold/45 text-alarak-gold flex items-center justify-center hover:bg-alarak-gold hover:text-alarak-navy-dark hover:border-alarak-gold transition-all duration-300 focus-ring shrink-0"
   >
     <ArrowUp className="w-4 h-4 transition-transform duration-300 group-hover:-translate-y-0.5" />
   </button>
-);
+  );
+};
 
 // ─── Main Footer ──────────────────────────────────────────────────────────────
 
 export const Footer: React.FC = () => {
+  const { t } = useLanguage();
   const logoWeb = mediaAssets.logo.web;
   const shouldReduceMotion = useReducedMotion();
 
@@ -275,7 +316,7 @@ export const Footer: React.FC = () => {
 
             {/* Description */}
             <p className="mt-5 max-w-[260px] font-sans text-[13.5px] text-alarak-cream/50 font-light leading-[1.8]">
-              Specialty coffee and artisan pastry, made slowly in Rabat — a warm place to pause, savor, and return to.
+              {t("Specialty coffee and artisan pastry, made slowly in Fnideq — a warm place to pause, savor, and return to.")}
             </p>
 
             {/* Social icons row */}
@@ -284,7 +325,7 @@ export const Footer: React.FC = () => {
                 href={INSTAGRAM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Follow Alarak on Instagram"
+                aria-label={t("Follow Alarak on Instagram")}
                 className="w-8 h-8 rounded-full border border-alarak-gold/25 flex items-center justify-center text-alarak-cream/50 hover:text-alarak-gold hover:border-alarak-gold/60 transition-all duration-300 focus-ring"
               >
                 <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5">
@@ -296,7 +337,7 @@ export const Footer: React.FC = () => {
                 href="#"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Follow Alarak on Facebook"
+                aria-label={t("Follow Alarak on Facebook")}
                 className="w-8 h-8 rounded-full border border-alarak-gold/25 flex items-center justify-center text-alarak-cream/50 hover:text-alarak-gold hover:border-alarak-gold/60 transition-all duration-300 focus-ring"
               >
                 <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5">
@@ -308,7 +349,7 @@ export const Footer: React.FC = () => {
                 href="#"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Follow Alarak on TikTok"
+                aria-label={t("Follow Alarak on TikTok")}
                 className="w-8 h-8 rounded-full border border-alarak-gold/25 flex items-center justify-center text-alarak-cream/50 hover:text-alarak-gold hover:border-alarak-gold/60 transition-all duration-300 focus-ring"
               >
                 <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5">
@@ -320,7 +361,7 @@ export const Footer: React.FC = () => {
                 href="#"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Follow Alarak on YouTube"
+                aria-label={t("Follow Alarak on YouTube")}
                 className="w-8 h-8 rounded-full border border-alarak-gold/25 flex items-center justify-center text-alarak-cream/50 hover:text-alarak-gold hover:border-alarak-gold/60 transition-all duration-300 focus-ring"
               >
                 <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5">
@@ -358,7 +399,7 @@ export const Footer: React.FC = () => {
             <address className="not-italic space-y-4 font-sans text-[13.5px] text-alarak-cream/55 font-light">
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-3.5 h-3.5 text-alarak-gold/70 mt-[2px] shrink-0" aria-hidden="true" />
-                <span>Rabat, Morocco</span>
+                <span>{t("Fnideq, Morocco")}</span>
               </div>
               <div className="flex items-start gap-2.5">
                 <Clock className="w-3.5 h-3.5 text-alarak-gold/70 mt-[2px] shrink-0" aria-hidden="true" />
@@ -406,11 +447,11 @@ export const Footer: React.FC = () => {
 
           {/* ── Col 5: Stay in Touch ─────────────────────────────────────── */}
           <FooterColumn delay={0.30}>
-            <ColumnHeading>Stay in Touch</ColumnHeading>
+            <ColumnHeading>Send a message</ColumnHeading>
             <p className="font-sans text-[13.5px] text-alarak-cream/55 font-light leading-[1.75] mb-5 max-w-[240px]">
-              Get updates on new menu items, events and special offers.
+              Have a question? Send us a note and we&apos;ll get back to you.
             </p>
-            <NewsletterForm />
+            <ContactMessageForm />
           </FooterColumn>
         </div>
       </Container>

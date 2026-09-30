@@ -6,8 +6,10 @@ import { motion, useReducedMotion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Container, GoldAccent, EditorialReveal } from "@/components/ui";
 import { mediaAssets } from "@/lib/media";
+import { useLanguage } from "@/lib/language";
 
 export const Story: React.FC = () => {
+  const { t } = useLanguage();
   const ownerAsset = mediaAssets.brand.owner;
   const shouldReduceMotion = useReducedMotion();
 
@@ -17,7 +19,7 @@ export const Story: React.FC = () => {
       className="relative w-full bg-[#FAF7F2]"
       aria-labelledby="story-heading"
     >
-      <Container size="wide" className="py-20 sm:py-28 lg:py-32">
+      <Container size="wide" className="py-16 sm:py-24 lg:py-28">
         <div className="grid grid-cols-1 lg:grid-cols-[48fr_52fr] gap-10 lg:gap-16 xl:gap-20 items-center">
 
           {/* LEFT: OWNER PHOTOGRAPH */}
@@ -60,7 +62,7 @@ export const Story: React.FC = () => {
             <EditorialReveal delay={0.1}>
               <div className="flex items-center gap-3">
                 <GoldAccent variant="line" width="w-7" />
-                <GoldAccent variant="badge">OUR STORY</GoldAccent>
+                <GoldAccent variant="badge">{t("OUR STORY")}</GoldAccent>
               </div>
             </EditorialReveal>
 
@@ -77,8 +79,8 @@ export const Story: React.FC = () => {
                 id="story-heading"
                 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[50px] font-normal tracking-tight leading-[1.12] text-alarak-navy-dark"
               >
-                Crafted with{" "}
-                <span className="italic font-light text-[#b8892a]">Purpose.</span>
+                {t("Crafted with")}{" "}
+                <span className="italic font-light text-[#b8892a]">{t("Purpose.")}</span>
               </h2>
             </EditorialReveal>
 
@@ -86,10 +88,10 @@ export const Story: React.FC = () => {
             <EditorialReveal delay={0.28}>
               <div className="space-y-4">
                 <p className="font-sans text-base sm:text-[17px] text-alarak-charcoal/80 font-light leading-[1.75]">
-                  ALARAK was born from a deep love of craft — where the art of specialty coffee meets the warmth of Moroccan hospitality. Every cup is brewed with intention, every pastry shaped by the hands of artisans who believe that food is a form of care.
+                  {t("ALARAK was born from a deep love of craft — where the art of specialty coffee meets the warmth of Moroccan hospitality. Every cup is brewed with intention, every pastry shaped by the hands of artisans who believe that food is a form of care.")}
                 </p>
                 <p className="font-sans text-base sm:text-[17px] text-alarak-charcoal/80 font-light leading-[1.75]">
-                  We create spaces and flavors that invite you to slow down, to savor, and to feel genuinely welcomed. This is not just a café — it is a moment worth returning to.
+                  {t("We create spaces and flavors that invite you to slow down, to savor, and to feel genuinely welcomed. This is not just a café — it is a moment worth returning to.")}
                 </p>
               </div>
             </EditorialReveal>
@@ -98,7 +100,7 @@ export const Story: React.FC = () => {
             <EditorialReveal delay={0.36}>
               <div className="border-l-2 border-alarak-gold/55 pl-5 py-2 bg-[#F4EFE8]/50 pr-4">
                 <p className="font-serif text-lg sm:text-xl text-alarak-navy-dark/80 italic leading-[1.55]">
-                  &ldquo;Coffee and pastry are not simply served&thinsp;&mdash;&thinsp;they are shared moments of genuine warmth.&rdquo;
+                  &ldquo;{t("Coffee and pastry are not simply served ? they are shared moments of genuine warmth.")}&rdquo;
                 </p>
               </div>
             </EditorialReveal>
@@ -111,10 +113,10 @@ export const Story: React.FC = () => {
             {/* CTA */}
             <EditorialReveal delay={0.48}>
               <a
-                href="#"
+                href="/our-story"
                 className="inline-flex items-center gap-2 font-sans text-xs uppercase tracking-[0.28em] text-alarak-gold hover:text-[#b8892a] transition-colors duration-300 group"
               >
-                <span>Discover Our Story</span>
+                <span>{t("Discover Our Story")}</span>
                 <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
             </EditorialReveal>

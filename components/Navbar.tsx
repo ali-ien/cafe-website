@@ -6,7 +6,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { Menu, X, Coffee, MapPin } from "lucide-react";
-import { Button, Container } from "@/components/ui";
+import { Container } from "@/components/ui";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { useLanguage } from "@/lib/language";
 import { mediaAssets } from "@/lib/media";
 import { cn } from "@/lib/utils";
 
@@ -14,8 +16,8 @@ import { cn } from "@/lib/utils";
 const NAV_LINKS = [
   { name: "Home", href: "/" },
   { name: "Menu", href: "/menu" },
-  { name: "Our Story", href: "/#story" },
-  { name: "Gallery", href: "/#gallery" },
+  { name: "Our Story", href: "/our-story" },
+  { name: "Gallery", href: "/gallery" },
   { name: "Visit Us", href: "/visit" },
 ];
 
@@ -24,6 +26,7 @@ export const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const shouldReduceMotion = useReducedMotion();
   const pathname = usePathname();
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,7 +66,7 @@ export const Navbar: React.FC = () => {
         )}
       >
         <Container size="wide">
-          <nav className="flex items-center justify-between" aria-label="Main Navigation">
+          <nav className="flex items-center justify-between" aria-label={t("Main Navigation")}>
             {/* Prominent Substantially Sized Luxury Alarak Logo */}
             <Link
               href="/"
@@ -101,7 +104,12 @@ export const Navbar: React.FC = () => {
             {/* Desktop Navigation Links */}
             <ul className="hidden lg:flex items-center gap-9">
               {NAV_LINKS.map((link) => {
-                const isActive = pathname === link.href || (link.href === "/menu" && pathname?.startsWith("/menu")) || (link.href === "/visit" && pathname?.startsWith("/visit"));
+                const isActive =
+                  pathname === link.href ||
+                  (link.href === "/our-story" && pathname?.startsWith("/our-story")) ||
+                  (link.href === "/gallery" && pathname?.startsWith("/gallery")) ||
+                  (link.href === "/menu" && pathname?.startsWith("/menu")) ||
+                  (link.href === "/visit" && pathname?.startsWith("/visit"));
                 return (
                   <li key={link.name}>
                     <Link
@@ -111,7 +119,7 @@ export const Navbar: React.FC = () => {
                         isActive ? "text-alarak-gold font-medium" : "text-alarak-cream/85 hover:text-alarak-gold"
                       )}
                     >
-                      <span>{link.name}</span>
+                      <span>{t(link.name)}</span>
                       <span
                         className={cn(
                           "w-1 h-1 rounded-full bg-alarak-gold transition-all duration-300 mt-1 shadow-[0_0_8px_rgba(212,175,55,0.8)]",
@@ -126,15 +134,16 @@ export const Navbar: React.FC = () => {
 
             {/* Desktop CTA Action */}
             <div className="hidden sm:flex items-center gap-4">
-              <Link href="/menu">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="border-alarak-gold/40 text-alarak-cream hover:border-alarak-gold hover:text-alarak-gold hover:bg-alarak-gold/10 hover:-translate-y-[2px] transition-all duration-300 hover:shadow-[0_4px_16px_rgba(212,175,55,0.25)] px-5"
-                >
-                  View Menu
-                </Button>
-              </Link>
+              <LanguageSwitcher />
+              <a
+                href="/media/menu/alarak-menu.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={t("View the menu PDF in a new tab")}
+                className="inline-flex items-center justify-center rounded-sm border border-alarak-gold/40 bg-transparent px-5 py-2 font-sans text-xs font-medium uppercase tracking-widest text-alarak-cream transition-all duration-300 hover:-translate-y-[2px] hover:border-alarak-gold hover:bg-alarak-gold/10 hover:text-alarak-gold hover:shadow-[0_4px_16px_rgba(212,175,55,0.25)] focus-ring"
+              >
+                {t("View Menu")}
+              </a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -143,7 +152,7 @@ export const Navbar: React.FC = () => {
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="lg:hidden p-2 text-alarak-cream hover:text-alarak-gold focus-ring rounded-sm transition-colors"
               aria-expanded={mobileMenuOpen}
-              aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+              aria-label={mobileMenuOpen ? t("Close navigation menu") : t("Open navigation menu")}
             >
               {mobileMenuOpen ? <X className="w-7 h-7 text-alarak-gold" /> : <Menu className="w-7 h-7" />}
             </button>
@@ -159,7 +168,7 @@ export const Navbar: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.35, ease: "easeInOut" }}
-            className="fixed inset-0 z-40 bg-alarak-navy-dark/98 backdrop-blur-2xl lg:hidden pt-28 pb-12 px-6 flex flex-col justify-between"
+            className="fixed inset-0 z-40 overflow-y-auto overscroll-contain bg-alarak-navy-dark/98 backdrop-blur-2xl lg:hidden pt-28 pb-12 px-6 flex flex-col justify-between"
           >
             <div className="space-y-8">
               {/* Mobile Prominent Logo Header */}
@@ -177,7 +186,7 @@ export const Navbar: React.FC = () => {
                   ALARAK
                 </span>
                 <span className="font-sans text-[10px] tracking-[0.32em] uppercase text-alarak-gold mt-1">
-                  Moroccan Specialty Coffee &amp; Bakery
+                  {t("Moroccan Specialty Coffee & Bakery")}
                 </span>
               </div>
 
@@ -199,7 +208,7 @@ export const Navbar: React.FC = () => {
                         pathname === link.href ? "text-alarak-gold font-medium" : "text-alarak-cream hover:text-alarak-gold"
                       )}
                     >
-                      {link.name}
+                      {t(link.name)}
                     </Link>
                   </motion.li>
                 ))}
@@ -209,19 +218,21 @@ export const Navbar: React.FC = () => {
             </div>
 
             <div className="space-y-5 text-center">
-              <Link href="/menu" onClick={() => setMobileMenuOpen(false)} className="block w-full">
-                <Button
-                  variant="primary"
-                  size="lg"
-                  className="w-full justify-center text-base"
-                  icon={<Coffee className="w-5 h-5" />}
-                >
-                  Discover Our Menu
-                </Button>
-              </Link>
+              <div className="flex justify-center sm:hidden">
+                <LanguageSwitcher />
+              </div>
+              <a
+                href="/media/menu/alarak-menu.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileMenuOpen(false)}
+                className="inline-flex w-full items-center justify-center gap-2.5 rounded-sm bg-alarak-gold px-8 py-4 font-sans text-sm font-medium uppercase tracking-widest text-alarak-navy-dark transition-all duration-300 hover:bg-alarak-gold-light focus-ring"
+              >
+                {t("Discover Our Menu")} <Coffee className="h-5 w-5" />
+              </a>
               <div className="flex items-center justify-center gap-2 text-xs text-alarak-gold/80 tracking-widest uppercase">
                 <MapPin className="w-3.5 h-3.5 text-alarak-gold" />
-                <span>Rabat, Morocco</span>
+                <span>{t("Fnideq, Morocco")}</span>
               </div>
             </div>
           </motion.div>

@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Plus_Jakarta_Sans, Tajawal } from "next/font/google";
+import { LanguageProvider } from "@/lib/language";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -50,11 +52,15 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="fr"
+      dir="ltr"
       className={`${cormorant.variable} ${jakarta.variable} ${tajawal.variable} antialiased`}
     >
       <body className="min-h-screen bg-alarak-navy-dark text-alarak-cream selection:bg-alarak-gold selection:text-alarak-navy-dark">
-        {children}
+        <LanguageProvider>
+          {children}
+          <WhatsAppButton />
+        </LanguageProvider>
       </body>
     </html>
   );
