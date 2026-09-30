@@ -230,7 +230,7 @@ export const VisitUs: React.FC = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: shouldReduceMotion ? 0.3 : 1.1, delay: 0.1, ease: easeEditorial }}
-              className="relative min-h-[260px] sm:min-h-[320px] lg:h-[420px] rounded-[2px] overflow-hidden shadow-[0_8px_32px_rgba(7,12,24,0.07)]"
+              className="relative h-[260px] sm:h-[320px] lg:h-[420px] rounded-[2px] overflow-hidden shadow-[0_8px_32px_rgba(7,12,24,0.07)]"
             >
               <LocationMap />
               <div
