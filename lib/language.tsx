@@ -149,6 +149,16 @@ const translations: Record<string, Partial<Record<Language, string>>> = {
 };
 
 Object.assign(translations, {
+  "My journey into the world of culinary arts and pastry began with a passion for craftsmanship, creativity, and attention to detail.": {
+    fr: "Mon parcours dans les arts culinaires et la pâtisserie est né d’une passion pour le savoir-faire, la créativité et le souci du détail.",
+    ar: "بدأت رحلتي في عالم فنون الطهي والحلويات بشغف للحرفية والإبداع والاهتمام بالتفاصيل.",
+  },
+  "This journey led me to New York, where I earned my diploma from the Institute of Culinary Education in Culinary Arts and Pastry Arts.": {
+    fr: "Ce parcours m’a conduit à New York, où j’ai obtenu mon diplôme en arts culinaires et en pâtisserie à l’Institute of Culinary Education.",
+    ar: "قادني هذا الشغف إلى نيويورك، حيث حصلت على دبلوم فنون الطهي والحلويات من معهد Institute of Culinary Education.",
+  },
+  "And that dream became": { fr: "Et ce rêve est devenu", ar: "وهكذا أصبح ذلك الحلم" },
+  "Alarak Coffee & Bakery.": { fr: "Alarak Coffee & Bakery.", ar: "الأراك للقهوة والمخبوزات." },
   "Explore our": { fr: "Découvrir notre", ar: "اكتشف" },
   "Explore": { fr: "Découvrir", ar: "اكتشف" },
   "Our Selection": { fr: "Notre sélection", ar: "تشكيلتنا" },
@@ -275,6 +285,83 @@ Object.assign(translations, {
     fr: "Que vous passiez pour votre café du matin ou retrouviez des amis autour d’une douceur, nous espérons que chaque visite deviendra un rituel auquel revenir.",
     ar: "سواء مررتم لتناول قهوة الصباح أو للقاء الأصدقاء مع حلوى لذيذة، نأمل أن تصبح كل زيارة عادة جميلة تستحق التكرار.",
   },
+});
+
+Object.assign(translations, {
+  "A Family Story": { fr: "UNE HISTOIRE DE FAMILLE", ar: "حكاية عائلية" },
+  "OUR STORY · NOTRE HISTOIRE": { fr: "NOTRE HISTOIRE", ar: "قصتنا" },
+  "From New York": { fr: "De New York", ar: "من نيويورك" },
+  "to Morocco": { fr: "au Maroc", ar: "إلى المغرب" },
+  "Founder & Pastry Artisan": { fr: "Fondateur et artisan pâtissier", ar: "المؤسس وحرفي الحلويات" },
+  "Abdellah El Idrissi in a New York restaurant": { fr: "Abdellah El Idrissi dans un restaurant à New York", ar: "عبد الله الإدريسي في مطعم بنيويورك" },
+  "New York · Where the journey grew": { fr: "New York · Là où le parcours a grandi", ar: "نيويورك · حيث نمت الرحلة" },
+  "The Beginning": { fr: "Les débuts", ar: "البداية" },
+  "Craft, curiosity, and a journey across the ocean.": { fr: "Le savoir-faire, la curiosité et un voyage au-delà de l’océan.", ar: "الحرفة والفضول ورحلة عبر المحيط." },
+  "Made together": { fr: "Faits ensemble", ar: "صنعناها معاً" },
+  "Craft is passed on with joy": { fr: "Le savoir-faire se transmet dans la joie", ar: "الحرفة تنتقل بفرح" },
+  "A New Chapter · Morocco": { fr: "Un nouveau chapitre · Maroc", ar: "فصل جديد · المغرب" },
+  "A dream shaped around family.": { fr: "Un rêve façonné par la famille.", ar: "حلم صاغته العائلة." },
+  "The finest things we make begin with the people we make them for.": { fr: "Nos plus belles créations commencent avec celles et ceux à qui elles sont destinées.", ar: "أجمل ما نصنعه يبدأ من الأشخاص الذين نصنعه من أجلهم." },
+  "The El Idrissi Family": { fr: "La famille El Idrissi", ar: "عائلة الإدريسي" },
+  "Selected with the same care as everything we bake.": { fr: "Choisi avec autant de soin que tout ce que nous préparons.", ar: "نختارها بعناية ككل ما نخبزه." },
+  "Craft is passed on": { fr: "Le savoir-faire se transmet", ar: "الحرفة تنتقل" },
+  "with joy": { fr: "avec joie", ar: "بفرح" },
+  "From New York to Morocco,": { fr: "De New York au Maroc,", ar: "من نيويورك إلى المغرب،" },
+  "a Family Dream Baked Every Day": { fr: "un rêve familial façonné chaque jour", ar: "حلم عائلي يُخبز كل يوم" },
+  "A family dream, baked every day.": { fr: "Un rêve familial, préparé chaque jour.", ar: "حلم عائلي نخبزه كل يوم." },
+  "Meet Abdellah El Idrissi and the family story behind Alarak Coffee & Bakery.": {
+    fr: "Découvrez Abdellah El Idrissi et l’histoire familiale à l’origine d’Alarak Coffee & Bakery.",
+    ar: "تعرّفوا على عبد الله الإدريسي وحكاية العائلة وراء الأراك للقهوة والمخبوزات.",
+  },
+  "My journey into the world of culinary arts and pastry began with a passion for craftsmanship, creativity, and attention to detail. This journey led me to New York, where I earned my diploma from the Institute of Culinary Education in Culinary Arts and Pastry Arts.": {
+    fr: "Mon parcours dans les arts culinaires et la pâtisserie est né d’une passion pour le savoir-faire, la créativité et le souci du détail. Il m’a conduit à New York, où j’ai obtenu mon diplôme en arts culinaires et pâtisserie à l’Institute of Culinary Education.",
+    ar: "بدأت رحلتي في عالم فنون الطهي والحلويات بشغف للحرفة والإبداع والاهتمام بالتفاصيل. وقادتني هذه الرحلة إلى نيويورك، حيث حصلت على دبلوم في فنون الطهي والحلويات من معهد Institute of Culinary Education.",
+  },
+  "From New York, I brought back more than techniques. I brought with me a modern approach to the world of coffee, bakery, and pastry — inspired by the diversity, creativity, and energy of the city.": {
+    fr: "De New York, j’ai rapporté bien plus que des techniques. J’en ai ramené une approche moderne du café, de la boulangerie et de la pâtisserie, inspirée par la diversité, la créativité et l’énergie de la ville.",
+    ar: "عدت من نيويورك بأكثر من مجرد تقنيات؛ جلبت معي رؤية عصرية للقهوة والمخبوزات والحلويات، استلهمتها من تنوع المدينة وإبداعها وحيويتها.",
+  },
+  "But returning to Morocco marked the beginning of a new chapter.": { fr: "Mais mon retour au Maroc a marqué le début d’un nouveau chapitre.", ar: "لكن عودتي إلى المغرب كانت بداية فصل جديد." },
+  "The dream was to transform this experience into something that reflected who we are: a family project built around passion, craftsmanship, and hospitality.": {
+    fr: "Le rêve était de transformer cette expérience en un projet à notre image : une aventure familiale portée par la passion, le savoir-faire et l’hospitalité.",
+    ar: "كان الحلم أن نحوّل هذه التجربة إلى مشروع يشبهنا: مشروع عائلي يجمعه الشغف والحرفة وحسن الضيافة.",
+  },
+  "And that dream became Alarak Coffee & Bakery.": { fr: "Et ce rêve est devenu Alarak Coffee & Bakery.", ar: "وهكذا أصبح ذلك الحلم الأراك للقهوة والمخبوزات." },
+  "A place where the spirit of New York meets a Moroccan touch, with Mediterranean influences woven into our coffee, pastries, cakes, and baked creations.": {
+    fr: "Un lieu où l’esprit de New York rencontre une touche marocaine, tandis que des influences méditerranéennes se glissent dans nos cafés, pâtisseries, gâteaux et créations boulangères.",
+    ar: "مكان تلتقي فيه روح نيويورك بلمسة مغربية، وتمتزج التأثيرات المتوسطية بقهوة الأراك ومعجناته وكعكاته ومخبوزاته.",
+  },
+  "A family craft, shared together": { fr: "Un savoir-faire partagé en famille", ar: "حرفة نتشاركها كأسرة" },
+  "Learning, exploring, dreaming": { fr: "Apprendre, découvrir, rêver", ar: "نتعلّم ونكتشف ونحلم" },
+  "The joy of making something by hand": { fr: "La joie de créer de ses mains", ar: "فرحة صنع الأشياء بأيدينا" },
+  "Abdellah baking together with his daughter": { fr: "Abdellah prépare des pâtisseries avec sa fille", ar: "عبد الله يحضّر المخبوزات مع ابنته" },
+  "Abdellah and his daughter outside a New York bakery": { fr: "Abdellah et sa fille devant une boulangerie à New York", ar: "عبد الله وابنته أمام مخبز في نيويورك" },
+  "A young family baker presenting a freshly baked pastry": { fr: "Une jeune pâtissière de la famille présente une création fraîchement cuite", ar: "شيف صغيرة من العائلة تقدّم مخبوزاً طازجاً" },
+  "Abdellah El Idrissi, founder of Alarak Coffee & Bakery": { fr: "Abdellah El Idrissi, fondateur d’Alarak Coffee & Bakery", ar: "عبد الله الإدريسي، مؤسس الأراك للقهوة والمخبوزات" },
+  "Abdellah El Idrissi · Founder": { fr: "Abdellah El Idrissi · Fondateur", ar: "عبد الله الإدريسي · المؤسس" },
+  "Our Coffee": { fr: "Notre café", ar: "قهوتنا" },
+  "Carefully chosen,": { fr: "Sélectionné avec soin,", ar: "نختاره بعناية،" },
+  "thoughtfully served.": { fr: "servi avec attention.", ar: "ونقدّمه باهتمام." },
+  "Because coffee is at the heart of the coffee & bakery experience, we carefully selected the coffees we serve.": {
+    fr: "Le café étant au cœur de l’expérience coffee & bakery, nous avons soigneusement choisi les cafés que nous servons.",
+    ar: "لأن القهوة في قلب تجربة المقهى والمخبوزات، اخترنا بعناية أنواع القهوة التي نقدّمها.",
+  },
+  "We use Miscela d'Oro Italian coffee, a blend of Arabica and Robusta, alongside illy 100% Arabica, offering different coffee profiles and experiences for our guests.": {
+    fr: "Nous servons le café italien Miscela d’Oro, un assemblage d’arabica et de robusta, ainsi que l’illy 100 % arabica, pour offrir à nos clients des profils et des expériences variés.",
+    ar: "نقدّم قهوة ميسيلادورو الإيطالية، وهي مزيج من أرابيكا وروبوستا، إلى جانب قهوة illy المصنوعة من أرابيكا 100٪، لنمنح ضيوفنا نكهات وتجارب متنوعة.",
+  },
+  "For us, quality begins with the ingredients — from the coffee we select to the pastries we bake and the way every creation is prepared and presented.": {
+    fr: "Pour nous, la qualité commence par les ingrédients : du café que nous choisissons aux pâtisseries que nous préparons, jusqu’au soin apporté à chaque création et à sa présentation.",
+    ar: "تبدأ الجودة عندنا من المكوّنات: من القهوة التي نختارها إلى المخبوزات التي نعدّها، وصولاً إلى طريقة تحضير كل إبداع وتقديمه.",
+  },
+  "Alarak is more than a Coffee & Bakery.": { fr: "Alarak est plus qu’un café et une boulangerie.", ar: "الأراك أكثر من مقهى ومخبز." },
+  "It is a family dream brought to life.": { fr: "C’est un rêve familial devenu réalité.", ar: "إنه حلم عائلي أصبح حقيقة." },
+  "Every pastry, every dessert, and every cup of coffee is prepared with care, passion, and a love for the craft.": {
+    fr: "Chaque pâtisserie, chaque dessert et chaque tasse de café sont préparés avec soin, passion et amour du métier.",
+    ar: "نحضّر كل معجنّة وكل حلوى وكل فنجان قهوة بعناية وشغف وحبّ للحرفة.",
+  },
+  "Welcome to Alarak.": { fr: "Bienvenue chez Alarak.", ar: "مرحباً بكم في الأراك." },
+  "A family dream, baked with passion.": { fr: "Un rêve familial, préparé avec passion.", ar: "حلم عائلي نخبزه بشغف." },
 });
 
 interface LanguageContextValue {

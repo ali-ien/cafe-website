@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Navbar, Hero, Story, SignatureSelection, Footer } from "@/components";
+import { Navbar, Hero, FamilyStorySection, SignatureSelection, Footer } from "@/components";
 import { HomeVisitSection } from "@/components/HomeVisitSection";
 import { HomeRitualSection } from "@/components/HomeRitualSection";
 
@@ -16,8 +16,8 @@ export default function Home() {
         {/* 2. Cinematic Hero Section */}
         <Hero />
 
-        {/* 3. Our Story Section */}
-        <Story />
+        {/* 3. Family story and craft */}
+        <FamilyStorySection />
 
         <div
           className="w-full bg-[#FAF7F2] flex items-center justify-center py-6 sm:py-8"
