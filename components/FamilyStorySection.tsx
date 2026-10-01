@@ -92,19 +92,22 @@ export function FamilyStorySection() {
                 if (closestSlide === 0 || closestSlide === slides.length - 1) {
                   const wrappedIndex = closestSlide === 0 ? slides.length - 2 : 1;
                   const wrappedSlide = slides[wrappedIndex];
+                  const previousScrollBehavior = event.currentTarget.style.scrollBehavior;
+                  event.currentTarget.style.scrollBehavior = "auto";
                   event.currentTarget.scrollTo({ left: wrappedSlide.offsetLeft, behavior: "auto" });
+                  event.currentTarget.style.scrollBehavior = previousScrollBehavior;
                   setActiveStoryPhoto(closestSlide === 0 ? mobileStoryPhotos.length - 1 : 0);
                   return;
                 }
                 setActiveStoryPhoto(closestSlide - 1);
               }}
-              className="flex snap-x snap-mandatory overflow-x-auto overscroll-x-contain pe-[12%] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+              className="flex snap-x snap-mandatory scroll-smooth overflow-x-auto overscroll-x-contain pe-[12%] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
               aria-label={t("Our Story photos")}
             >
               {mobileStorySlides.map((photo, slideIndex) => {
                 const photoIndex = slideIndex === 0 ? mobileStoryPhotos.length - 1 : slideIndex === mobileStorySlides.length - 1 ? 0 : slideIndex - 1;
                 return (
-                <figure key={`${photo.src}-${slideIndex}`} className="w-[88%] shrink-0 snap-start pe-3 ps-4">
+                <figure key={`${photo.src}-${slideIndex}`} className="w-[88%] shrink-0 snap-start snap-always pe-3 ps-4">
                   <div className="relative aspect-[0.9/1] overflow-hidden border border-alarak-gold/50 bg-[#17243a] p-1.5 shadow-[0_18px_50px_rgba(0,0,0,0.28)]">
                     <div className="relative h-full w-full overflow-hidden border border-alarak-gold/20">
                       <Image
