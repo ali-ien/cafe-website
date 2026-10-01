@@ -149,6 +149,36 @@ const translations: Record<string, Partial<Record<Language, string>>> = {
 };
 
 Object.assign(translations, {
+  "CAREER & TRAINING": { fr: "PARCOURS & FORMATION", ar: "المسار والتكوين" },
+  "From New York, a craft brought home.": { fr: "De New York, un savoir-faire rapporté au pays.", ar: "من نيويورك، حرفة عاد بها إلى الوطن." },
+  "At the Institute of Culinary Education in New York, Abdellah El Idrissi completed two intensive programs: 720 hours in Culinary Arts, followed by 600 hours in Pastry & Baking Arts. He graduated with Highest Honors in 2016 and 2018, then brought his craft and experience home to Morocco.": {
+    fr: "À l’Institute of Culinary Education de New York, Abdellah El Idrissi a suivi deux formations intensives : 720 heures en arts culinaires, puis 600 heures en pâtisserie et boulangerie. Il a obtenu les plus hautes distinctions en 2016 et 2018 avant de rapporter son savoir-faire au Maroc.",
+    ar: "أكمل عبد الله الإدريسي في معهد Institute of Culinary Education بنيويورك برنامجين مكثفين: 720 ساعة في فنون الطهي، تلتها 600 ساعة في فنون الحلويات والخبز. وتخرج بمرتبة الشرف العليا عامي 2016 و2018، ثم عاد بخبرته إلى المغرب.",
+  },
+  "Hours of training": { fr: "Heures de formation", ar: "ساعة تدريب" },
+  "Highest Honors": { fr: "Très hautes distinctions", ar: "مرتبة الشرف العليا" },
+  "Graduated with": { fr: "Diplômé avec", ar: "تخرج بمرتبة" },
+  "New York, USA": { fr: "New York, États-Unis", ar: "نيويورك، الولايات المتحدة" },
+  "Institute of Culinary Education": { fr: "Institute of Culinary Education", ar: "معهد Institute of Culinary Education" },
+  "Pastry & Baking Arts · 2018": { fr: "Arts de la pâtisserie et boulangerie · 2018", ar: "فنون الحلويات والخبز · 2018" },
+  "Total training hours": { fr: "Heures de formation au total", ar: "إجمالي ساعات التدريب" },
+  "Culinary Arts Diploma": { fr: "Diplôme en arts culinaires", ar: "دبلوم فنون الطهي" },
+  "Pastry & Baking Arts Diploma": { fr: "Diplôme en pâtisserie et boulangerie", ar: "دبلوم فنون الحلويات والخبز" },
+  "Intensive training in cooking, nutrition, food preparation, and culinary techniques at the Institute of Culinary Education in New York. Graduated with Highest Honors.": {
+    fr: "Formation intensive en cuisine, nutrition, préparation des aliments et techniques culinaires à l’Institute of Culinary Education de New York. Diplômé avec les plus hautes distinctions.",
+    ar: "تدريب مكثف في الطهي والتغذية وتحضير الطعام وتقنيات فنون الطهي في معهد Institute of Culinary Education بنيويورك. تخرج بمرتبة الشرف العليا.",
+  },
+  "Intensive training in pastry, baking, dessert production, and confectionery arts at the Institute of Culinary Education in New York. Graduated with Highest Honors.": {
+    fr: "Formation intensive en pâtisserie, boulangerie, desserts et confiserie à l’Institute of Culinary Education de New York. Diplômé avec les plus hautes distinctions.",
+    ar: "تدريب مكثف في الحلويات والخبز وإعداد الحلويات وفنون السكر في معهد Institute of Culinary Education بنيويورك. تخرج بمرتبة الشرف العليا.",
+  },
+  "Graduated with Highest Honors": { fr: "Diplômé avec les plus hautes distinctions", ar: "تخرج بمرتبة الشرف العليا" },
+  "Two ICE diplomas": { fr: "Deux diplômes ICE", ar: "شهادتا ICE" },
+  "Culinary Arts · 2016": { fr: "Arts culinaires · 2016", ar: "فنون الطهي · 2016" },
+  "Abdellah El Idrissi's culinary arts diploma": {
+    fr: "Diplôme d’Abdellah El Idrissi en arts culinaires",
+    ar: "دبلوم عبد الله الإدريسي في فنون الطهي",
+  },
   "Abdellah El Idrissi's pastry and baking arts diploma": {
     fr: "Diplôme d’Abdellah El Idrissi en pâtisserie et arts de la boulangerie",
     ar: "دبلوم عبد الله الإدريسي في فنون الحلويات والخبز",

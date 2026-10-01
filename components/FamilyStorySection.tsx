@@ -23,8 +23,8 @@ export function FamilyStorySection() {
       <div aria-hidden="true" className="pointer-events-none absolute -start-48 top-[42rem] h-[30rem] w-[30rem] rounded-full border border-alarak-gold/10" />
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-[0.08]" style={{ backgroundImage: "radial-gradient(rgba(255,255,255,0.28) 0.45px, transparent 0.45px)", backgroundSize: "5px 5px" }} />
 
-      <Container size="wide" padding="none" className="relative pb-16 pt-24 sm:pb-20 sm:pt-10 lg:pb-28 lg:pt-32">
-        <header className="relative mb-14 sm:mb-14 lg:mb-14">
+      <Container size="wide" padding="none" className="relative pb-16 pt-[68px] sm:pb-20 sm:pt-10 lg:pb-28 lg:pt-32">
+        <header className="relative mb-14 px-4 sm:mb-14 lg:mb-14 lg:px-0">
           <p className="mb-5 font-sans text-[10px] font-medium uppercase tracking-[0.3em] text-alarak-gold sm:mb-6 sm:text-xs lg:ms-6 min-[1400px]:-ms-5">
             {t("OUR STORY · NOTRE HISTOIRE")}
           </p>
@@ -52,7 +52,6 @@ export function FamilyStorySection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.16 }}
             transition={{ duration: 0.85, ease: easeEditorial }}
-            style={{ rotate: "-0.25deg" }}
             className="group relative order-1 max-lg:scale-[0.92]"
           >
             <div className="relative aspect-[0.65/1] border border-alarak-gold/40 p-1.5 sm:p-3 lg:aspect-[0.98/1]">
@@ -73,7 +72,7 @@ export function FamilyStorySection() {
               </span>
               <span className="mt-0.5 block font-serif text-base leading-tight text-alarak-cream sm:text-lg">Abdellah El Idrissi</span>
               <span className="mt-2 flex items-center gap-2 border-t border-alarak-gold/20 pt-2">
-                <span className="relative block h-[38px] w-[52px] shrink-0 rotate-[2deg] border-[3px] border-[#f6efdf] bg-[#f6efdf] shadow-md sm:h-[44px] sm:w-[60px]">
+                <span className="relative block h-[38px] w-[52px] shrink-0 border-[3px] border-[#f6efdf] bg-[#f6efdf] shadow-md sm:h-[44px] sm:w-[60px]">
                   <Image
                     src="/media/our-story/ice-diploma.jpeg"
                     alt={t("Abdellah El Idrissi's pastry and baking arts diploma")}
@@ -84,7 +83,7 @@ export function FamilyStorySection() {
                   />
                 </span>
                 <Link
-                  href="/our-story"
+                  href="/our-story#career"
                   className="group inline-flex min-w-0 flex-1 items-center justify-between gap-1 font-sans text-[8px] font-medium leading-tight text-alarak-cream/75 transition-colors hover:text-alarak-gold sm:text-[9px]"
                 >
                   <span>{t("View more about Abdellah's career")}</span>
@@ -99,7 +98,6 @@ export function FamilyStorySection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.12 }}
             transition={{ duration: 0.85, delay: 0.08, ease: easeEditorial }}
-            style={{ rotate: "0.35deg" }}
             className="group relative order-2 mt-[10rem] border border-alarak-gold/35 p-1.5 sm:p-2 lg:mt-[19rem] lg:p-3 max-lg:scale-[0.92]"
           >
             <div className="relative aspect-[0.5/1] overflow-hidden bg-[#17243a] lg:aspect-[1.3/1]">
@@ -151,7 +149,6 @@ export function FamilyStorySection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
             transition={{ duration: 0.8, ease: easeEditorial }}
-            style={{ rotate: "-0.3deg" }}
             className="group relative mb-4 aspect-[0.7/1] border border-alarak-gold/30 p-2 sm:aspect-[0.83/1] sm:p-3 lg:ms-5 max-lg:scale-[0.92]"
           >
             <div className="relative h-full w-full overflow-hidden border border-alarak-gold/20 bg-[#17243a]">
@@ -175,7 +172,7 @@ export function FamilyStorySection() {
               {t("A New Chapter · Morocco")}
             </p>
             <h3 id="chapter-heading" className="mb-8 max-w-xl font-serif text-4xl font-light leading-[1.02] text-alarak-cream sm:text-5xl lg:text-6xl">
-              {t("A dream shaped around family.")}
+              {t("A dream shaped around family.")}<span aria-hidden="true" className="ms-2 inline-block align-middle text-[0.48em]">❤️</span>
             </h3>
             <div className="space-y-4 font-sans text-xs font-light leading-6 text-alarak-cream/70 sm:text-[13px] sm:leading-7">
               <p>{t("But returning to Morocco marked the beginning of a new chapter.")}</p>
