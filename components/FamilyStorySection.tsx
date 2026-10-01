@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { Container } from "@/components/ui";
 import { useLanguage } from "@/lib/language";
@@ -11,6 +12,25 @@ const easeEditorial: [number, number, number, number] = [0.16, 1, 0.3, 1];
 export function FamilyStorySection() {
   const { t, language } = useLanguage();
   const reduceMotion = useReducedMotion();
+  const mobileStoryCarousel = useRef<HTMLDivElement>(null);
+  const [activeStoryPhoto, setActiveStoryPhoto] = useState(0);
+  const mobileStoryPhotos = [
+    {
+      src: "/media/brand/owner (2).png",
+      alt: "Abdellah El Idrissi in a New York restaurant",
+      caption: "Founder & Pastry Artisan",
+    },
+    {
+      src: "/media/our-story/family-new-york.jpg",
+      alt: "Abdellah and his daughter outside a New York bakery",
+      caption: "New York · Where the journey grew",
+    },
+    {
+      src: "/media/cakes/Gemini_Generated_Image_srxds4srxds4srxd.jfif",
+      alt: "Abdellah preparing pastries in the Alarak kitchen",
+      caption: "The craft, made by hand",
+    },
+  ];
 
   return (
     <section
@@ -46,13 +66,97 @@ export function FamilyStorySection() {
           </div>
         </header>
 
-        <div className="relative mb-20 grid grid-cols-[1.3fr_1fr] items-start gap-3 sm:mb-28 lg:mb-28 lg:grid-cols-[59.2%_35.5%] lg:gap-10">
+        <div className="relative mb-20 block sm:mb-28 lg:mb-28 lg:grid lg:grid-cols-[59.2%_35.5%] lg:items-start lg:gap-10">
+          <div className="lg:hidden">
+            <div
+              ref={mobileStoryCarousel}
+              dir="ltr"
+              onScroll={(event) => {
+                const slides = Array.from(event.currentTarget.children) as HTMLElement[];
+                const currentScroll = Math.abs(event.currentTarget.scrollLeft);
+                const activeIndex = slides.reduce((closest, slide, index) =>
+                  Math.abs(slide.offsetLeft - currentScroll) < Math.abs(slides[closest].offsetLeft - currentScroll) ? index : closest,
+                0);
+                setActiveStoryPhoto(activeIndex);
+              }}
+              className="flex snap-x snap-mandatory overflow-x-auto overscroll-x-contain [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+              aria-label={t("Our Story photos")}
+            >
+              {mobileStoryPhotos.map((photo, index) => (
+                <figure key={photo.src} className="w-[88%] shrink-0 snap-start pe-3 ps-4">
+                  <div className="relative aspect-[0.9/1] overflow-hidden border border-alarak-gold/50 bg-[#17243a] p-1.5 shadow-[0_18px_50px_rgba(0,0,0,0.28)]">
+                    <div className="relative h-full w-full overflow-hidden border border-alarak-gold/20">
+                      <Image
+                        src={photo.src}
+                        alt={t(photo.alt)}
+                        fill
+                        sizes="calc(100vw - 40px)"
+                        quality={90}
+                        unoptimized={index === 2}
+                        className={`object-cover ${index === 0 ? "object-[50%_22%]" : index === 2 ? "object-[50%_38%]" : "object-[50%_56%]"}`}
+                      />
+                    </div>
+                    {index === 2 && (
+                      <span className="absolute bottom-4 end-4 border border-white/30 bg-[#0b1423]/80 px-3 py-2 font-serif text-sm italic text-alarak-cream backdrop-blur-sm">
+                        {t(photo.caption)}
+                      </span>
+                    )}
+                  </div>
+
+                  {index === 0 ? (
+                    <figcaption className="relative z-10 -mt-5 ms-4 w-[calc(100%-2rem)] border border-alarak-gold/30 bg-[#0b1423] p-3 shadow-xl">
+                      <span className="block font-sans text-[8px] font-semibold uppercase tracking-[0.2em] text-alarak-gold">
+                        {t(photo.caption)}
+                      </span>
+                      <span className="mt-0.5 block font-serif text-lg leading-tight text-alarak-cream">Abdellah El Idrissi</span>
+                      <span className="mt-2 flex items-center gap-2 border-t border-alarak-gold/20 pt-2">
+                        <span className="relative block h-[38px] w-[52px] shrink-0 border-[3px] border-[#f6efdf] bg-[#f6efdf] shadow-md">
+                          <Image
+                            src="/media/our-story/ice-diploma.jpeg"
+                            alt={t("Abdellah El Idrissi's pastry and baking arts diploma")}
+                            fill
+                            sizes="52px"
+                            quality={88}
+                            className="object-cover"
+                          />
+                        </span>
+                        <Link href="/our-story#career" className="inline-flex min-w-0 flex-1 items-center justify-between gap-1 font-sans text-[9px] leading-tight text-alarak-cream/75 transition-colors hover:text-alarak-gold">
+                          <span>{t("View more about Abdellah's career")}</span>
+                          <span aria-hidden="true" className="shrink-0 text-alarak-gold">↗</span>
+                        </Link>
+                      </span>
+                    </figcaption>
+                  ) : index === 1 ? (
+                    <figcaption className="mt-3 px-1 text-center font-serif text-sm italic text-alarak-cream/70">
+                      {t(photo.caption)}
+                    </figcaption>
+                  ) : null}
+                </figure>
+              ))}
+            </div>
+            <div className="mt-4 flex items-center justify-center gap-2" role="group" aria-label={t("Choose a story photo")}>
+              {mobileStoryPhotos.map((photo, index) => (
+                <button
+                  key={photo.src}
+                  type="button"
+                  aria-label={t("Show story photo").concat(` ${index + 1}`)}
+                  aria-current={activeStoryPhoto === index ? "true" : undefined}
+                  onClick={() => {
+                    const slide = mobileStoryCarousel.current?.children.item(index) as HTMLElement | null;
+                    if (slide) mobileStoryCarousel.current?.scrollTo({ left: slide.offsetLeft, behavior: "smooth" });
+                  }}
+                  className={`h-1.5 rounded-full transition-all ${activeStoryPhoto === index ? "w-7 bg-alarak-gold" : "w-1.5 bg-alarak-cream/35"}`}
+                />
+              ))}
+            </div>
+          </div>
+
           <motion.figure
             initial={{ opacity: 0, x: reduceMotion ? 0 : -18 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.16 }}
             transition={{ duration: 0.85, ease: easeEditorial }}
-            className="group relative order-1 max-lg:scale-[0.92]"
+            className="group relative order-1 hidden lg:block"
           >
             <div className="relative aspect-[0.65/1] border border-alarak-gold/40 p-1.5 sm:p-3 lg:aspect-[0.98/1]">
               <div className="relative h-full w-full overflow-hidden border border-alarak-gold/20 bg-[#17243a]">
@@ -98,7 +202,7 @@ export function FamilyStorySection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.12 }}
             transition={{ duration: 0.85, delay: 0.08, ease: easeEditorial }}
-            className="group relative order-2 mt-[10rem] border border-alarak-gold/35 p-1.5 sm:p-2 lg:mt-[19rem] lg:p-3 max-lg:scale-[0.92]"
+            className="group relative order-2 mt-[19rem] hidden border border-alarak-gold/35 p-3 lg:block"
           >
             <div className="relative aspect-[0.5/1] overflow-hidden bg-[#17243a] lg:aspect-[1.3/1]">
               <Image
@@ -115,7 +219,7 @@ export function FamilyStorySection() {
             </figcaption>
           </motion.figure>
 
-          <div aria-hidden="true" className="absolute start-[72%] top-[-2rem] z-10 flex h-16 w-16 items-center justify-center rounded-full border border-alarak-gold bg-[#0b1423] font-serif text-[8px] uppercase tracking-[0.15em] text-alarak-gold lg:start-[58%] lg:top-[3.5rem] lg:h-[104px] lg:w-[104px] lg:text-[11px]">
+          <div aria-hidden="true" className="absolute start-[58%] top-[3.5rem] z-10 hidden h-[104px] w-[104px] items-center justify-center rounded-full border border-alarak-gold bg-[#0b1423] font-serif text-[11px] uppercase tracking-[0.15em] text-alarak-gold lg:flex">
             <span className="flex flex-col items-center gap-1">NYC<span className="h-px w-7 rotate-[-35deg] bg-alarak-gold lg:w-10" />MAR</span>
           </div>
         </div>

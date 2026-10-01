@@ -175,7 +175,7 @@ export const VisitUs: React.FC = () => {
               <div className="space-y-5 sm:space-y-6 mb-8 sm:mb-9">
                 <InfoRow icon={<MapPin className="w-4 h-4" />} label="Our Location" delay={0.16}>
                   <p className="font-sans text-[14px] text-alarak-navy-dark/75 font-light leading-snug">
-                    {t("Fnideq, Morocco")}
+                    {t("Immeuble Alia, 18, Fnideq 93100")}
                   </p>
                 </InfoRow>
 
@@ -204,7 +204,7 @@ export const VisitUs: React.FC = () => {
                 className="flex flex-wrap items-center gap-3 sm:gap-4"
               >
                 <a
-                  href="https://maps.google.com/?q=Fnideq%2C%20Morocco"
+                  href="https://maps.app.goo.gl/qEttWmKuwJgqPrZL9"
                   target="_blank"
                   rel="noopener noreferrer"
                   id="visit-get-directions-btn"

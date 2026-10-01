@@ -406,6 +406,22 @@ Object.assign(translations, {
 });
 
 Object.assign(translations, {
+  "Our Story photos": { fr: "Photos de notre histoire", ar: "صور من حكايتنا" },
+  "Choose a story photo": { fr: "Choisir une photo de notre histoire", ar: "اختاروا صورة من حكايتنا" },
+  "Show story photo": { fr: "Afficher la photo", ar: "عرض الصورة" },
+  "Abdellah preparing pastries in the Alarak kitchen": {
+    fr: "Abdellah prépare des pâtisseries dans la cuisine d’Alarak",
+    ar: "عبد الله يحضّر الحلويات في مطبخ الأراك",
+  },
+  "The craft, made by hand": { fr: "Le savoir-faire, façonné à la main", ar: "حرفة تُصنع باليد" },
+  "Immeuble Alia, 18, Fnideq 93100": {
+    fr: "Immeuble Alia, 18, Fnideq 93100",
+    ar: "عمارة علياء، 18، الفنيدق 93100",
+  },
+  "Open Alarak Coffee & Bakery on Google Maps": {
+    fr: "Ouvrir Alarak Coffee & Bakery sur Google Maps",
+    ar: "افتحوا موقع الأراك للقهوة والمخبوزات على خرائط جوجل",
+  },
   "Coffee": { fr: "Café", ar: "القهوة" },
   "Coffee at Alarak": { fr: "Le café chez Alarak", ar: "قهوة الأراك" },
   "Our Coffee Selection": { fr: "Notre sélection de cafés", ar: "تشكيلة القهوة لدينا" },

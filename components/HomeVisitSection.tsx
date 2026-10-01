@@ -37,12 +37,12 @@ const boutiqueInfo = [
     icon: LocationIcon,
     content: (translate: (text: string) => string) => (
       <Link
-        href="https://maps.google.com/?q=Fnideq%2C%20Morocco"
+        href="https://maps.app.goo.gl/qEttWmKuwJgqPrZL9"
         target="_blank"
         rel="noopener noreferrer"
         className="text-alarak-navy-dark/60 transition-colors hover:text-alarak-gold"
       >
-        {translate("Fnideq")}<br />{translate("Morocco")}
+        {translate("Immeuble Alia, 18, Fnideq 93100")}
       </Link>
     ),
   },

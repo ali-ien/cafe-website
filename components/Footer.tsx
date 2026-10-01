@@ -339,7 +339,7 @@ export const Footer: React.FC = () => {
               </a>
               {/* Facebook */}
               <a
-                href="#"
+                href="https://www.facebook.com/share/1BVvEpkcAk/?mibextid=wwXIfr"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={t("Follow Alarak on Facebook")}
@@ -351,7 +351,7 @@ export const Footer: React.FC = () => {
               </a>
               {/* TikTok */}
               <a
-                href="#"
+                href="https://www.tiktok.com/@alarakcoffeebakery"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={t("Follow Alarak on TikTok")}
@@ -404,7 +404,7 @@ export const Footer: React.FC = () => {
             <address className="not-italic space-y-4 font-sans text-[13.5px] text-alarak-cream/55 font-light">
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-3.5 h-3.5 text-alarak-gold/70 mt-[2px] shrink-0" aria-hidden="true" />
-                <span>{t("Fnideq, Morocco")}</span>
+                <span>{t("Immeuble Alia, 18, Fnideq 93100")}</span>
               </div>
               <div className="flex items-start gap-2.5">
                 <Clock className="w-3.5 h-3.5 text-alarak-gold/70 mt-[2px] shrink-0" aria-hidden="true" />

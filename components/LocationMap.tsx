@@ -4,13 +4,13 @@ import { useLanguage } from "@/lib/language";
 
 export function LocationMap() {
   const { t } = useLanguage();
-  const mapUrl = "https://maps.google.com/maps?q=Fnideq%2C%20Morocco&z=14&output=embed";
-  const directionsUrl = "https://maps.google.com/?q=Fnideq%2C%20Morocco";
+  const mapUrl = "https://maps.google.com/maps?q=35.8555556%2C-5.3558889&z=17&output=embed";
+  const directionsUrl = "https://maps.app.goo.gl/qEttWmKuwJgqPrZL9";
 
   return (
     <div className="relative h-full w-full overflow-hidden rounded-[2px] bg-[#EDE8DF]">
       <iframe
-        title={t("Open Fnideq on Google Maps")}
+        title={t("Open Alarak Coffee & Bakery on Google Maps")}
         src={mapUrl}
         className="absolute inset-0 h-full w-full border-0"
         loading="lazy"
