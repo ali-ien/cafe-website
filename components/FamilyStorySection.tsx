@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { Container } from "@/components/ui";
 import { useLanguage } from "@/lib/language";
@@ -31,6 +31,18 @@ export function FamilyStorySection() {
       caption: "The craft, made by hand",
     },
   ];
+  const mobileStorySlides = [
+    mobileStoryPhotos[mobileStoryPhotos.length - 1],
+    ...mobileStoryPhotos,
+    mobileStoryPhotos[0],
+  ];
+
+  useEffect(() => {
+    requestAnimationFrame(() => {
+      const firstRealSlide = mobileStoryCarousel.current?.children.item(1) as HTMLElement | null;
+      if (firstRealSlide) mobileStoryCarousel.current?.scrollTo({ left: firstRealSlide.offsetLeft, behavior: "auto" });
+    });
+  }, []);
 
   return (
     <section
@@ -74,16 +86,25 @@ export function FamilyStorySection() {
               onScroll={(event) => {
                 const slides = Array.from(event.currentTarget.children) as HTMLElement[];
                 const currentScroll = Math.abs(event.currentTarget.scrollLeft);
-                const activeIndex = slides.reduce((closest, slide, index) =>
+                const closestSlide = slides.reduce((closest, slide, index) =>
                   Math.abs(slide.offsetLeft - currentScroll) < Math.abs(slides[closest].offsetLeft - currentScroll) ? index : closest,
                 0);
-                setActiveStoryPhoto(activeIndex);
+                if (closestSlide === 0 || closestSlide === slides.length - 1) {
+                  const wrappedIndex = closestSlide === 0 ? slides.length - 2 : 1;
+                  const wrappedSlide = slides[wrappedIndex];
+                  event.currentTarget.scrollTo({ left: wrappedSlide.offsetLeft, behavior: "auto" });
+                  setActiveStoryPhoto(closestSlide === 0 ? mobileStoryPhotos.length - 1 : 0);
+                  return;
+                }
+                setActiveStoryPhoto(closestSlide - 1);
               }}
-              className="flex snap-x snap-mandatory overflow-x-auto overscroll-x-contain [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+              className="flex snap-x snap-mandatory overflow-x-auto overscroll-x-contain pe-[12%] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
               aria-label={t("Our Story photos")}
             >
-              {mobileStoryPhotos.map((photo, index) => (
-                <figure key={photo.src} className="w-[88%] shrink-0 snap-start pe-3 ps-4">
+              {mobileStorySlides.map((photo, slideIndex) => {
+                const photoIndex = slideIndex === 0 ? mobileStoryPhotos.length - 1 : slideIndex === mobileStorySlides.length - 1 ? 0 : slideIndex - 1;
+                return (
+                <figure key={`${photo.src}-${slideIndex}`} className="w-[88%] shrink-0 snap-start pe-3 ps-4">
                   <div className="relative aspect-[0.9/1] overflow-hidden border border-alarak-gold/50 bg-[#17243a] p-1.5 shadow-[0_18px_50px_rgba(0,0,0,0.28)]">
                     <div className="relative h-full w-full overflow-hidden border border-alarak-gold/20">
                       <Image
@@ -92,18 +113,18 @@ export function FamilyStorySection() {
                         fill
                         sizes="calc(100vw - 40px)"
                         quality={90}
-                        unoptimized={index === 2}
-                        className={`object-cover ${index === 0 ? "object-[50%_22%]" : index === 2 ? "object-[50%_38%]" : "object-[50%_56%]"}`}
+                        unoptimized={photoIndex === 2}
+                        className={`object-cover ${photoIndex === 0 ? "object-[50%_22%]" : photoIndex === 2 ? "object-[50%_38%]" : "object-[50%_56%]"}`}
                       />
                     </div>
-                    {index === 2 && (
+                    {photoIndex === 2 && (
                       <span className="absolute bottom-4 end-4 border border-white/30 bg-[#0b1423]/80 px-3 py-2 font-serif text-sm italic text-alarak-cream backdrop-blur-sm">
                         {t(photo.caption)}
                       </span>
                     )}
                   </div>
 
-                  {index === 0 ? (
+                  {photoIndex === 0 ? (
                     <figcaption className="relative z-10 -mt-5 ms-4 w-[calc(100%-2rem)] border border-alarak-gold/30 bg-[#0b1423] p-3 shadow-xl">
                       <span className="block font-sans text-[8px] font-semibold uppercase tracking-[0.2em] text-alarak-gold">
                         {t(photo.caption)}
@@ -126,13 +147,14 @@ export function FamilyStorySection() {
                         </Link>
                       </span>
                     </figcaption>
-                  ) : index === 1 ? (
+                  ) : photoIndex === 1 ? (
                     <figcaption className="mt-3 px-1 text-center font-serif text-sm italic text-alarak-cream/70">
                       {t(photo.caption)}
                     </figcaption>
                   ) : null}
                 </figure>
-              ))}
+                );
+              })}
             </div>
             <div className="mt-4 flex items-center justify-center gap-2" role="group" aria-label={t("Choose a story photo")}>
               {mobileStoryPhotos.map((photo, index) => (
@@ -142,7 +164,7 @@ export function FamilyStorySection() {
                   aria-label={t("Show story photo").concat(` ${index + 1}`)}
                   aria-current={activeStoryPhoto === index ? "true" : undefined}
                   onClick={() => {
-                    const slide = mobileStoryCarousel.current?.children.item(index) as HTMLElement | null;
+                    const slide = mobileStoryCarousel.current?.children.item(index + 1) as HTMLElement | null;
                     if (slide) mobileStoryCarousel.current?.scrollTo({ left: slide.offsetLeft, behavior: "smooth" });
                   }}
                   className={`h-1.5 rounded-full transition-all ${activeStoryPhoto === index ? "w-7 bg-alarak-gold" : "w-1.5 bg-alarak-cream/35"}`}
