@@ -3,7 +3,6 @@
 import React from "react";
 import { Navbar, Hero, FamilyStorySection, SignatureSelection, Footer } from "@/components";
 import { HomeVisitSection } from "@/components/HomeVisitSection";
-import { HomeRitualSection } from "@/components/HomeRitualSection";
 
 export default function Home() {
   return (
@@ -28,9 +27,6 @@ export default function Home() {
 
         {/* 4. Signature Selection — Coffee / Bakery / Desserts */}
         <SignatureSelection />
-
-        {/* A short brand moment between the menu showcase and visit details */}
-        <HomeRitualSection />
 
         {/* Boutique visit details */}
         <HomeVisitSection />

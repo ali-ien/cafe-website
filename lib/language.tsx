@@ -149,6 +149,14 @@ const translations: Record<string, Partial<Record<Language, string>>> = {
 };
 
 Object.assign(translations, {
+  "Abdellah El Idrissi's pastry and baking arts diploma": {
+    fr: "Diplôme d’Abdellah El Idrissi en pâtisserie et arts de la boulangerie",
+    ar: "دبلوم عبد الله الإدريسي في فنون الحلويات والخبز",
+  },
+  "View more about Abdellah's career": {
+    fr: "En savoir plus sur le parcours d’Abdellah",
+    ar: "اكتشف المزيد عن مسيرة عبد الله",
+  },
   "My journey into the world of culinary arts and pastry began with a passion for craftsmanship, creativity, and attention to detail.": {
     fr: "Mon parcours dans les arts culinaires et la pâtisserie est né d’une passion pour le savoir-faire, la créativité et le souci du détail.",
     ar: "بدأت رحلتي في عالم فنون الطهي والحلويات بشغف للحرفية والإبداع والاهتمام بالتفاصيل.",

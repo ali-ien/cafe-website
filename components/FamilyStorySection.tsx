@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { Container } from "@/components/ui";
 import { useLanguage } from "@/lib/language";
@@ -66,11 +67,30 @@ export function FamilyStorySection() {
                 />
               </div>
             </div>
-            <figcaption className="absolute -bottom-28 end-0 z-10 w-full max-w-[190px] border border-alarak-gold/20 bg-[#0b1423] px-3 py-3 shadow-xl sm:-end-4 sm:bottom-8 sm:w-auto sm:min-w-[210px] sm:px-5 sm:py-4">
+            <figcaption className="relative z-10 mt-2 w-full max-w-[240px] border border-alarak-gold/25 bg-[#0b1423] px-2.5 py-2.5 shadow-xl sm:mt-3 sm:max-w-[290px] sm:px-4 sm:py-3">
               <span className="block font-sans text-[8px] font-semibold uppercase tracking-[0.2em] text-alarak-gold sm:text-[9px]">
                 {t("Founder & Pastry Artisan")}
               </span>
-              <span className="mt-1 block font-serif text-lg text-alarak-cream sm:text-xl">Abdellah El Idrissi</span>
+              <span className="mt-0.5 block font-serif text-base leading-tight text-alarak-cream sm:text-lg">Abdellah El Idrissi</span>
+              <span className="mt-2 flex items-center gap-2 border-t border-alarak-gold/20 pt-2">
+                <span className="relative block h-[38px] w-[52px] shrink-0 rotate-[2deg] border-[3px] border-[#f6efdf] bg-[#f6efdf] shadow-md sm:h-[44px] sm:w-[60px]">
+                  <Image
+                    src="/media/our-story/ice-diploma.jpeg"
+                    alt={t("Abdellah El Idrissi's pastry and baking arts diploma")}
+                    fill
+                    sizes="60px"
+                    quality={88}
+                    className="object-cover"
+                  />
+                </span>
+                <Link
+                  href="/our-story"
+                  className="group inline-flex min-w-0 flex-1 items-center justify-between gap-1 font-sans text-[8px] font-medium leading-tight text-alarak-cream/75 transition-colors hover:text-alarak-gold sm:text-[9px]"
+                >
+                  <span>{t("View more about Abdellah's career")}</span>
+                  <span aria-hidden="true" className="shrink-0 text-alarak-gold">↗</span>
+                </Link>
+              </span>
             </figcaption>
           </motion.figure>
 
@@ -252,6 +272,9 @@ export function FamilyStorySection() {
               {t("Welcome to Alarak.")}<br />
               <span className="text-alarak-gold-light italic">{t("A family dream, baked with passion.")}</span>
             </p>
+            <span aria-hidden="true" className="mt-4 inline-flex items-center gap-2 text-lg" role="presentation">
+              <span>👨‍👩‍👧‍👦</span><span>❤️</span>
+            </span>
           </div>
           <span aria-hidden="true" className="pointer-events-none absolute left-0 top-0 h-12 w-12 border-l border-t border-alarak-gold/80" />
           <span aria-hidden="true" className="pointer-events-none absolute bottom-0 right-0 h-12 w-12 border-b border-r border-alarak-gold/80" />
