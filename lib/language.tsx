@@ -220,6 +220,9 @@ Object.assign(translations, {
   "Your message has been sent. Thank you!": { fr: "Votre message a bien été envoyé. Merci !", ar: "تم إرسال رسالتك بنجاح، شكراً لك!" },
   "Your message will be sent directly to our team.": { fr: "Votre message sera envoyé directement à notre équipe.", ar: "ستُرسل رسالتك مباشرة إلى فريقنا." },
   "We could not send your message. Please try again.": { fr: "Nous n’avons pas pu envoyer votre message. Veuillez réessayer.", ar: "تعذّر إرسال رسالتك. يُرجى المحاولة مجدداً." },
+  "Email is temporarily unavailable. Please contact us on WhatsApp.": { fr: "L’envoi d’e-mail est temporairement indisponible. Contactez-nous sur WhatsApp.", ar: "إرسال البريد الإلكتروني غير متاح مؤقتاً. تواصلوا معنا عبر واتساب." },
+  "Your message could not be delivered. Please try again later or contact us on WhatsApp.": { fr: "Votre message n’a pas pu être envoyé. Réessayez plus tard ou contactez-nous sur WhatsApp.", ar: "تعذّر إرسال رسالتك. حاولوا مجدداً لاحقاً أو تواصلوا معنا عبر واتساب." },
+  "We could not send your message. Please check your details and try again.": { fr: "Nous n’avons pas pu envoyer votre message. Vérifiez les informations et réessayez.", ar: "تعذّر إرسال رسالتك. تحققوا من المعلومات وحاولوا مجدداً." },
   "Have a question? Send us a note and we'll get back to you.": { fr: "Une question ? Écrivez-nous et nous vous répondrons.", ar: "لديك سؤال؟ أرسل لنا رسالة وسنعاود التواصل معك." },
   "Leave this field empty": { fr: "Laissez ce champ vide", ar: "اترك هذا الحقل فارغاً" },
   "Footer navigation": { fr: "Navigation de pied de page", ar: "روابط أسفل الصفحة" },
@@ -400,6 +403,40 @@ Object.assign(translations, {
   },
   "Welcome to Alarak.": { fr: "Bienvenue chez Alarak.", ar: "مرحباً بكم في الأراك." },
   "A family dream, baked with passion.": { fr: "Un rêve familial, préparé avec passion.", ar: "حلم عائلي نخبزه بشغف." },
+});
+
+Object.assign(translations, {
+  "Coffee": { fr: "Café", ar: "القهوة" },
+  "Coffee at Alarak": { fr: "Le café chez Alarak", ar: "قهوة الأراك" },
+  "Our Coffee Selection": { fr: "Notre sélection de cafés", ar: "تشكيلة القهوة لدينا" },
+  "Menu categories": { fr: "Catégories du menu", ar: "أقسام القائمة" },
+  "Coffee is at the heart of our coffee and bakery experience. We carefully select every bean we serve.": {
+    fr: "Le café est au cœur de notre expérience coffee & bakery. Nous choisissons avec soin chaque grain que nous servons.",
+    ar: "القهوة في قلب تجربة المقهى والمخبوزات لدينا. نختار بعناية كل حبة قهوة نقدمها.",
+  },
+  "illy coffee bean selection with six varieties": {
+    fr: "Sélection de grains de café illy en six variétés",
+    ar: "تشكيلة حبوب قهوة illy بستة أنواع",
+  },
+  "Six origins, six experiences": { fr: "Six origines, six expériences", ar: "ستة أنواع، ست تجارب" },
+  "Explore six illy coffee varieties: Classico, Intenso, Decaffeinato, Brasile, Guatemala, and Ethiopia.": {
+    fr: "Découvrez six variétés de café illy : Classico, Intenso, Decaffeinato, Brasile, Guatemala et Ethiopia.",
+    ar: "اكتشفوا ستة أنواع من قهوة illy: Classico وIntenso وDecaffeinato وBrasile وGuatemala وEthiopia.",
+  },
+  "illy coffee varieties": { fr: "Variétés de café illy", ar: "أنواع قهوة illy" },
+  "Miscela d’Oro Espresso Gran Crema coffee bag": {
+    fr: "Paquet de café Miscela d’Oro Espresso Gran Crema",
+    ar: "كيس قهوة Miscela d’Oro Espresso Gran Crema",
+  },
+  "Miscela d’Oro Espresso Gusto Classico coffee bag by the sea": {
+    fr: "Paquet de café Miscela d’Oro Espresso Gusto Classico au bord de la mer",
+    ar: "كيس قهوة Miscela d’Oro Espresso Gusto Classico بجانب البحر",
+  },
+  "Italian coffee": { fr: "Café italien", ar: "قهوة إيطالية" },
+  "An Italian Arabica and Robusta blend, selected for its full espresso character and velvety crema.": {
+    fr: "Un assemblage italien d’arabica et de robusta, choisi pour son espresso intense et sa crema veloutée.",
+    ar: "مزيج إيطالي من أرابيكا وروبوستا، اخترناه لمذاق إسبريسو غني وكريمة ناعمة.",
+  },
 });
 
 interface LanguageContextValue {

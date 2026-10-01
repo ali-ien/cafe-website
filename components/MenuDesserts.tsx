@@ -133,6 +133,7 @@ const CategoryBlock: React.FC<{ category: MenuCategory; delay?: number }> = ({
 export const MenuDesserts: React.FC = () => {
   const { t } = useLanguage();
   const { eyebrow, title, subtitle, heroImage, ctaImage, categories } = dessertsMenu;
+  const menuCategories = [{ id: "coffee", label: "Coffee" }, ...categories];
 
   return (
     <div className="relative w-full bg-[#FAF7F2] text-alarak-navy-dark overflow-x-hidden">
@@ -200,12 +201,12 @@ export const MenuDesserts: React.FC = () => {
       </section>
 
       {/* ── 2. Category Navigation Bar with side accent lines ── */}
-      <nav aria-label={t("Dessert categories")} className="border-y border-alarak-gold/20 py-4 sm:py-5">
+      <nav aria-label={t("Menu categories")} className="border-y border-alarak-gold/20 py-4 sm:py-5">
         <Container size="wide">
           <div className="flex items-center justify-center gap-4 sm:gap-8">
             <div className="hidden md:block w-12 lg:w-20 h-px bg-alarak-gold/30" />
             <ul className="flex flex-wrap items-center justify-center gap-x-8 sm:gap-x-12 gap-y-3">
-              {categories.map((category) => (
+              {menuCategories.map((category) => (
                 <li key={category.id}>
                   <a
                     href={`#${category.id}`}
@@ -220,6 +221,80 @@ export const MenuDesserts: React.FC = () => {
           </div>
         </Container>
       </nav>
+
+      <section id="coffee" className="relative isolate scroll-mt-28 overflow-hidden border-y border-alarak-gold/15 bg-[#091321] py-16 text-alarak-cream sm:py-20 lg:py-24" aria-labelledby="coffee-heading">
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 opacity-[0.1] [background-image:radial-gradient(rgba(197,160,89,0.75)_0.7px,transparent_0.7px)] [background-size:26px_26px]" />
+        <div aria-hidden="true" className="pointer-events-none absolute -right-40 top-20 -z-10 h-[480px] w-[480px] rounded-full border border-alarak-gold/10" />
+        <Container size="wide">
+          <div className="mb-10 grid items-end gap-5 border-b border-alarak-gold/20 pb-7 sm:mb-14 sm:pb-9 lg:grid-cols-[1fr_0.75fr] lg:gap-12">
+            <div>
+              <p className="flex items-center gap-3 font-sans text-[9px] font-semibold uppercase tracking-[0.32em] text-alarak-gold sm:text-[10px]">
+                <span className="h-px w-8 bg-alarak-gold" />{t("Coffee at Alarak")}
+              </p>
+              <h2 id="coffee-heading" className="mt-4 font-serif text-3xl font-normal leading-[1.08] tracking-tight text-[#f6f0e5] sm:text-4xl lg:text-5xl">
+                {t("Our Coffee Selection")}
+              </h2>
+            </div>
+            <p className="max-w-xl font-sans text-sm font-light leading-7 text-alarak-cream/65 sm:text-base sm:leading-8 lg:justify-self-end">
+              {t("Coffee is at the heart of our coffee and bakery experience. We carefully select every bean we serve.")}
+            </p>
+          </div>
+
+          <div className="grid items-start gap-6 lg:grid-cols-2 lg:gap-8">
+            <article className="group relative overflow-hidden border border-alarak-gold/25 bg-[#111c2b] shadow-[0_24px_70px_rgba(0,0,0,0.28)] transition-transform duration-500 hover:-translate-y-1">
+              <div aria-hidden="true" className="absolute inset-x-0 top-0 z-10 h-px bg-gradient-to-r from-transparent via-alarak-gold/80 to-transparent" />
+              <div className="relative aspect-[4/5] overflow-hidden bg-[#f6f0e5]">
+                <Image
+                  src="/media/menu/coffee-illy-selection.jpeg"
+                  alt={t("illy coffee bean selection with six varieties")}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  quality={90}
+                  className="object-cover transition-transform duration-700 group-hover:scale-[1.025]"
+                />
+                <span className="absolute left-4 top-4 border border-white/40 bg-[#091321]/85 px-3 py-2 font-sans text-[9px] uppercase tracking-[0.2em] text-alarak-cream backdrop-blur-sm">01 · illy</span>
+              </div>
+              <div className="p-5 sm:p-7 lg:p-8">
+                <p className="font-sans text-[9px] font-semibold uppercase tracking-[0.25em] text-alarak-gold">100% Arabica</p>
+                <h3 className="mt-2 font-serif text-2xl text-[#f6f0e5] sm:text-3xl">{t("Six origins, six experiences")}</h3>
+                <p className="mt-3 font-sans text-sm font-light leading-6 text-alarak-cream/65">
+                  {t("Explore six illy coffee varieties: Classico, Intenso, Decaffeinato, Brasile, Guatemala, and Ethiopia.")}
+                </p>
+                <ul className="mt-5 flex flex-wrap gap-2" aria-label={t("illy coffee varieties")}>
+                  {["Classico", "Intenso", "Decaffeinato", "Brasile", "Guatemala", "Ethiopia"].map((variant) => (
+                    <li key={variant} className="border border-alarak-gold/25 bg-white/[0.025] px-2.5 py-1.5 font-sans text-[9px] uppercase tracking-[0.12em] text-alarak-cream/75">
+                      {variant}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+
+            <article className="group relative overflow-hidden border border-alarak-gold/25 bg-[#111c2b] shadow-[0_24px_70px_rgba(0,0,0,0.28)] transition-transform duration-500 hover:-translate-y-1 lg:mt-16">
+              <div aria-hidden="true" className="absolute inset-x-0 top-0 z-10 h-px bg-gradient-to-r from-transparent via-alarak-gold/80 to-transparent" />
+              <div className="relative aspect-[4/5] overflow-hidden bg-[#c4b69e]">
+                <Image
+                  src="/media/menu/coffee-miscela-espresso.jpeg"
+                  alt={t("Miscela d’Oro Espresso Gusto Classico coffee bag by the sea")}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  quality={90}
+                  className="object-cover transition-transform duration-700 group-hover:scale-[1.025]"
+                />
+                <span className="absolute left-4 top-4 border border-white/40 bg-[#091321]/85 px-3 py-2 font-sans text-[9px] uppercase tracking-[0.2em] text-alarak-cream backdrop-blur-sm">02 · Miscela d’Oro</span>
+                <span className="absolute right-4 top-4 border border-alarak-gold/55 bg-[#091321]/90 px-3 py-2 font-sans text-[9px] uppercase tracking-[0.2em] text-alarak-gold backdrop-blur-sm">500 g</span>
+              </div>
+              <div className="p-5 sm:p-7 lg:p-8">
+                <p className="font-sans text-[9px] font-semibold uppercase tracking-[0.25em] text-alarak-gold">{t("Italian coffee")}</p>
+                <h3 className="mt-2 font-serif text-2xl text-[#f6f0e5] sm:text-3xl">Espresso Gusto Classico</h3>
+                <p className="mt-3 font-sans text-sm font-light leading-6 text-alarak-cream/65">
+                  {t("An Italian Arabica and Robusta blend, selected for its full espresso character and velvety crema.")}
+                </p>
+              </div>
+            </article>
+          </div>
+        </Container>
+      </section>
 
       {/* ── 3. Products Categories ── */}
       <Container size="wide" className="py-16 sm:py-20 lg:py-24 space-y-20 sm:space-y-24 lg:space-y-28">

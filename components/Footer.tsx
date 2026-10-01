@@ -164,7 +164,12 @@ const ContactMessageForm: React.FC = () => {
 
       const result = await response.json().catch(() => ({}));
       if (!response.ok) {
-        setErrorText(typeof result.error === "string" ? result.error : t("We could not send your message. Please try again."));
+        const errorMessage = result.error === "EMAIL_NOT_CONFIGURED"
+          ? "Email is temporarily unavailable. Please contact us on WhatsApp."
+          : result.error === "EMAIL_DELIVERY_FAILED"
+            ? "Your message could not be delivered. Please try again later or contact us on WhatsApp."
+            : "We could not send your message. Please check your details and try again.";
+        setErrorText(t(errorMessage));
         setStatus("error");
         return;
       }
