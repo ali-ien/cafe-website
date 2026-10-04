@@ -2,9 +2,9 @@
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
 
-export type Language = "fr" | "ar" | "en";
+export type Language = "en" | "ar" | "es";
 
-const translations: Record<string, Partial<Record<Language, string>>> = {
+const translations: Record<string, Partial<Record<Language | "fr", string>>> = {
   "Home": { fr: "Accueil", ar: "الرئيسية" },
   "Menu": { fr: "Menu", ar: "القائمة" },
   "Our Story": { fr: "Notre histoire", ar: "قصتنا" },
@@ -147,6 +147,8 @@ const translations: Record<string, Partial<Record<Language, string>>> = {
   "Specialty coffee and artisan pastry, made slowly in Fnideq — a warm place to pause, savor, and return to.": { fr: "Cafe de specialite et patisseries artisanales prepares avec soin a Fnideq, dans un lieu chaleureux ou faire une pause et savourer l?instant.", ar: "قهوة مختصة ومعجنات يدوية تُحضّر بعناية في الفنيدق، في مكان دافئ للاستراحة والتذوق." },
   "Find us in Fnideq for specialty coffee, freshly baked pastries, and a warm place to pause.": { fr: "Retrouvez-nous a Fnideq pour un cafe de specialite, des patisseries fraiches et une pause chaleureuse.", ar: "تفضلوا بزيارتنا في الفنيدق للاستمتاع بالقهوة المختصة والمعجنات الطازجة في أجواء دافئة." },
 };
+
+
 
 Object.assign(translations, {
   "CAREER & TRAINING": { fr: "PARCOURS & FORMATION", ar: "المسار والتكوين" },
@@ -331,6 +333,8 @@ Object.assign(translations, {
 Object.assign(translations, {
   "A Family Story": { fr: "UNE HISTOIRE DE FAMILLE", ar: "حكاية عائلية" },
   "OUR STORY · NOTRE HISTOIRE": { fr: "NOTRE HISTOIRE", ar: "قصتنا" },
+  "Inspired by New York,": { fr: "Inspiré par New York,", ar: "مستوحى من نيويورك،" },
+  "Rooted in Morocco": { fr: "Enraciné au Maroc", ar: "متجذر في المغرب" },
   "From New York": { fr: "De New York", ar: "من نيويورك" },
   "to Morocco": { fr: "au Maroc", ar: "إلى المغرب" },
   "Founder & Pastry Artisan": { fr: "Fondateur et artisan pâtissier", ar: "المؤسس وحرفي الحلويات" },
@@ -423,8 +427,6 @@ Object.assign(translations, {
     ar: "افتحوا موقع الأراك للقهوة والمخبوزات على خرائط جوجل",
   },
   "Coffee": { fr: "Café", ar: "القهوة" },
-  "Coffee at Alarak": { fr: "Le café chez Alarak", ar: "قهوة الأراك" },
-  "Our Coffee Selection": { fr: "Notre sélection de cafés", ar: "تشكيلة القهوة لدينا" },
   "Menu categories": { fr: "Catégories du menu", ar: "أقسام القائمة" },
   "Coffee is at the heart of our coffee and bakery experience. We carefully select every bean we serve.": {
     fr: "Le café est au cœur de notre expérience coffee & bakery. Nous choisissons avec soin chaque grain que nous servons.",
@@ -455,6 +457,128 @@ Object.assign(translations, {
   },
 });
 
+Object.assign(translations, {
+  "Home": { es: "Inicio" },
+  "Menu": { es: "Menú" },
+  "Our Story": { es: "Nuestra historia" },
+  "Gallery": { es: "Galería" },
+  "Visit Us": { es: "Visítanos" },
+  "View Menu": { es: "Ver menú" },
+  "Discover Our Menu": { es: "Descubre nuestro menú" },
+  "Moroccan Specialty Coffee & Bakery": { es: "Café de especialidad y panadería marroquí" },
+  "Open navigation menu": { es: "Abrir menú de navegación" },
+  "Close navigation menu": { es: "Cerrar menú de navegación" },
+  "Main Navigation": { es: "Navegación principal" },
+  "Select language": { es: "Seleccionar idioma" },
+  "Hero Section": { es: "Sección principal" },
+  "Where": { es: "Donde" },
+  "Elegance": { es: "la elegancia" },
+  "Meets Flavor": { es: "se encuentra con el sabor" },
+  "Artisan pastries, specialty coffee, and moments worth savoring.": { es: "Repostería artesanal, café de especialidad y momentos para saborear." },
+  "Discover Our Story": { es: "Descubre nuestra historia" },
+  "OUR STORY": { es: "NUESTRA HISTORIA" },
+  "Purpose.": { es: "Con intención." },
+  "Crafted with": { es: "Elaborado con" },
+  "Made to Be": { es: "Hecho para" },
+  "Savored.": { es: "disfrutar." },
+  "Signature Selection": { es: "Selección de la casa" },
+  "Bakery": { es: "Panadería" },
+  "Pastry": { es: "Pastelería" },
+  "Desserts": { es: "Postres" },
+  "Freshly Baked": { es: "Recién horneado" },
+  "Signature Pastries": { es: "Pasteles de la casa" },
+  "Fine Desserts": { es: "Postres delicados" },
+  "Golden layers and flaky pastries, baked fresh in-house every morning.": { es: "Hojaldres dorados y crujientes, recién horneados cada mañana." },
+  "Made slowly. Finished with intention. An elegant touch to your day.": { es: "Preparados con calma y terminados con esmero. Un toque especial para tu día." },
+  "A final touch worth staying for — beautiful, seasonal, made with care.": { es: "Un último capricho para disfrutar sin prisa: bonito, de temporada y hecho con cuidado." },
+  "Explore": { es: "Descubrir" },
+  "View Full Menu": { es: "Ver todo el menú" },
+  "Our Menu": { es: "Nuestra carta" },
+  "Desserts Menu": { es: "Carta de postres" },
+  "A sweeter side of AlArak": { es: "El lado más dulce de Alarak" },
+  "Cakes & Pastries": { es: "Tartas y pasteles" },
+  "Trompe L'Œil Desserts": { es: "Postres trompe-l’œil" },
+  "Cookies": { es: "Galletas" },
+  "Coffee": { es: "Café" },
+  "Coffee at Alarak": { es: "El café en Alarak" },
+  "Our Coffee Selection": { es: "Nuestra selección de café" },
+  "Menu categories": { es: "Categorías del menú" },
+  "Coffee is at the heart of our coffee and bakery experience. We carefully select every bean we serve.": { es: "El café es el corazón de nuestra experiencia. Seleccionamos cuidadosamente cada grano que servimos." },
+  "Six origins, six experiences": { es: "Seis orígenes, seis experiencias" },
+  "Italian coffee": { es: "Café italiano" },
+  "An Italian Arabica and Robusta blend, selected for its full espresso character and velvety crema.": { es: "Una mezcla italiana de arábica y robusta, elegida por su espresso intenso y su crema aterciopelada." },
+  "OUR STORY · NOTRE HISTOIRE": { es: "NUESTRA HISTORIA" },
+  "Inspired by New York,": { es: "Inspirados por Nueva York," },
+  "Rooted in Morocco": { es: "con raíces en Marruecos" },
+  "Founder & Pastry Artisan": { es: "Fundador y maestro pastelero" },
+  "New York · Where the journey grew": { es: "Nueva York · Donde comenzó el camino" },
+  "The Beginning": { es: "Los comienzos" },
+  "My journey into the world of culinary arts and pastry began with a passion for craftsmanship, creativity, and attention to detail.": { es: "Mi camino en las artes culinarias y la pastelería comenzó con pasión por el oficio, la creatividad y la atención al detalle." },
+  "This journey led me to New York, where I earned my diploma from the Institute of Culinary Education in Culinary Arts and Pastry Arts.": { es: "Este camino me llevó a Nueva York, donde obtuve mis diplomas en Artes Culinarias y Pastelería en el Institute of Culinary Education." },
+  "From New York, I brought back more than techniques. I brought with me a modern approach to the world of coffee, bakery, and pastry — inspired by the diversity, creativity, and energy of the city.": { es: "De Nueva York traje mucho más que técnicas. Me llevé una visión moderna del café, la panadería y la pastelería, inspirada en la diversidad, creatividad y energía de la ciudad." },
+  "A New Chapter · Morocco": { es: "Una nueva etapa · Marruecos" },
+  "A dream shaped around family.": { es: "Un sueño creado en familia." },
+  "But returning to Morocco marked the beginning of a new chapter.": { es: "Pero volver a Marruecos marcó el comienzo de una nueva etapa." },
+  "The dream was to transform this experience into something that reflected who we are: a family project built around passion, craftsmanship, and hospitality.": { es: "El sueño era transformar esta experiencia en algo que nos representara: un proyecto familiar basado en la pasión, el oficio y la hospitalidad." },
+  "And that dream became": { es: "Y ese sueño se convirtió en" },
+  "Alarak Coffee & Bakery.": { es: "Alarak Coffee & Bakery." },
+  "A place where the spirit of New York meets a Moroccan touch, with Mediterranean influences woven into our coffee, pastries, cakes, and baked creations.": { es: "Un lugar donde el espíritu de Nueva York se une al toque marroquí, con influencias mediterráneas en nuestros cafés, pasteles y creaciones horneadas." },
+  "The finest things we make begin with the people we make them for.": { es: "Las mejores cosas que hacemos nacen pensando en quienes las disfrutan." },
+  "The El Idrissi Family": { es: "La familia El Idrissi" },
+  "Our Coffee": { es: "Nuestro café" },
+  "Selected with the same care as everything we bake.": { es: "Elegido con el mismo cuidado que todo lo que horneamos." },
+  "Because coffee is at the heart of the coffee & bakery experience, we carefully selected the coffees we serve.": { es: "Como el café es el corazón de nuestra experiencia, seleccionamos cuidadosamente los cafés que servimos." },
+  "We use Miscela d'Oro Italian coffee, a blend of Arabica and Robusta, alongside illy 100% Arabica, offering different coffee profiles and experiences for our guests.": { es: "Servimos café italiano Miscela d’Oro, una mezcla de arábica y robusta, junto con illy 100 % arábica, para ofrecer distintos perfiles y experiencias." },
+  "For us, quality begins with the ingredients — from the coffee we select to the pastries we bake and the way every creation is prepared and presented.": { es: "Para nosotros, la calidad empieza con los ingredientes: desde el café que elegimos hasta la preparación y presentación de cada creación." },
+  "Made together": { es: "Hecho en familia" },
+  "Craft is passed on": { es: "El oficio se transmite" },
+  "with joy": { es: "con alegría" },
+  "Alarak is more than a Coffee & Bakery.": { es: "Alarak es mucho más que una cafetería y panadería." },
+  "It is a family dream brought to life.": { es: "Es un sueño familiar hecho realidad." },
+  "Every pastry, every dessert, and every cup of coffee is prepared with care, passion, and a love for the craft.": { es: "Cada pastel, cada postre y cada taza de café se prepara con cuidado, pasión y amor por el oficio." },
+  "Welcome to Alarak.": { es: "Te damos la bienvenida a Alarak." },
+  "A family dream, baked with passion.": { es: "Un sueño familiar, horneado con pasión." },
+  "Location": { es: "Dirección" },
+  "Opening Hours": { es: "Horario" },
+  "Contact": { es: "Contacto" },
+  "Immeuble Alia, 18, Fnideq 93100": { es: "Immeuble Alia, 18, Fnideq 93100" },
+  "Monday – Sunday": { es: "Lunes a domingo" },
+  "Daily": { es: "Todos los días" },
+  "Hours of training": { es: "Horas de formación" },
+  "Highest Honors": { es: "Máximos honores" },
+  "Graduated with Highest Honors": { es: "Graduado con máximos honores" },
+  "Institute of Culinary Education": { es: "Institute of Culinary Education" },
+  "CAREER & TRAINING": { es: "TRAYECTORIA Y FORMACIÓN" },
+  "From New York, a craft brought home.": { es: "De Nueva York, un oficio que volvió a casa." },
+  "Culinary Arts Diploma": { es: "Diploma en Artes Culinarias" },
+  "Pastry & Baking Arts Diploma": { es: "Diploma en Pastelería y Panadería" },
+  "Culinary Arts · 2016": { es: "Artes Culinarias · 2016" },
+  "Pastry & Baking Arts · 2018": { es: "Pastelería y Panadería · 2018" },
+  "Our Story photos": { es: "Fotos de nuestra historia" },
+  "Choose a story photo": { es: "Elegir una foto de nuestra historia" },
+  "Show story photo": { es: "Mostrar foto" },
+  "From New York to Morocco,": { es: "De Nueva York a Marruecos," },
+  "Explore our menu": { es: "Descubre nuestra carta" },
+  "Come share a moment with us.": { es: "Ven a compartir un momento con nosotros." },
+  "Good coffee, thoughtful pastries, and a warm welcome in Fnideq.": { es: "Buen café, pasteles artesanales y una cálida bienvenida en Fnideq." },
+  "Visit our location": { es: "Visítanos" },
+  "Your email address": { es: "Tu correo electrónico" },
+  "Your message": { es: "Tu mensaje" },
+  "Write your message...": { es: "Escribe tu mensaje..." },
+  "Send message": { es: "Enviar mensaje" },
+  "Sending...": { es: "Enviando..." },
+  "Your message has been sent. Thank you!": { es: "Tu mensaje se ha enviado. ¡Gracias!" },
+  "Your message will be sent directly to our team.": { es: "Tu mensaje se enviará directamente a nuestro equipo." },
+  "We could not send your message. Please check your details and try again.": { es: "No pudimos enviar tu mensaje. Comprueba tus datos e inténtalo de nuevo." },
+  "Email is temporarily unavailable. Please contact us on WhatsApp.": { es: "El correo no está disponible temporalmente. Contáctanos por WhatsApp." },
+  "Your message could not be delivered. Please try again later or contact us on WhatsApp.": { es: "No se pudo entregar tu mensaje. Inténtalo más tarde o contáctanos por WhatsApp." },
+  "Follow Alarak on Facebook": { es: "Sigue a Alarak en Facebook" },
+  "Follow Alarak on TikTok": { es: "Sigue a Alarak en TikTok" },
+  "Follow Alarak on Instagram": { es: "Sigue a Alarak en Instagram" },
+  "Open Alarak Coffee & Bakery on Google Maps": { es: "Abrir Alarak Coffee & Bakery en Google Maps" },
+  "Find us in Fnideq for specialty coffee, freshly baked pastries, and a warm place to pause.": { es: "Visítanos en Fnideq para disfrutar de café de especialidad, pasteles recién hechos y un lugar acogedor." },
+});
+
 interface LanguageContextValue {
   language: Language;
   setLanguage: (language: Language) => void;
@@ -464,7 +588,7 @@ interface LanguageContextValue {
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguageState] = useState<Language>("fr");
+  const [language, setLanguageState] = useState<Language>("en");
 
   const setLanguage = useCallback((nextLanguage: Language) => {
     setLanguageState(nextLanguage);
@@ -473,7 +597,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const saved = window.localStorage.getItem("alarak-language");
-    if (saved === "fr" || saved === "ar" || saved === "en") setLanguageState(saved);
+    if (saved === "ar" || saved === "en" || saved === "es") setLanguageState(saved);
   }, []);
 
   useEffect(() => {

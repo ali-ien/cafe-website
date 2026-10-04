@@ -37,6 +37,16 @@ const copy = {
     cta: "Explore our menu",
     imageAlt: "Handcrafted raspberry tart from Alarak",
   },
+  es: {
+    eyebrow: "UN MOMENTO PARA SABOREAR",
+    titleFirst: "El placer de",
+    titleAccent: "desacelerar.",
+    description:
+      "Café de especialidad, repostería artesanal y un ambiente cálido. En ALARAK, cada visita invita a relajarse y disfrutar del momento.",
+    detail: "Preparado con esmero cada día en Fnideq",
+    cta: "Descubre nuestra carta",
+    imageAlt: "Tarta artesanal de frambuesa de Alarak",
+  },
 } as const;
 
 export function HomeRitualSection() {

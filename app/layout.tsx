@@ -52,7 +52,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="fr"
+      lang="en"
       dir="ltr"
       className={`${cormorant.variable} ${jakarta.variable} ${tajawal.variable} antialiased`}
     >

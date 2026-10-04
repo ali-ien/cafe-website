@@ -16,22 +16,24 @@ export function FamilyStorySection() {
   const [activeStoryPhoto, setActiveStoryPhoto] = useState(0);
   const mobileStoryPhotos = [
     {
+      id: "founder",
       src: "/media/brand/owner (2).png",
       alt: "Abdellah El Idrissi in a New York restaurant",
       caption: "Founder & Pastry Artisan",
     },
     {
+      id: "new-york",
       src: "/media/our-story/family-new-york.jpg",
       alt: "Abdellah and his daughter outside a New York bakery",
       caption: "New York · Where the journey grew",
     },
     {
+      id: "craft",
       src: "/media/cakes/Gemini_Generated_Image_srxds4srxds4srxd.jfif",
       alt: "Abdellah preparing pastries in the Alarak kitchen",
       caption: "The craft, made by hand",
     },
   ];
-
   return (
     <section
       id="story"
@@ -49,9 +51,9 @@ export function FamilyStorySection() {
             {t("OUR STORY · NOTRE HISTOIRE")}
           </p>
           <div className="grid items-center gap-7 lg:grid-cols-[1fr_270px] lg:gap-10">
-            <h2 id="family-story-heading" className="max-w-[270px] font-serif text-[56px] font-light leading-[0.9] tracking-tight text-alarak-cream sm:max-w-none sm:text-7xl lg:ms-6 lg:text-[108px] min-[1400px]:-ms-5 xl:text-[124px]">
-              <span className="block whitespace-normal sm:whitespace-nowrap">{t("From New York")}</span>
-              <span className="block ps-[0.35em] italic text-alarak-gold sm:ps-[0.82em]">{t("to Morocco")}</span>
+            <h2 id="family-story-heading" className="max-w-none font-serif text-[clamp(2.65rem,10vw,3.25rem)] font-light leading-[0.96] tracking-tight text-alarak-cream sm:text-7xl lg:ms-6 lg:text-[108px] min-[1400px]:-ms-5 xl:text-[124px]">
+              <span className="block whitespace-normal sm:whitespace-nowrap">{t("Inspired by New York,")}</span>
+              <span className="block italic text-alarak-gold sm:ps-[0.82em]">{t("Rooted in Morocco")}</span>
             </h2>
             <div className="hidden max-w-[270px] flex-col items-center gap-4 justify-self-end pb-1 text-center lg:flex">
               <div aria-hidden="true" className="flex w-44 items-center gap-2 text-alarak-gold">
@@ -74,16 +76,19 @@ export function FamilyStorySection() {
               onScroll={(event) => {
                 const slides = Array.from(event.currentTarget.children) as HTMLElement[];
                 const currentScroll = Math.abs(event.currentTarget.scrollLeft);
-                const activeIndex = slides.reduce((closest, slide, index) =>
+                if (!slides.length) return;
+
+                const closestSlide = slides.reduce((closest, slide, index) =>
                   Math.abs(slide.offsetLeft - currentScroll) < Math.abs(slides[closest].offsetLeft - currentScroll) ? index : closest,
                 0);
-                setActiveStoryPhoto(activeIndex);
+                setActiveStoryPhoto(closestSlide);
               }}
-              className="flex snap-x snap-mandatory overflow-x-auto overscroll-x-contain [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+              className="flex snap-x snap-mandatory scroll-smooth overflow-x-auto overscroll-x-contain pe-[12%] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
               aria-label={t("Our Story photos")}
             >
-              {mobileStoryPhotos.map((photo, index) => (
-                <figure key={photo.src} className="w-[88%] shrink-0 snap-start pe-3 ps-4">
+              {mobileStoryPhotos.map((photo, slideIndex) => {
+                return (
+                <figure key={photo.src} className="w-[88%] shrink-0 snap-start snap-always pe-3 ps-4">
                   <div className="relative aspect-[0.9/1] overflow-hidden border border-alarak-gold/50 bg-[#17243a] p-1.5 shadow-[0_18px_50px_rgba(0,0,0,0.28)]">
                     <div className="relative h-full w-full overflow-hidden border border-alarak-gold/20">
                       <Image
@@ -92,18 +97,18 @@ export function FamilyStorySection() {
                         fill
                         sizes="calc(100vw - 40px)"
                         quality={90}
-                        unoptimized={index === 2}
-                        className={`object-cover ${index === 0 ? "object-[50%_22%]" : index === 2 ? "object-[50%_38%]" : "object-[50%_56%]"}`}
+                        unoptimized={photo.id === "craft"}
+                        className={`object-cover ${photo.id === "founder" ? "object-[50%_22%]" : photo.id === "craft" ? "object-[50%_38%]" : "object-[50%_56%]"}`}
                       />
                     </div>
-                    {index === 2 && (
+                    {photo.id === "craft" && (
                       <span className="absolute bottom-4 end-4 border border-white/30 bg-[#0b1423]/80 px-3 py-2 font-serif text-sm italic text-alarak-cream backdrop-blur-sm">
                         {t(photo.caption)}
                       </span>
                     )}
                   </div>
 
-                  {index === 0 ? (
+                  {photo.id === "founder" ? (
                     <figcaption className="relative z-10 -mt-5 ms-4 w-[calc(100%-2rem)] border border-alarak-gold/30 bg-[#0b1423] p-3 shadow-xl">
                       <span className="block font-sans text-[8px] font-semibold uppercase tracking-[0.2em] text-alarak-gold">
                         {t(photo.caption)}
@@ -126,13 +131,14 @@ export function FamilyStorySection() {
                         </Link>
                       </span>
                     </figcaption>
-                  ) : index === 1 ? (
-                    <figcaption className="mt-3 px-1 text-center font-serif text-sm italic text-alarak-cream/70">
+                  ) : photo.id === "new-york" ? (
+                    <figcaption dir={language === "ar" ? "rtl" : "ltr"} className="mt-3 px-1 text-center font-serif text-sm italic text-alarak-cream/70">
                       {t(photo.caption)}
                     </figcaption>
                   ) : null}
                 </figure>
-              ))}
+                );
+              })}
             </div>
             <div className="mt-4 flex items-center justify-center gap-2" role="group" aria-label={t("Choose a story photo")}>
               {mobileStoryPhotos.map((photo, index) => (

@@ -1,0 +1,41 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="18" fill="#E2E2E2"/>
+
+  <g opacity="0.75">
+    <path d="M34 130C68 121 98 116 155 114C220 111 330 119 420 94V28H34V130Z" fill="#D2D2D2"/>
+    <path d="M14 104C79 125 158 133 240 132C323 131 394 120 486 79V18H14V104Z" fill="#C9C9C9"/>
+  </g>
+
+  <text x="44" y="262" font-family="Arial, Helvetica, sans-serif" font-size="252" font-weight="700" fill="#0D0D0D" letter-spacing="-12">NYC</text>
+  <text x="64" y="335" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="700" fill="#101010">Health</text>
+
+  <text x="600" y="138" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700" fill="#111111">New York City Department of</text>
+  <text x="600" y="210" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="66" font-weight="700" fill="#111111">Health and Mental Hygiene</text>
+
+  <text x="600" y="372" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="86" font-weight="700" fill="#111111">Qualifying Certificate in</text>
+  <text x="600" y="480" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="108" font-weight="700" fill="#111111">Food Protection</text>
+
+  <text x="68" y="665" font-family="Arial, Helvetica, sans-serif" font-size="74" font-weight="400" fill="#121212">Abdellah</text>
+  <text x="68" y="752" font-family="Arial, Helvetica, sans-serif" font-size="78" font-weight="400" fill="#121212">El Idrissi</text>
+  <text x="68" y="824" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="400" fill="#121212">18-05691</text>
+
+  <text x="852" y="702" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="400" fill="#121212">Date issued</text>
+  <text x="1080" y="702" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="400" fill="#121212">03/2018</text>
+  <line x1="770" y1="724" x2="1090" y2="724" stroke="#171717" stroke-opacity="0.25" stroke-width="3"/>
+
+  <g transform="translate(873 118)">
+    <rect width="220" height="165" fill="#D7D7D7"/>
+    <rect x="12" y="12" width="196" height="141" fill="#B9B9B9"/>
+    <circle cx="110" cy="77" r="52" fill="#A8A8A8"/>
+    <path d="M80 138C88 114 100 100 111 100C123 100 135 113 141 138V160H80V138Z" fill="#8E8E8E"/>
+  </g>
+
+  <g transform="translate(821 324)">
+    <rect width="300" height="430" rx="12" fill="#D3D3D3"/>
+    <rect x="14" y="14" width="272" height="402" rx="8" fill="#B8B8B8"/>
+    <path d="M108 124C133 89 163 77 197 79C237 81 265 109 274 150C279 176 255 189 216 194C179 198 122 187 108 124Z" fill="#9A9A9A"/>
+    <ellipse cx="190" cy="154" rx="80" ry="86" fill="#A5A5A5"/>
+    <path d="M102 290C118 257 142 238 168 232C198 225 228 230 252 250C277 270 292 305 305 366L287 404H95L102 290Z" fill="#8F8F8F"/>
+    <path d="M63 347C87 315 102 296 120 286C147 271 176 271 198 288C223 307 240 336 256 382L269 405H54L63 347Z" fill="#A4A4A4" opacity="0.9"/>
+  </g>
+</svg>

@@ -29,6 +29,18 @@ const diplomas = [
       "Intensive training in pastry, baking, dessert production, and confectionery arts at the Institute of Culinary Education in New York. Graduated with Highest Honors.",
     caption: "Pastry & Baking Arts · 2018",
   },
+  {
+    image: "/media/our-story/carte_sticker_originale (6).png",
+    imageAlt: "Abdellah El Idrissi's New York City Department of Health and Mental Hygiene food protection certificate",
+    number: "03",
+    title: "Food Protection Certificate",
+    year: "2018",
+    hours: "Food Safety",
+    honor: "Issued by NYC Health",
+    description:
+      "Qualified under the New York City Department of Health and Mental Hygiene in food protection standards and safe food handling practices, strengthening his commitment to trusted, high-standard preparation.",
+    caption: "Food Protection · 2018",
+  },
 ];
 
 export function OurStoryExperience() {
@@ -102,8 +114,7 @@ export function OurStoryExperience() {
               </div>
 
               <figure className={`group relative mx-auto w-full max-w-2xl ${index % 2 ? "lg:order-1" : ""}`}>
-                <div aria-hidden="true" className="absolute -inset-2 border border-alarak-gold/20" />
-                <div className="relative aspect-[1.34/1] overflow-hidden border border-alarak-gold/45 bg-[#f6efdf] p-2 shadow-[0_24px_80px_rgba(0,0,0,0.35)] sm:p-3">
+                <div className="relative aspect-[1.34/1] overflow-hidden bg-transparent">
                   <Image
                     src={diploma.image}
                     alt={t(diploma.imageAlt)}
