@@ -1,11 +1,27 @@
 "use client";
 
 import Image from "next/image";
+import { useState } from "react";
 import { Container } from "@/components/ui";
 import { useLanguage } from "@/lib/language";
 
-const diplomas = [
+type CredentialType = "diploma" | "certificate";
+type CredentialFilter = "all" | CredentialType;
+
+const credentials: {
+  type: CredentialType;
+  image: string;
+  imageAlt: string;
+  number: string;
+  title: string;
+  year: string;
+  hours: string;
+  honor: string;
+  description: string;
+  caption: string;
+}[] = [
   {
+    type: "diploma",
     image: "/media/our-story/ice-culinary-diploma.jpeg",
     imageAlt: "Abdellah El Idrissi's Culinary Arts diploma",
     number: "01",
@@ -18,6 +34,7 @@ const diplomas = [
     caption: "Culinary Arts · 2016",
   },
   {
+    type: "diploma",
     image: "/media/our-story/ice-diploma.jpeg",
     imageAlt: "Abdellah El Idrissi's Pastry and Baking Arts diploma",
     number: "02",
@@ -30,6 +47,7 @@ const diplomas = [
     caption: "Pastry & Baking Arts · 2018",
   },
   {
+    type: "certificate",
     image: "/media/our-story/carte_sticker_originale (6).png",
     imageAlt: "Abdellah El Idrissi's New York City Department of Health and Mental Hygiene food protection certificate",
     number: "03",
@@ -45,6 +63,15 @@ const diplomas = [
 
 export function OurStoryExperience() {
   const { t } = useLanguage();
+  const [activeFilter, setActiveFilter] = useState<CredentialFilter>("all");
+  const filters: { value: CredentialFilter; label: string }[] = [
+    { value: "all", label: "All" },
+    { value: "diploma", label: "Diplomas" },
+    { value: "certificate", label: "Certificates" },
+  ];
+  const filteredCredentials = credentials.filter(
+    (credential) => activeFilter === "all" || credential.type === activeFilter,
+  );
 
   return (
     <>
@@ -79,10 +106,36 @@ export function OurStoryExperience() {
         </Container>
       </section>
 
-      {diplomas.map((diploma, index) => (
+      <section className="border-b border-white/[0.08] bg-alarak-navy-dark py-5 sm:py-6">
+        <Container size="wide">
+          <div className="flex justify-center gap-3 overflow-x-auto pb-1" role="group" aria-label={t("Filter credentials")}>
+            {filters.map((filter) => {
+              const isActive = activeFilter === filter.value;
+
+              return (
+                <button
+                  key={filter.value}
+                  type="button"
+                  aria-pressed={isActive}
+                  onClick={() => setActiveFilter(filter.value)}
+                  className={`shrink-0 rounded-full px-6 py-3 font-sans text-[10px] font-semibold uppercase tracking-[0.14em] transition-colors sm:px-7 sm:text-xs ${
+                    isActive
+                      ? "bg-alarak-gold text-alarak-navy-dark"
+                      : "bg-white/[0.05] text-white/55 hover:bg-white/[0.09] hover:text-white"
+                  }`}
+                >
+                  {t(filter.label)}
+                </button>
+              );
+            })}
+          </div>
+        </Container>
+      </section>
+
+      {filteredCredentials.map((diploma, index) => (
         <section
-          key={diploma.year}
-          id={index === 0 ? "career" : undefined}
+          key={diploma.number}
+          id={diploma.number === "01" ? "career" : undefined}
           className="scroll-mt-24 border-b border-white/[0.07] py-14 sm:py-20 lg:py-24"
         >
           <Container size="wide">

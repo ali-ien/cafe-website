@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
@@ -10,33 +10,6 @@ import { cn } from "@/lib/utils";
 import { useLanguage } from "@/lib/language";
 
 const easeEditorial: [number, number, number, number] = [0.16, 1, 0.3, 1];
-
-const LeafMotif: React.FC<{ className?: string }> = ({ className }) => (
-  <svg
-    aria-hidden="true"
-    focusable="false"
-    viewBox="0 0 120 160"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className={className}
-  >
-    <path
-      d="M58 150 C56 110 40 78 22 52"
-      stroke="#C5A059"
-      strokeWidth="1.1"
-      strokeLinecap="round"
-    />
-    <path
-      d="M58 118 C78 98 96 92 112 88"
-      stroke="#C5A059"
-      strokeWidth="1"
-      strokeLinecap="round"
-    />
-    <ellipse cx="24" cy="50" rx="14" ry="7" transform="rotate(-28 24 50)" fill="#C5A059" fillOpacity="0.35" />
-    <ellipse cx="108" cy="86" rx="12" ry="6" transform="rotate(18 108 86)" fill="#C5A059" fillOpacity="0.32" />
-    <ellipse cx="46" cy="86" rx="11" ry="5.5" transform="rotate(-16 46 86)" fill="#C5A059" fillOpacity="0.22" />
-  </svg>
-);
 
 const Diamond: React.FC = () => (
   <span
@@ -132,14 +105,15 @@ const CategoryBlock: React.FC<{ category: MenuCategory; delay?: number }> = ({
 
 export const MenuDesserts: React.FC = () => {
   const { t } = useLanguage();
+  const [activeMenuCategory, setActiveMenuCategory] = useState("coffee");
   const { eyebrow, title, subtitle, heroImage, ctaImage, categories } = dessertsMenu;
   const menuCategories = [{ id: "coffee", label: "Coffee" }, ...categories];
 
   return (
-    <div className="relative w-full bg-[#FAF7F2] text-alarak-navy-dark overflow-x-hidden">
+    <div className="relative w-full bg-white text-alarak-navy-dark overflow-x-hidden">
       {/* ── 1. Hero Section with Background Dessert Image ── */}
       <section
-        className="relative pt-32 sm:pt-36 lg:pt-40 pb-16 sm:pb-20 overflow-hidden"
+        className="relative overflow-hidden bg-[#091321] pt-32 pb-16 sm:pt-36 sm:pb-20 lg:pt-40"
         aria-labelledby="menu-heading"
       >
         {/* Soft background dessert image anchored to the right, matching template */}
@@ -161,7 +135,7 @@ export const MenuDesserts: React.FC = () => {
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(to right, #FAF7F2 0%, rgba(250, 247, 242, 0.88) 18%, rgba(250, 247, 242, 0.3) 48%, transparent 80%), linear-gradient(to bottom, #FAF7F2 0%, transparent 18%, transparent 82%, #FAF7F2 100%)",
+                  "linear-gradient(to right, #091321 0%, rgba(9, 19, 33, 0.88) 18%, rgba(9, 19, 33, 0.3) 48%, transparent 80%), linear-gradient(to bottom, #091321 0%, transparent 18%, transparent 82%, #091321 100%)",
               }}
             />
           </div>
@@ -180,13 +154,13 @@ export const MenuDesserts: React.FC = () => {
             <EditorialReveal delay={0.08}>
               <h1
                 id="menu-heading"
-                className="font-serif text-[44px] sm:text-[56px] lg:text-[66px] font-normal tracking-[0.04em] uppercase leading-[1.04] text-alarak-navy-dark"
+                className="font-serif text-[44px] sm:text-[56px] lg:text-[66px] font-normal tracking-[0.04em] uppercase leading-[1.04] text-alarak-cream"
               >
                 {t(title)}
               </h1>
             </EditorialReveal>
             <EditorialReveal delay={0.16}>
-              <p className="mt-4 font-serif italic text-[18px] sm:text-[20px] text-alarak-navy-dark/65 font-light">
+              <p className="mt-4 font-serif italic text-[18px] sm:text-[20px] text-alarak-cream/70 font-light">
                 {t(subtitle)}.
               </p>
             </EditorialReveal>
@@ -201,28 +175,30 @@ export const MenuDesserts: React.FC = () => {
       </section>
 
       {/* ── 2. Category Navigation Bar with side accent lines ── */}
-      <nav aria-label={t("Menu categories")} className="border-y border-alarak-gold/20 py-4 sm:py-5">
-        <Container size="wide">
-          <div className="flex items-center justify-center gap-4 sm:gap-8">
-            <div className="hidden md:block w-12 lg:w-20 h-px bg-alarak-gold/30" />
-            <ul className="flex flex-wrap items-center justify-center gap-x-8 sm:gap-x-12 gap-y-3">
+      <nav aria-label={t("Menu categories")} className="sticky top-[76px] z-30 border-y border-white/[0.07] bg-[#091321] py-5 sm:top-[88px] sm:py-6">
+        <Container size="wide" className="overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            <ul className="flex min-w-max items-center justify-center gap-3 sm:gap-4">
               {menuCategories.map((category) => (
                 <li key={category.id}>
                   <a
                     href={`#${category.id}`}
-                    className="font-sans text-[11px] sm:text-[12px] uppercase tracking-[0.24em] text-alarak-navy-dark/70 hover:text-alarak-gold transition-colors duration-300 focus-ring font-medium"
+                    aria-current={activeMenuCategory === category.id ? "location" : undefined}
+                    onClick={() => setActiveMenuCategory(category.id)}
+                    className={`block rounded-full px-6 py-3 font-sans text-[10px] font-semibold uppercase tracking-[0.16em] transition-colors sm:px-8 sm:text-xs ${
+                      activeMenuCategory === category.id
+                        ? "bg-alarak-gold text-alarak-navy-dark"
+                        : "bg-white/[0.05] text-alarak-cream/55 hover:bg-white/10 hover:text-alarak-cream"
+                    }`}
                   >
                     {t(category.label)}
                   </a>
                 </li>
               ))}
             </ul>
-            <div className="hidden md:block w-12 lg:w-20 h-px bg-alarak-gold/30" />
-          </div>
         </Container>
       </nav>
 
-      <section id="coffee" className="relative isolate scroll-mt-28 overflow-hidden border-y border-alarak-gold/15 bg-[#091321] py-16 text-alarak-cream sm:py-20 lg:py-24" aria-labelledby="coffee-heading">
+      <section id="coffee" className="relative isolate scroll-mt-28 overflow-hidden border-y border-alarak-gold/15 bg-white py-16 text-alarak-navy-dark sm:py-20 lg:py-24" aria-labelledby="coffee-heading">
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 opacity-[0.1] [background-image:radial-gradient(rgba(197,160,89,0.75)_0.7px,transparent_0.7px)] [background-size:26px_26px]" />
         <div aria-hidden="true" className="pointer-events-none absolute -right-40 top-20 -z-10 h-[480px] w-[480px] rounded-full border border-alarak-gold/10" />
         <Container size="wide">
@@ -231,38 +207,37 @@ export const MenuDesserts: React.FC = () => {
               <p className="flex items-center gap-3 font-sans text-[9px] font-semibold uppercase tracking-[0.32em] text-alarak-gold sm:text-[10px]">
                 <span className="h-px w-8 bg-alarak-gold" />{t("Coffee at Alarak")}
               </p>
-              <h2 id="coffee-heading" className="mt-4 font-serif text-3xl font-normal leading-[1.08] tracking-tight text-[#f6f0e5] sm:text-4xl lg:text-5xl">
+              <h2 id="coffee-heading" className="mt-4 font-serif text-3xl font-normal leading-[1.08] tracking-tight text-alarak-navy-dark sm:text-4xl lg:text-5xl">
                 {t("Our Coffee Selection")}
               </h2>
             </div>
-            <p className="max-w-xl font-sans text-sm font-light leading-7 text-alarak-cream/65 sm:text-base sm:leading-8 lg:justify-self-end">
+            <p className="max-w-xl font-sans text-sm font-light leading-7 text-alarak-navy-dark/70 sm:text-base sm:leading-8 lg:justify-self-end">
               {t("Coffee is at the heart of our coffee and bakery experience. We carefully select every bean we serve.")}
             </p>
           </div>
 
           <div className="grid items-start gap-6 lg:grid-cols-2 lg:gap-8">
-            <article className="group relative overflow-hidden border border-alarak-gold/25 bg-[#111c2b] shadow-[0_24px_70px_rgba(0,0,0,0.28)] transition-transform duration-500 hover:-translate-y-1">
-              <div aria-hidden="true" className="absolute inset-x-0 top-0 z-10 h-px bg-gradient-to-r from-transparent via-alarak-gold/80 to-transparent" />
-              <div className="relative aspect-[4/5] overflow-hidden bg-[#f6f0e5]">
+            <article className="group relative">
+              <div className="relative mx-auto aspect-square w-full max-w-[440px] overflow-hidden border border-alarak-gold/25 bg-[#f6f0e5] shadow-[0_24px_70px_rgba(0,0,0,0.28)] transition-transform duration-500 group-hover:-translate-y-1">
                 <Image
                   src="/media/menu/coffee-illy-selection.jpeg"
                   alt={t("illy coffee bean selection with six varieties")}
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   quality={90}
-                  className="object-cover transition-transform duration-700 group-hover:scale-[1.025]"
+                  className="object-contain p-3 transition-transform duration-700 group-hover:scale-[1.025] sm:p-5"
                 />
                 <span className="absolute left-4 top-4 border border-white/40 bg-[#091321]/85 px-3 py-2 font-sans text-[9px] uppercase tracking-[0.2em] text-alarak-cream backdrop-blur-sm">01 · illy</span>
               </div>
-              <div className="p-5 sm:p-7 lg:p-8">
+              <div className="mx-auto max-w-[440px] pt-5 sm:pt-7">
                 <p className="font-sans text-[9px] font-semibold uppercase tracking-[0.25em] text-alarak-gold">100% Arabica</p>
-                <h3 className="mt-2 font-serif text-2xl text-[#f6f0e5] sm:text-3xl">{t("Six origins, six experiences")}</h3>
-                <p className="mt-3 font-sans text-sm font-light leading-6 text-alarak-cream/65">
+                <h3 className="mt-2 font-serif text-2xl text-alarak-navy-dark sm:text-3xl">{t("Six origins, six experiences")}</h3>
+                <p className="mt-3 font-sans text-sm font-light leading-6 text-alarak-navy-dark/70">
                   {t("Explore six illy coffee varieties: Classico, Intenso, Decaffeinato, Brasile, Guatemala, and Ethiopia.")}
                 </p>
                 <ul className="mt-5 flex flex-wrap gap-2" aria-label={t("illy coffee varieties")}>
                   {["Classico", "Intenso", "Decaffeinato", "Brasile", "Guatemala", "Ethiopia"].map((variant) => (
-                    <li key={variant} className="border border-alarak-gold/25 bg-white/[0.025] px-2.5 py-1.5 font-sans text-[9px] uppercase tracking-[0.12em] text-alarak-cream/75">
+                    <li key={variant} className="border border-alarak-gold/25 bg-[#f6f0e5] px-2.5 py-1.5 font-sans text-[9px] uppercase tracking-[0.12em] text-alarak-navy-dark/75">
                       {variant}
                     </li>
                   ))}
@@ -270,24 +245,23 @@ export const MenuDesserts: React.FC = () => {
               </div>
             </article>
 
-            <article className="group relative overflow-hidden border border-alarak-gold/25 bg-[#111c2b] shadow-[0_24px_70px_rgba(0,0,0,0.28)] transition-transform duration-500 hover:-translate-y-1 lg:mt-16">
-              <div aria-hidden="true" className="absolute inset-x-0 top-0 z-10 h-px bg-gradient-to-r from-transparent via-alarak-gold/80 to-transparent" />
-              <div className="relative aspect-[4/5] overflow-hidden bg-[#c4b69e]">
+            <article className="group relative">
+              <div className="relative mx-auto aspect-square w-full max-w-[440px] overflow-hidden border border-alarak-gold/25 bg-[#c4b69e] shadow-[0_24px_70px_rgba(0,0,0,0.28)] transition-transform duration-500 group-hover:-translate-y-1">
                 <Image
                   src="/media/menu/coffee-miscela-espresso.jpeg"
                   alt={t("Miscela d’Oro Espresso Gusto Classico coffee bag by the sea")}
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   quality={90}
-                  className="object-cover transition-transform duration-700 group-hover:scale-[1.025]"
+                  className="object-contain p-3 transition-transform duration-700 group-hover:scale-[1.025] sm:p-5"
                 />
                 <span className="absolute left-4 top-4 border border-white/40 bg-[#091321]/85 px-3 py-2 font-sans text-[9px] uppercase tracking-[0.2em] text-alarak-cream backdrop-blur-sm">02 · Miscela d’Oro</span>
                 <span className="absolute right-4 top-4 border border-alarak-gold/55 bg-[#091321]/90 px-3 py-2 font-sans text-[9px] uppercase tracking-[0.2em] text-alarak-gold backdrop-blur-sm">500 g</span>
               </div>
-              <div className="p-5 sm:p-7 lg:p-8">
+              <div className="mx-auto max-w-[440px] pt-5 sm:pt-7">
                 <p className="font-sans text-[9px] font-semibold uppercase tracking-[0.25em] text-alarak-gold">{t("Italian coffee")}</p>
-                <h3 className="mt-2 font-serif text-2xl text-[#f6f0e5] sm:text-3xl">Espresso Gusto Classico</h3>
-                <p className="mt-3 font-sans text-sm font-light leading-6 text-alarak-cream/65">
+                <h3 className="mt-2 font-serif text-2xl text-alarak-navy-dark sm:text-3xl">Espresso Gusto Classico</h3>
+                <p className="mt-3 font-sans text-sm font-light leading-6 text-alarak-navy-dark/70">
                   {t("An Italian Arabica and Robusta blend, selected for its full espresso character and velvety crema.")}
                 </p>
               </div>
@@ -305,18 +279,10 @@ export const MenuDesserts: React.FC = () => {
 
       {/* ── 4. Compact Sweet Awaits Section with Background Image & Centered Button ── */}
       <section
-        className="relative overflow-hidden border-t border-alarak-gold/15 py-12 sm:py-14 lg:py-16 bg-[#FAF7F2]"
+        className="relative overflow-hidden border-t border-alarak-gold/15 bg-[#070c18] py-12 sm:py-14 lg:py-16"
         aria-labelledby="menu-cta-heading"
       >
-        {/* Subtle leaf motif sketch in left corner */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute left-0 bottom-0 top-0 w-36 sm:w-48 opacity-40 overflow-hidden flex items-center"
-        >
-          <LeafMotif className="w-full h-auto" />
-        </div>
-
-        {/* Dessert background image on right, blending seamlessly into cream background */}
+        {/* Dessert background image on right, blending seamlessly into the navy background */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute top-0 right-0 bottom-0 w-full sm:w-[50%] lg:w-[42%] overflow-hidden select-none"
@@ -334,7 +300,7 @@ export const MenuDesserts: React.FC = () => {
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(to right, #FAF7F2 0%, rgba(250, 247, 242, 0.9) 20%, rgba(250, 247, 242, 0.3) 55%, transparent 85%), linear-gradient(to bottom, #FAF7F2 0%, transparent 20%, transparent 80%, #FAF7F2 100%)",
+                  "linear-gradient(to right, #070c18 0%, rgba(7, 12, 24, 0.9) 20%, rgba(7, 12, 24, 0.3) 55%, transparent 85%), linear-gradient(to bottom, #070c18 0%, transparent 20%, transparent 80%, #070c18 100%)",
               }}
             />
           </div>
@@ -351,7 +317,7 @@ export const MenuDesserts: React.FC = () => {
             <EditorialReveal delay={0.08}>
               <h2
                 id="menu-cta-heading"
-                className="font-serif text-[28px] sm:text-[34px] lg:text-[40px] font-normal tracking-[0.05em] uppercase leading-[1.15] text-alarak-navy-dark"
+                className="font-serif text-[28px] sm:text-[34px] lg:text-[40px] font-normal tracking-[0.05em] uppercase leading-[1.15] text-alarak-cream"
               >
                 {t("Come taste it for yourself.")}
               </h2>
@@ -363,7 +329,7 @@ export const MenuDesserts: React.FC = () => {
                   <Button
                     variant="outline"
                     size="md"
-                    className="border-alarak-gold/50 text-alarak-navy-dark hover:border-alarak-navy-dark hover:bg-alarak-navy-dark hover:text-alarak-cream px-7 py-2.5 text-[11px] tracking-[0.24em] uppercase transition-all duration-300 shadow-sm"
+                    className="border-alarak-gold/50 text-alarak-cream hover:border-alarak-gold hover:bg-alarak-gold hover:text-alarak-navy-dark px-7 py-2.5 text-[11px] tracking-[0.24em] uppercase transition-all duration-300 shadow-sm"
                   >
                     {t("Visit Alarak →")}
                   </Button>
