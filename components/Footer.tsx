@@ -6,6 +6,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import {
   MapPin,
   Clock,
+  Mail,
   ArrowRight,
   ArrowUp,
 } from "lucide-react";
@@ -412,6 +413,15 @@ export const Footer: React.FC = () => {
                   <span className="block">{t("Daily")}</span>
                   <span className="block text-alarak-cream/70">{t("07:00 – 22:00")}</span>
                 </div>
+              </div>
+              <div className="flex items-start gap-2.5">
+                <Mail className="w-3.5 h-3.5 text-alarak-gold/70 mt-[2px] shrink-0" aria-hidden="true" />
+                <a
+                  href="mailto:bakeryservice@alarak.com"
+                  className="break-all hover:text-alarak-gold transition-colors duration-300 focus-ring rounded-sm"
+                >
+                  bakeryservice@alarak.com
+                </a>
               </div>
               <div className="flex items-start gap-2.5">
                 <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 text-alarak-gold/70 mt-[2px] shrink-0">

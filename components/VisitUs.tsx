@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
-import { MapPin, Clock, Phone, ArrowRight, Navigation } from "lucide-react";
+import { MapPin, Clock, Phone, Mail, ArrowRight, Navigation } from "lucide-react";
 import { Container, EditorialReveal, Button } from "@/components/ui";
 import { useLanguage } from "@/lib/language";
 import { LocationMap } from "@/components/LocationMap";
@@ -192,6 +192,15 @@ export const VisitUs: React.FC = () => {
                     className="font-sans text-[14px] text-alarak-navy-dark/75 font-light hover:text-alarak-gold transition-colors duration-300"
                   >
                     +212 663 46 41 74
+                  </a>
+                </InfoRow>
+
+                <InfoRow icon={<Mail className="w-4 h-4" />} label="Email" delay={0.28}>
+                  <a
+                    href="mailto:bakeryservice@alarak.com"
+                    className="break-all font-sans text-[14px] text-alarak-navy-dark/75 font-light hover:text-alarak-gold transition-colors duration-300"
+                  >
+                    bakeryservice@alarak.com
                   </a>
                 </InfoRow>
               </div>
