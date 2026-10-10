@@ -1,4 +1,4 @@
-const recipient = "wahby.compte@gmail.com";
+const recipient = "bakeryservice@alarak.com";
 
 export async function POST(request: Request) {
   let payload: { email?: unknown; message?: unknown; website?: unknown };

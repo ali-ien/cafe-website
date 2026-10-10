@@ -63,8 +63,8 @@ const boutiqueInfo = [
         <a href="tel:+212663464174" className="text-alarak-navy-dark/60 transition-colors hover:text-alarak-gold">
           +212 663 46 41 74
         </a>
-        <a href="mailto:contact@alarak.ma" className="text-alarak-navy-dark/60 transition-colors hover:text-alarak-gold">
-          contact@alarak.ma
+        <a href="mailto:bakeryservice@alarak.com" className="text-alarak-navy-dark/60 transition-colors hover:text-alarak-gold">
+          bakeryservice@alarak.com
         </a>
       </div>
     ),
