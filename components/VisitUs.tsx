@@ -182,7 +182,7 @@ export const VisitUs: React.FC = () => {
                 <InfoRow icon={<Clock className="w-4 h-4" />} label="Opening Hours" delay={0.20}>
                   <p className="font-sans text-[14px] text-alarak-navy-dark/75 font-light leading-snug">
                     {t("Daily")}<br />
-                    <span className="text-alarak-navy-dark/50 text-[13px]">08:00 – 22:00</span>
+                    <span className="text-alarak-navy-dark/50 text-[13px]">{t("07:00 – 22:00")}</span>
                   </p>
                 </InfoRow>
 

@@ -410,7 +410,7 @@ export const Footer: React.FC = () => {
                 <Clock className="w-3.5 h-3.5 text-alarak-gold/70 mt-[2px] shrink-0" aria-hidden="true" />
                 <div>
                   <span className="block">{t("Daily")}</span>
-                  <span className="block text-alarak-cream/70">{t("08:00 – 22:00")}</span>
+                  <span className="block text-alarak-cream/70">{t("07:00 – 22:00")}</span>
                 </div>
               </div>
               <div className="flex items-start gap-2.5">

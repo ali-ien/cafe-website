@@ -51,7 +51,7 @@ const boutiqueInfo = [
     icon: HoursIcon,
     content: (translate: (text: string) => string) => (
       <p className="text-alarak-navy-dark/60">
-        {translate("Monday – Sunday")}<br />{translate("08:00 AM – 10:00 PM")}
+        {translate("Monday – Sunday")}<br />{translate("07:00 AM – 10:00 PM")}
       </p>
     ),
   },

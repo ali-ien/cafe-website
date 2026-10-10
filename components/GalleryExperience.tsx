@@ -158,7 +158,7 @@ export function GalleryExperience() {
           <p className="mx-auto mt-5 max-w-2xl font-sans text-sm leading-7 text-alarak-navy-dark/70">{t("Find us in Fnideq for specialty coffee, freshly baked pastries, and a warm place to pause.")}</p>
           <div className="mt-7 flex flex-wrap justify-center gap-x-8 gap-y-3 font-sans text-[10px] font-medium uppercase tracking-[0.16em] text-alarak-navy-dark/70">
             <span className="flex items-center gap-2"><MapPin className="h-4 w-4 text-alarak-gold" /> {t("Immeuble Alia, 18, Fnideq 93100")}</span>
-            <span className="flex items-center gap-2"><Clock3 className="h-4 w-4 text-alarak-gold" /> {t("Daily")}: 08:00 – 22:00</span>
+            <span className="flex items-center gap-2"><Clock3 className="h-4 w-4 text-alarak-gold" /> {t("Daily")}: {t("07:00 – 22:00")}</span>
           </div>
         </Container>
       </section>
