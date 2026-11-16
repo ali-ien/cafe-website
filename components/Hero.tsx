@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useCallback, useRef } from "react";
+import React, { useState, useEffect, useCallback, useRef, useMemo } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
@@ -8,6 +8,8 @@ import { Button, Container } from "@/components/ui";
 import { mediaAssets } from "@/lib/media";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/lib/language";
+import { resolveHero, type HeroDocument } from "@/lib/hero-content";
+import { fetchHero } from "@/lib/sanity";
 
 // ─── Slide dot indicator ────────────────────────────────────────────────────
 const SlideDot: React.FC<{ active: boolean; onClick: () => void; index: number }> = ({
@@ -29,8 +31,36 @@ const SlideDot: React.FC<{ active: boolean; onClick: () => void; index: number }
 
 // ─── Main Hero ───────────────────────────────────────────────────────────────
 export const Hero: React.FC = () => {
-  const { t } = useLanguage();
-  const slides = mediaAssets.hero.slides;
+  const { t, language } = useLanguage();
+  const [cmsHero, setCmsHero] = useState<HeroDocument | null>(null);
+
+  useEffect(() => {
+    let active = true;
+    let controller: AbortController | null = null;
+    const refresh = () => {
+      if (document.visibilityState === "hidden" || controller) return;
+      const request = new AbortController();
+      controller = request;
+      fetchHero(request.signal)
+        .then(data => { if (active && !request.signal.aborted) setCmsHero(data); })
+        .catch(() => { /* Keep the last good CMS content or the original Hero. */ })
+        .finally(() => { if (controller === request) controller = null; });
+    };
+    refresh();
+    const timer = window.setInterval(refresh, 60_000);
+    window.addEventListener("focus", refresh);
+    document.addEventListener("visibilitychange", refresh);
+    return () => {
+      active = false;
+      controller?.abort();
+      window.clearInterval(timer);
+      window.removeEventListener("focus", refresh);
+      document.removeEventListener("visibilitychange", refresh);
+    };
+  }, []);
+
+  const content = useMemo(() => resolveHero(cmsHero, language, t, mediaAssets.hero.slides), [cmsHero, language, t]);
+  const slides = content.slides;
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [prevSlideIndex, setPrevSlideIndex] = useState<number | null>(null);
   const [transitioning, setTransitioning] = useState(false);
@@ -80,7 +110,9 @@ export const Hero: React.FC = () => {
     };
   }, [shouldReduceMotion, slides.length]);
 
-  const currentSlide = slides[currentSlideIndex];
+  // CMS data can arrive while the four-slide fallback carousel is already moving.
+  const visibleIndex = currentSlideIndex % slides.length;
+  const currentSlide = slides[visibleIndex];
 
   return (
     <section
@@ -92,7 +124,7 @@ export const Hero: React.FC = () => {
       ==================================================================== */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         {slides.map((slide, idx) => {
-          const isCurrent = idx === currentSlideIndex;
+          const isCurrent = idx === visibleIndex;
           const isPrev = idx === prevSlideIndex;
           const isVisible = isCurrent || isPrev;
 
@@ -108,7 +140,7 @@ export const Hero: React.FC = () => {
               {/* Background image — never shifts position between slides */}
               <Image
                 src={slide.src}
-                alt={t(slide.alt)}
+                alt={slide.alt}
                 fill
                 priority={idx === 0}
                 sizes="100vw"
@@ -183,7 +215,7 @@ export const Hero: React.FC = () => {
                   transition={{ duration: 0.5 }}
                   className="font-arabic text-xs sm:text-sm text-alarak-gold/80 border-l border-alarak-gold/30 pl-3"
                 >
-                  {t(currentSlide.chapter)}
+                  {currentSlide.chapter}
                 </motion.span>
               </AnimatePresence>
             </motion.div>
@@ -196,9 +228,9 @@ export const Hero: React.FC = () => {
                 transition={{ duration: 0.8, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
                 className="font-serif text-[44px] sm:text-[64px] md:text-[76px] lg:text-[86px] font-normal tracking-tight leading-[1.05] text-alarak-cream drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)]"
               >
-                {t("Where")}{" "}
+                {content.firstLine}{" "}
                 <span className="text-alarak-gold italic font-light">
-                  {t("Elegance")}
+                  {content.highlight}
                 </span>
               </motion.h1>
               <motion.h1
@@ -207,7 +239,7 @@ export const Hero: React.FC = () => {
                 transition={{ duration: 0.8, delay: 0.56, ease: [0.16, 1, 0.3, 1] }}
                 className="font-serif text-[44px] sm:text-[64px] md:text-[76px] lg:text-[86px] font-normal tracking-tight leading-[1.05] text-alarak-cream drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)]"
               >
-                {t("Meets Flavor")}
+                {content.secondLine}
               </motion.h1>
             </div>
 
@@ -218,7 +250,7 @@ export const Hero: React.FC = () => {
               transition={{ duration: 0.65, delay: 0.7, ease: "easeOut" }}
               className="font-sans text-sm sm:text-base md:text-[17px] text-alarak-cream/85 font-light leading-relaxed max-w-[340px] sm:max-w-[400px] drop-shadow-[0_1px_6px_rgba(0,0,0,0.5)]"
             >
-              {t("Artisan pastries, specialty coffee, and moments worth savoring.")}
+              {content.description}
             </motion.p>
 
             {/* CTAs — static */}
@@ -229,13 +261,13 @@ export const Hero: React.FC = () => {
               className="flex flex-wrap items-center gap-3 sm:gap-4 pt-1"
             >
               <a
-                href="/media/menu/alarak-menu.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={t("View the menu PDF in a new tab")}
+                href={content.primaryButton.href}
+                target={content.primaryButton.newTab ? "_blank" : undefined}
+                rel={content.primaryButton.newTab ? "noopener noreferrer" : undefined}
+                aria-label={content.primaryButton.label}
                 className="inline-flex items-center justify-center gap-2.5 rounded-sm font-sans font-medium uppercase tracking-widest focus-ring select-none px-8 py-4 text-sm relative overflow-hidden group bg-alarak-gold hover:bg-alarak-gold-light text-alarak-navy-dark shadow-[0_6px_20px_rgba(212,175,55,0.28)] hover:shadow-[0_10px_28px_rgba(212,175,55,0.45)] hover:-translate-y-[2px] transition-all duration-300 sm:text-base"
               >
-                <span className="relative z-10">{t("Discover Our Menu")}</span>
+                <span className="relative z-10">{content.primaryButton.label}</span>
                 <span className="relative z-10 shrink-0">
                   <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </span>
@@ -247,10 +279,13 @@ export const Hero: React.FC = () => {
                 size="lg"
                 className="border-alarak-cream/35 text-alarak-cream hover:border-alarak-gold hover:text-alarak-gold hover:-translate-y-[2px] bg-transparent backdrop-blur-sm transition-all duration-300 text-sm sm:text-base"
                 onClick={() => {
-                  document.getElementById("story")?.scrollIntoView({ behavior: "smooth" });
+                  const { href, newTab } = content.secondaryButton;
+                  if (newTab) window.open(href, "_blank", "noopener,noreferrer");
+                  else if (href.startsWith("#")) document.getElementById(href.slice(1))?.scrollIntoView({ behavior: shouldReduceMotion ? "instant" : "smooth" });
+                  else window.location.assign(href);
                 }}
               >
-                {t("Visit Us")}
+                {content.secondaryButton.label}
               </Button>
             </motion.div>
 
@@ -270,7 +305,7 @@ export const Hero: React.FC = () => {
             <SlideDot
               key={slide.id}
               index={idx}
-              active={idx === currentSlideIndex}
+              active={idx === visibleIndex}
               onClick={() => goToSlide(idx)}
             />
           ))}

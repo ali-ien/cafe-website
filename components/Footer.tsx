@@ -152,6 +152,14 @@ const ContactMessageForm: React.FC = () => {
     setErrorText("");
 
     const formData = new FormData(e.currentTarget);
+    if (process.env.NEXT_PUBLIC_STATIC_EXPORT === "true") {
+      // Static hosting cannot run the email API. Open a draft without claiming delivery.
+      if (!formData.get("website")) {
+        window.location.href = `mailto:bakeryservice@alarak.com?subject=${encodeURIComponent("Message from the Alarak website")}&body=${encodeURIComponent(`From: ${email}\n\n${message}`)}`;
+      }
+      setStatus("idle");
+      return;
+    }
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -225,7 +233,9 @@ const ContactMessageForm: React.FC = () => {
           ? t("Your message has been sent. Thank you!")
           : status === "error"
             ? errorText
-            : t("Your message will be sent directly to our team.")}
+            : process.env.NEXT_PUBLIC_STATIC_EXPORT === "true"
+              ? t("Your email app will open with the message ready to send.")
+              : t("Your message will be sent directly to our team.")}
       </p>
     </form>
   );
