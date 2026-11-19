@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
+import { withCmsSection, CmsImage as Image, useCmsLanguage as useLanguage, useCmsCollection } from "@/lib/cms";
+
 import { useState } from "react";
 import { Container } from "@/components/ui";
-import { useLanguage } from "@/lib/language";
 
 type CredentialType = "diploma" | "certificate";
 type CredentialFilter = "all" | CredentialType;
@@ -61,7 +61,7 @@ const credentials: {
   },
 ];
 
-export function OurStoryExperience() {
+function OurStoryExperienceContent() {
   const { t } = useLanguage();
   const [activeFilter, setActiveFilter] = useState<CredentialFilter>("all");
   const filters: { value: CredentialFilter; label: string }[] = [
@@ -69,7 +69,8 @@ export function OurStoryExperience() {
     { value: "diploma", label: "Diplomas" },
     { value: "certificate", label: "Certificates" },
   ];
-  const filteredCredentials = credentials.filter(
+  const publishedCredentials = useCmsCollection("credentials", credentials);
+  const filteredCredentials = publishedCredentials.filter(
     (credential) => activeFilter === "all" || credential.type === activeFilter,
   );
 
@@ -189,3 +190,5 @@ export function OurStoryExperience() {
     </>
   );
 }
+
+export const OurStoryExperience = withCmsSection("storyPage", OurStoryExperienceContent);

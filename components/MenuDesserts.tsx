@@ -1,13 +1,17 @@
 "use client";
 
+import { withCmsSection, CmsText, CmsAnchor, CmsImage as Image, CmsLink as Link, useCmsLanguage as useLanguage, useCmsCollection, cmsImageUrl } from "@/lib/cms";
+
 import React, { useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
+
+
 import { motion, useReducedMotion } from "framer-motion";
-import { Container, EditorialReveal, GoldAccent, Button } from "@/components/ui";
+import { Container, EditorialReveal, Button } from "@/components/ui";
 import { dessertsMenu, type MenuCategory } from "@/lib/menu";
 import { cn } from "@/lib/utils";
-import { useLanguage } from "@/lib/language";
+
+
+import { useContentSection, useSiteContent } from "@/lib/cms-context";
 
 const easeEditorial: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
@@ -93,7 +97,10 @@ const CategoryBlock: React.FC<{ category: MenuCategory; delay?: number }> = ({
                   <span className="font-serif text-[17px] sm:text-[18px] lg:text-[19px] text-alarak-navy-dark/85 font-light leading-snug group-hover:text-alarak-gold transition-colors duration-200">
                     {t(item.name)}
                   </span>
+                  {item.price && <span className="ms-auto whitespace-nowrap font-sans text-sm text-alarak-gold">{t(item.price)}</span>}
                 </div>
+                {item.description && <p className="ms-5 mt-1 font-sans text-xs text-alarak-navy-dark/65">{t(item.description)}</p>}
+                {Boolean(item.image) && <div className="relative ms-5 mt-2 h-20 w-24"><Image src={cmsImageUrl(item.image, "")} alt={t(item.name)} fill className="object-cover" sizes="96px" /></div>}
               </motion.li>
             ))}
           </ul>
@@ -103,10 +110,14 @@ const CategoryBlock: React.FC<{ category: MenuCategory; delay?: number }> = ({
   );
 };
 
-export const MenuDesserts: React.FC = () => {
+const MenuDessertsContent: React.FC = () => {
   const { t } = useLanguage();
   const [activeMenuCategory, setActiveMenuCategory] = useState("coffee");
-  const { eyebrow, title, subtitle, heroImage, ctaImage, categories } = dessertsMenu;
+  const { eyebrow, title, subtitle, heroImage, ctaImage } = dessertsMenu;
+  const categories = useCmsCollection<MenuCategory>("menuCategories", dessertsMenu.categories);
+  const site = useSiteContent();
+  const section = useContentSection();
+  const coffeeVariants = site[section]?.coffeeVariants ?? ["Classico", "Intenso", "Decaffeinato", "Brasile", "Guatemala", "Ethiopia"];
   const menuCategories = [{ id: "coffee", label: "Coffee" }, ...categories];
 
   return (
@@ -180,7 +191,7 @@ export const MenuDesserts: React.FC = () => {
             <ul className="flex min-w-max items-center justify-center gap-3 sm:gap-4">
               {menuCategories.map((category) => (
                 <li key={category.id}>
-                  <a
+                  <CmsAnchor
                     href={`#${category.id}`}
                     aria-current={activeMenuCategory === category.id ? "location" : undefined}
                     onClick={() => setActiveMenuCategory(category.id)}
@@ -191,7 +202,7 @@ export const MenuDesserts: React.FC = () => {
                     }`}
                   >
                     {t(category.label)}
-                  </a>
+                  </CmsAnchor>
                 </li>
               ))}
             </ul>
@@ -227,18 +238,18 @@ export const MenuDesserts: React.FC = () => {
                   quality={90}
                   className="object-contain p-3 transition-transform duration-700 group-hover:scale-[1.025] sm:p-5"
                 />
-                <span className="absolute left-4 top-4 border border-white/40 bg-[#091321]/85 px-3 py-2 font-sans text-[9px] uppercase tracking-[0.2em] text-alarak-cream backdrop-blur-sm">01 · illy</span>
+                <span className="absolute left-4 top-4 border border-white/40 bg-[#091321]/85 px-3 py-2 font-sans text-[9px] uppercase tracking-[0.2em] text-alarak-cream backdrop-blur-sm"><CmsText value={"01 · illy"} /></span>
               </div>
               <div className="mx-auto max-w-[440px] pt-5 sm:pt-7">
-                <p className="font-sans text-[9px] font-semibold uppercase tracking-[0.25em] text-alarak-gold">100% Arabica</p>
+                <p className="font-sans text-[9px] font-semibold uppercase tracking-[0.25em] text-alarak-gold"><CmsText value={"100% Arabica"} /></p>
                 <h3 className="mt-2 font-serif text-2xl text-alarak-navy-dark sm:text-3xl">{t("Six origins, six experiences")}</h3>
                 <p className="mt-3 font-sans text-sm font-light leading-6 text-alarak-navy-dark/70">
                   {t("Explore six illy coffee varieties: Classico, Intenso, Decaffeinato, Brasile, Guatemala, and Ethiopia.")}
                 </p>
                 <ul className="mt-5 flex flex-wrap gap-2" aria-label={t("illy coffee varieties")}>
-                  {["Classico", "Intenso", "Decaffeinato", "Brasile", "Guatemala", "Ethiopia"].map((variant) => (
+                  {coffeeVariants.map((variant) => (
                     <li key={variant} className="border border-alarak-gold/25 bg-[#f6f0e5] px-2.5 py-1.5 font-sans text-[9px] uppercase tracking-[0.12em] text-alarak-navy-dark/75">
-                      {variant}
+                      {t(variant)}
                     </li>
                   ))}
                 </ul>
@@ -255,12 +266,12 @@ export const MenuDesserts: React.FC = () => {
                   quality={90}
                   className="object-contain p-3 transition-transform duration-700 group-hover:scale-[1.025] sm:p-5"
                 />
-                <span className="absolute left-4 top-4 border border-white/40 bg-[#091321]/85 px-3 py-2 font-sans text-[9px] uppercase tracking-[0.2em] text-alarak-cream backdrop-blur-sm">02 · Miscela d’Oro</span>
-                <span className="absolute right-4 top-4 border border-alarak-gold/55 bg-[#091321]/90 px-3 py-2 font-sans text-[9px] uppercase tracking-[0.2em] text-alarak-gold backdrop-blur-sm">500 g</span>
+                <span className="absolute left-4 top-4 border border-white/40 bg-[#091321]/85 px-3 py-2 font-sans text-[9px] uppercase tracking-[0.2em] text-alarak-cream backdrop-blur-sm"><CmsText value={"02 · Miscela d’Oro"} /></span>
+                <span className="absolute right-4 top-4 border border-alarak-gold/55 bg-[#091321]/90 px-3 py-2 font-sans text-[9px] uppercase tracking-[0.2em] text-alarak-gold backdrop-blur-sm"><CmsText value={"500 g"} /></span>
               </div>
               <div className="mx-auto max-w-[440px] pt-5 sm:pt-7">
                 <p className="font-sans text-[9px] font-semibold uppercase tracking-[0.25em] text-alarak-gold">{t("Italian coffee")}</p>
-                <h3 className="mt-2 font-serif text-2xl text-alarak-navy-dark sm:text-3xl">Espresso Gusto Classico</h3>
+                <h3 className="mt-2 font-serif text-2xl text-alarak-navy-dark sm:text-3xl"><CmsText value={"Espresso Gusto Classico"} /></h3>
                 <p className="mt-3 font-sans text-sm font-light leading-6 text-alarak-navy-dark/70">
                   {t("An Italian Arabica and Robusta blend, selected for its full espresso character and velvety crema.")}
                 </p>
@@ -343,3 +354,5 @@ export const MenuDesserts: React.FC = () => {
   );
 };
 
+
+export const MenuDesserts = withCmsSection("menuPage", MenuDessertsContent);

@@ -1,12 +1,14 @@
 "use client";
 
+import { withCmsSection, CmsText, CmsAnchor, CmsImage as Image, CmsLink as Link, useCmsLanguage as useLanguage } from "@/lib/cms";
+
 import React from "react";
-import Image from "next/image";
-import Link from "next/link";
+
+
 import { motion, useReducedMotion } from "framer-motion";
 import { MapPin, Clock, Phone, Mail, ArrowRight, Navigation } from "lucide-react";
-import { Container, EditorialReveal, Button } from "@/components/ui";
-import { useLanguage } from "@/lib/language";
+import { Container, EditorialReveal } from "@/components/ui";
+
 import { LocationMap } from "@/components/LocationMap";
 
 const easeEditorial: [number, number, number, number] = [0.16, 1, 0.3, 1];
@@ -58,7 +60,7 @@ const InfoRow: React.FC<InfoRowProps> = ({ icon, label, children, delay = 0 }) =
   );
 };
 
-export const VisitUs: React.FC = () => {
+const VisitUsContent: React.FC = () => {
   const { t } = useLanguage();
   const shouldReduceMotion = useReducedMotion();
 
@@ -187,21 +189,17 @@ export const VisitUs: React.FC = () => {
                 </InfoRow>
 
                 <InfoRow icon={<Phone className="w-4 h-4" />} label="Phone" delay={0.24}>
-                  <a
+                  <CmsAnchor
                     href="tel:+212663464174"
                     className="font-sans text-[14px] text-alarak-navy-dark/75 font-light hover:text-alarak-gold transition-colors duration-300"
-                  >
-                    +212 663 46 41 74
-                  </a>
+                  ><CmsText value={"+212 663 46 41 74"} /></CmsAnchor>
                 </InfoRow>
 
                 <InfoRow icon={<Mail className="w-4 h-4" />} label="Email" delay={0.28}>
-                  <a
+                  <CmsAnchor
                     href="mailto:bakeryservice@alarak.com"
                     className="break-all font-sans text-[14px] text-alarak-navy-dark/75 font-light hover:text-alarak-gold transition-colors duration-300"
-                  >
-                    bakeryservice@alarak.com
-                  </a>
+                  ><CmsText value={"bakeryservice@alarak.com"} /></CmsAnchor>
                 </InfoRow>
               </div>
 
@@ -212,7 +210,7 @@ export const VisitUs: React.FC = () => {
                 transition={{ duration: 0.7, delay: 0.28, ease: easeEditorial }}
                 className="flex flex-wrap items-center gap-3 sm:gap-4"
               >
-                <a
+                <CmsAnchor
                   href="https://maps.app.goo.gl/qEttWmKuwJgqPrZL9"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -222,7 +220,7 @@ export const VisitUs: React.FC = () => {
                   <Navigation className="w-3.5 h-3.5 text-alarak-gold" />
                   {t("Get Directions")}
                   <ArrowRight className="w-3.5 h-3.5" />
-                </a>
+                </CmsAnchor>
                 <Link
                   href="/#visit"
                   id="visit-contact-us-btn"
@@ -258,3 +256,5 @@ export const VisitUs: React.FC = () => {
     </div>
   );
 };
+
+export const VisitUs = withCmsSection("visitPage", VisitUsContent);

@@ -1,14 +1,15 @@
 "use client";
 
+import { withCmsSection, CmsAnchor, useCmsLanguage as useLanguage } from "@/lib/cms";
+
 import { MessageCircle, Phone } from "lucide-react";
-import { useLanguage } from "@/lib/language";
 
 const WHATSAPP_URL = "https://wa.me/212663464174";
 
-export function WhatsAppButton() {
+function WhatsAppButtonContent() {
   const { t } = useLanguage();
   return (
-    <a
+    <CmsAnchor
       href={WHATSAPP_URL}
       target="_blank"
       rel="noopener noreferrer"
@@ -20,6 +21,8 @@ export function WhatsAppButton() {
         <MessageCircle className="absolute inset-0 h-full w-full" strokeWidth={2.2} />
         <Phone className="absolute h-[42%] w-[42%]" strokeWidth={2.4} />
       </span>
-    </a>
+    </CmsAnchor>
   );
 }
+
+export const WhatsAppButton = withCmsSection("siteSettings", WhatsAppButtonContent);

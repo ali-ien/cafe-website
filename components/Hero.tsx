@@ -1,13 +1,15 @@
 "use client";
 
+import { withCmsSection, CmsText, CmsAnchor, CmsImage as Image, useCmsLanguage as useLanguage } from "@/lib/cms";
+
 import React, { useState, useEffect, useCallback, useRef, useMemo } from "react";
-import Image from "next/image";
+
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button, Container } from "@/components/ui";
 import { mediaAssets } from "@/lib/media";
 import { cn } from "@/lib/utils";
-import { useLanguage } from "@/lib/language";
+
 import { resolveHero, type HeroDocument } from "@/lib/hero-content";
 import { fetchHero } from "@/lib/sanity";
 
@@ -30,7 +32,7 @@ const SlideDot: React.FC<{ active: boolean; onClick: () => void; index: number }
 );
 
 // ─── Main Hero ───────────────────────────────────────────────────────────────
-export const Hero: React.FC = () => {
+const HeroContent: React.FC = () => {
   const { t, language } = useLanguage();
   const [cmsHero, setCmsHero] = useState<HeroDocument | null>(null);
 
@@ -202,9 +204,7 @@ export const Hero: React.FC = () => {
             >
               <div className="flex items-center gap-2.5">
                 <span className="w-6 h-px bg-alarak-gold flex-shrink-0" />
-                <span className="font-sans text-[10px] sm:text-xs font-semibold uppercase tracking-[0.3em] text-alarak-gold">
-                  ALARAK COFFEE &amp; BAKERY
-                </span>
+                <span className="font-sans text-[10px] sm:text-xs font-semibold uppercase tracking-[0.3em] text-alarak-gold"><CmsText value={"ALARAK COFFEE & BAKERY"} /></span>
               </div>
               <AnimatePresence mode="wait">
                 <motion.span
@@ -260,7 +260,7 @@ export const Hero: React.FC = () => {
               transition={{ duration: 0.65, delay: 0.85, ease: "easeOut" }}
               className="flex flex-wrap items-center gap-3 sm:gap-4 pt-1"
             >
-              <a
+              <CmsAnchor
                 href={content.primaryButton.href}
                 target={content.primaryButton.newTab ? "_blank" : undefined}
                 rel={content.primaryButton.newTab ? "noopener noreferrer" : undefined}
@@ -272,7 +272,7 @@ export const Hero: React.FC = () => {
                   <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </span>
                 <span className="absolute inset-0 z-0 bg-gradient-to-r from-transparent via-white/22 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out" />
-              </a>
+              </CmsAnchor>
 
               <Button
                 variant="outline"
@@ -314,3 +314,5 @@ export const Hero: React.FC = () => {
     </section>
   );
 };
+
+export const Hero = withCmsSection("homePage", HeroContent);

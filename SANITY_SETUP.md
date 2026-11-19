@@ -1,4 +1,9 @@
-# Alarak Hero editing
+# Alarak CMS setup
+
+The complete dashboard now covers Home Page, Menu, Our Story, Gallery, Visit Us, Navbar,
+Footer and shared Site Settings. Start with [CONTENT_DASHBOARD.md](CONTENT_DASHBOARD.md)
+for the Studio update, editing instructions, section readiness and contact-form limitations.
+The commands and Hero notes below still apply.
 
 Project: `z12n5wz6`. Dataset: `production`. Node.js 22.12 or newer.
 
@@ -8,7 +13,7 @@ Open the project folder in VS Code, select **Terminal > New Terminal**, then run
 
 ```powershell
 npm ci
-npm run test:hero
+npm run test:cms
 npm run check:sanity
 npm run dev
 ```
@@ -50,10 +55,10 @@ Legacy `title`/`description` values are ignored, including older placeholder tex
 in English and retains its existing Spanish/Arabic translations. Future text edits must use
 `heroTitle` and `heroDescription`. The Studio's legacy fields remain read-only for reference.
 
-The Studio uses one Home Page with document ID `homePage`. Until this singleton is published,
-the website can read the most recently updated existing published `homePage` document.
-Publishing a new singleton makes it take precedence; copy any older content you want to keep into it first.
-No production documents were created, migrated, or published by this update.
+The Studio resolves the published Home Page using the same preference as the website:
+canonical ID `homePage` when present, otherwise the most recently updated published Home Page.
+The existing document is `4ab74fac-c6b5-4443-9e7f-2e83e9c0146e`; it is preserved.
+No replacement Home Page, production migration or content publication is part of this update.
 
 ## How the integration works
 
@@ -70,7 +75,7 @@ The carousel styles, gradients, breakpoints, transition durations, and language 
 ## Verify
 
 ```powershell
-npm run test:hero
+npm run test:cms
 npm run check:sanity
 npx tsc --noEmit --incremental false
 npx eslint components/Hero.tsx components/Footer.tsx lib/sanity.ts lib/hero-content.ts next.config.ts tests/hero.test.cjs scripts/check-sanity.cjs scripts/build-static.cjs scripts/verify-static.cjs

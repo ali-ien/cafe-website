@@ -1,14 +1,17 @@
 "use client";
 
+import { withCmsSection, CmsText, CmsAnchor, CmsImage as Image, CmsLink as Link, useCmsLanguage as useLanguage, useCmsCollection } from "@/lib/cms";
+
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
-import Link from "next/link";
+
+
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { Menu, X, Coffee, MapPin } from "lucide-react";
 import { Container } from "@/components/ui";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
-import { useLanguage } from "@/lib/language";
+
+
 import { mediaAssets } from "@/lib/media";
 import { cn } from "@/lib/utils";
 
@@ -21,7 +24,8 @@ const NAV_LINKS = [
   { name: "Visit Us", href: "/visit" },
 ];
 
-export const Navbar: React.FC = () => {
+const NavbarContent: React.FC = () => {
+  const navigationLinks = useCmsCollection("navigationLinks", NAV_LINKS);
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const shouldReduceMotion = useReducedMotion();
@@ -92,18 +96,14 @@ export const Navbar: React.FC = () => {
 
               {/* Accompanying Typography Lockup */}
               <div className="flex flex-col justify-center border-l border-alarak-gold/25 pl-3.5">
-                <span className="font-serif text-lg sm:text-xl lg:text-2xl tracking-[0.22em] text-alarak-cream font-medium leading-none group-hover:text-alarak-gold transition-colors duration-300">
-                  ALARAK
-                </span>
-                <span className="font-sans text-[8px] sm:text-[9.5px] tracking-[0.3em] uppercase text-alarak-gold/90 leading-none mt-1">
-                  Coffee &amp; Bakery
-                </span>
+                <span className="font-serif text-lg sm:text-xl lg:text-2xl tracking-[0.22em] text-alarak-cream font-medium leading-none group-hover:text-alarak-gold transition-colors duration-300"><CmsText value={"ALARAK"} /></span>
+                <span className="font-sans text-[8px] sm:text-[9.5px] tracking-[0.3em] uppercase text-alarak-gold/90 leading-none mt-1"><CmsText value={"Coffee & Bakery"} /></span>
               </div>
             </Link>
 
             {/* Desktop Navigation Links */}
             <ul className="hidden lg:flex items-center gap-9">
-              {NAV_LINKS.map((link) => {
+              {navigationLinks.map((link) => {
                 const isActive =
                   pathname === link.href ||
                   (link.href === "/our-story" && pathname?.startsWith("/our-story")) ||
@@ -135,7 +135,7 @@ export const Navbar: React.FC = () => {
             {/* Desktop CTA Action */}
             <div className="hidden sm:flex items-center gap-4">
               <LanguageSwitcher />
-              <a
+              <CmsAnchor
                 href="/media/menu/alarak-menu.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -143,7 +143,7 @@ export const Navbar: React.FC = () => {
                 className="inline-flex items-center justify-center rounded-sm border border-alarak-gold/40 bg-transparent px-5 py-2 font-sans text-xs font-medium uppercase tracking-widest text-alarak-cream transition-all duration-300 hover:-translate-y-[2px] hover:border-alarak-gold hover:bg-alarak-gold/10 hover:text-alarak-gold hover:shadow-[0_4px_16px_rgba(212,175,55,0.25)] focus-ring"
               >
                 {t("View Menu")}
-              </a>
+              </CmsAnchor>
             </div>
 
             {/* Mobile Menu Button */}
@@ -182,9 +182,7 @@ export const Navbar: React.FC = () => {
                     className="h-full w-auto object-contain drop-shadow-[0_4px_16px_rgba(212,175,55,0.2)]"
                   />
                 </div>
-                <span className="font-serif text-2xl tracking-[0.22em] text-alarak-cream font-medium">
-                  ALARAK
-                </span>
+                <span className="font-serif text-2xl tracking-[0.22em] text-alarak-cream font-medium"><CmsText value={"ALARAK"} /></span>
                 <span className="font-sans text-[10px] tracking-[0.32em] uppercase text-alarak-gold mt-1">
                   {t("Moroccan Specialty Coffee & Bakery")}
                 </span>
@@ -193,7 +191,7 @@ export const Navbar: React.FC = () => {
               <div className="w-16 h-px bg-alarak-gold/30 mx-auto" />
 
               <ul className="flex flex-col space-y-6 text-center">
-                {NAV_LINKS.map((link, idx) => (
+                {navigationLinks.map((link, idx) => (
                   <motion.li
                     key={link.name}
                     initial={{ opacity: 0, y: 12 }}
@@ -221,7 +219,7 @@ export const Navbar: React.FC = () => {
               <div className="flex justify-center sm:hidden">
                 <LanguageSwitcher />
               </div>
-              <a
+              <CmsAnchor
                 href="/media/menu/alarak-menu.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -229,7 +227,7 @@ export const Navbar: React.FC = () => {
                 className="inline-flex w-full items-center justify-center gap-2.5 rounded-sm bg-alarak-gold px-8 py-4 font-sans text-sm font-medium uppercase tracking-widest text-alarak-navy-dark transition-all duration-300 hover:bg-alarak-gold-light focus-ring"
               >
                 {t("Discover Our Menu")} <Coffee className="h-5 w-5" />
-              </a>
+              </CmsAnchor>
               <div className="flex items-center justify-center gap-2 text-xs text-alarak-gold/80 tracking-widest uppercase">
                 <MapPin className="w-3.5 h-3.5 text-alarak-gold" />
                 <span>{t("Fnideq, Morocco")}</span>
@@ -241,3 +239,5 @@ export const Navbar: React.FC = () => {
     </>
   );
 };
+
+export const Navbar = withCmsSection("navbar", NavbarContent);

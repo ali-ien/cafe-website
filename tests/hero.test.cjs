@@ -12,7 +12,11 @@ function load(relative, mocks = {}) {
     compilerOptions: {module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2020},
   }).outputText;
   const result = {exports: {}};
-  new Function('require', 'module', 'exports', code)(name => mocks[name] || require(name), result, result.exports);
+  new Function('require', 'module', 'exports', code)(name => {
+    if (mocks[name]) return mocks[name];
+    if (name.startsWith('.')) return load(path.relative(path.join(__dirname, '..'), path.resolve(path.dirname(filename), name + '.ts')), mocks);
+    return require(name);
+  }, result, result.exports);
   return result.exports;
 }
 const {resolveHero, safeHref} = load('lib/hero-content.ts');
@@ -158,4 +162,17 @@ test('Hero refreshes in the browser without a local Hero API dependency', () => 
   const source = fs.readFileSync(path.join(__dirname, '..', 'components/Hero.tsx'), 'utf8');
   assert.equal(source.includes('/api/hero'), false);
   assert.ok(source.includes('fetchHero(request.signal)'));
+});
+test('full website content uses public published reads and excludes draft sections', async () => {
+  const integration = sanity(async (query, params, options) => {
+    assert.ok(query.includes('textEntries') && query.includes('menuCategories') && query.includes('galleryItems'));
+    assert.equal(query.includes('token'), false);
+    assert.equal(options.cache, 'no-store');
+    assert.equal(params.types.length, 8);
+    return [{_type:'homePage',_id:'drafts.homePage'},{_type:'homePage',_id:'existing-home'},{_type:'menuPage',_id:'menuPage'}];
+  });
+  const content = await integration.fetchSiteContent();
+  assert.equal(content.homePage._id, 'existing-home');
+  assert.equal(content.menuPage._id, 'menuPage');
+  assert.equal(content.galleryPage, null);
 });

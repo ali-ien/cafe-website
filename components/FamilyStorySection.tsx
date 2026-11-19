@@ -1,20 +1,23 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
+import { withCmsSection, CmsText, CmsImage as Image, CmsLink as Link, useCmsLanguage as useLanguage, useCmsCollection } from "@/lib/cms";
+
+
+
 import { useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { Container } from "@/components/ui";
-import { useLanguage } from "@/lib/language";
+
+
 
 const easeEditorial: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
-export function FamilyStorySection() {
+function FamilyStorySectionContent() {
   const { t, language } = useLanguage();
   const reduceMotion = useReducedMotion();
   const mobileStoryCarousel = useRef<HTMLDivElement>(null);
   const [activeStoryPhoto, setActiveStoryPhoto] = useState(0);
-  const mobileStoryPhotos = [
+  const fallbackStoryPhotos = [
     {
       id: "founder",
       src: "/media/brand/owner (2).png",
@@ -34,6 +37,7 @@ export function FamilyStorySection() {
       caption: "The craft, made by hand",
     },
   ];
+  const mobileStoryPhotos = useCmsCollection("storyPhotos", fallbackStoryPhotos);
   return (
     <section
       id="story"
@@ -86,7 +90,7 @@ export function FamilyStorySection() {
               className="flex snap-x snap-mandatory scroll-smooth overflow-x-auto overscroll-x-contain pe-[12%] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
               aria-label={t("Our Story photos")}
             >
-              {mobileStoryPhotos.map((photo, slideIndex) => {
+              {mobileStoryPhotos.map((photo) => {
                 return (
                 <figure key={photo.src} className="w-[88%] shrink-0 snap-start snap-always pe-3 ps-4">
                   <div className="relative aspect-[0.9/1] overflow-hidden border border-alarak-gold/50 bg-[#17243a] p-1.5 shadow-[0_18px_50px_rgba(0,0,0,0.28)]">
@@ -113,7 +117,7 @@ export function FamilyStorySection() {
                       <span className="block font-sans text-[8px] font-semibold uppercase tracking-[0.2em] text-alarak-gold">
                         {t(photo.caption)}
                       </span>
-                      <span className="mt-0.5 block font-serif text-lg leading-tight text-alarak-cream">Abdellah El Idrissi</span>
+                      <span className="mt-0.5 block font-serif text-lg leading-tight text-alarak-cream"><CmsText value={"Abdellah El Idrissi"} /></span>
                       <span className="mt-2 flex items-center gap-2 border-t border-alarak-gold/20 pt-2">
                         <span className="relative block h-[38px] w-[52px] shrink-0 border-[3px] border-[#f6efdf] bg-[#f6efdf] shadow-md">
                           <Image
@@ -180,7 +184,7 @@ export function FamilyStorySection() {
               <span className="block font-sans text-[8px] font-semibold uppercase tracking-[0.2em] text-alarak-gold sm:text-[9px]">
                 {t("Founder & Pastry Artisan")}
               </span>
-              <span className="mt-0.5 block font-serif text-base leading-tight text-alarak-cream sm:text-lg">Abdellah El Idrissi</span>
+              <span className="mt-0.5 block font-serif text-base leading-tight text-alarak-cream sm:text-lg"><CmsText value={"Abdellah El Idrissi"} /></span>
               <span className="mt-2 flex items-center gap-2 border-t border-alarak-gold/20 pt-2">
                 <span className="relative block h-[38px] w-[52px] shrink-0 border-[3px] border-[#f6efdf] bg-[#f6efdf] shadow-md sm:h-[44px] sm:w-[60px]">
                   <Image
@@ -226,7 +230,7 @@ export function FamilyStorySection() {
           </motion.figure>
 
           <div aria-hidden="true" className="absolute start-[58%] top-[3.5rem] z-10 hidden h-[104px] w-[104px] items-center justify-center rounded-full border border-alarak-gold bg-[#0b1423] font-serif text-[11px] uppercase tracking-[0.15em] text-alarak-gold lg:flex">
-            <span className="flex flex-col items-center gap-1">NYC<span className="h-px w-7 rotate-[-35deg] bg-alarak-gold lg:w-10" />MAR</span>
+            <span className="flex flex-col items-center gap-1"><CmsText value={"NYC"} /><span className="h-px w-7 rotate-[-35deg] bg-alarak-gold lg:w-10" /><CmsText value={"MAR"} /></span>
           </div>
         </div>
 
@@ -390,3 +394,5 @@ export function FamilyStorySection() {
     </section>
   );
 }
+
+export const FamilyStorySection = withCmsSection("homePage", FamilyStorySectionContent);

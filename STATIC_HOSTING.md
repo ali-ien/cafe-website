@@ -9,8 +9,9 @@ POST route. No deployment workflow, Hostinger upload script, or hosting-specific
 found in the local repository. The remote GitHub connector and live domain could not be
 read in this session, so Hostinger's actual build/output settings remain unverified.
 
-The normal build/start commands are preserved. The Hero now reads the public published
-Sanity dataset directly from the browser in both normal and static hosting modes.
+The normal build/start commands are preserved. All eight CMS section types now read the public
+published Sanity dataset directly from the browser in both normal and static hosting modes.
+See [CONTENT_DASHBOARD.md](CONTENT_DASHBOARD.md) for the complete dashboard handoff.
 
 ## Sanity setup before pushing
 
@@ -27,7 +28,7 @@ relevant origin checks. No private token is used by the browser or this checker.
 Do not change an existing private dataset's visibility without checking that its contents
 are intended to be public; this browser integration requires a public dataset.
 
-After the code is deployed once, publishing Hero changes requires no Git push, rebuild,
+After the code is deployed once, publishing website content changes requires no Git push, rebuild,
 webhook, or Hostinger dashboard access. The page reads current published content on load,
 every 60 seconds while visible, and when the tab regains focus. Empty fields use the original
 translated content; legacy `title`/`description` values remain ignored. Draft edits require Publish.
@@ -36,13 +37,14 @@ translated content; legacy `title`/`description` values remain ignored. Draft ed
 
 ```powershell
 npm ci
-npm run test:hero
+npm run test:cms
 npm run check:sanity
 npm run build
 npm start
 ```
 
-The existing `/api/contact` email flow is unchanged in this mode. Sanity does not depend
+The existing `/api/contact` email transport remains in this mode; its recipient now uses the
+published Site Settings email with the original email as fallback. Sanity reads do not depend
 on any local API route. Existing Hostinger deployments that run `npm run build` can keep
 their command: no forced switch to a different deployment output was made.
 
@@ -73,15 +75,16 @@ cannot be confirmed here without the workflow or Hostinger configuration.
 
 | Local check | Result |
 | --- | --- |
-| Hero/browser CMS regression tests | 16 passed |
+| Full website/browser CMS and contact regression tests | 37 passed |
+| Studio schemas, navigation and non-overwriting defaults | 24 passed in the tested Studio copy |
 | TypeScript and ESLint on changed code | Passed |
-| Normal Next.js production build | Passed with temporary font substitutes |
-| Static production build | Passed with temporary font substitutes |
-| Exported artifact inspection | Six HTML pages and 32 browser JS chunks passed |
+| Normal Next.js production build | Passed with the original Google Fonts |
+| Static production build | Passed with the original Google Fonts |
+| Exported artifact inspection | Six HTML pages and 33 browser JS chunks passed |
 | Private-token check | No private Sanity variable or build-secret marker in browser chunks |
 | Plain static HTTP server | Five public pages, a local image and the menu PDF returned HTTP 200 |
 | API independence | Static pages served without a Hero API, contact API, or Next image optimizer |
-| Anonymous live Sanity/CORS | Blocked by the environment's outbound network restrictions |
+| Anonymous live Sanity/CORS | Latest recheck failed with environment timeout/TLS errors; recheck in the client browser |
 
 No package dependency changes were required for browser fetching; the existing locked Sanity
 client/image URL packages are reused. The new build and verification commands are in package.json.
@@ -91,12 +94,12 @@ and no-rebuild content-refresh tests. `verify:static` checks the exported pages,
 content, image paths, browser query, and absence of private Sanity configuration/test secrets
 in the browser chunks. It does not substitute for a live CORS/browser test.
 
-The local static production build passed with temporary Google Font substitutes because
-the environment blocks those existing HTTPS downloads. The substitutes are outside the
-repository and are not included in the source changes. Run a normal online build before
-production to verify the actual fonts. Anonymous live Sanity and CORS verification is blocked
-by the same environment's network restrictions and must be completed with `npm run check:sanity`.
+The latest normal and static builds used the original fonts without substitutes. The exported
+artifact contains the 17 expected font files and no temporary BuildMock font marker. Live Sanity
+and CORS verification still needs completion with `npm run check:sanity` and an actual browser.
 
-The changes are ready for review. An unconditional production push is not cleared until
+The website changes and packaged Studio source are ready for review. The original Studio
+folder could not be modified by this session; apply the guarded update before testing its editors.
+An unconditional production push is not cleared until
 the live Sanity checks and the existing hosting build/output path are confirmed. No commit,
 push, hosting change, deployment, or Sanity content publication was performed.

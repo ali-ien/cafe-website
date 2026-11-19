@@ -1,11 +1,14 @@
 ﻿"use client";
 
-import Image from "next/image";
+import { withCmsSection, CmsText, CmsAnchor, CmsImage as Image, useCmsCollection, useCmsLanguage as useLanguage } from "@/lib/cms";
+
+
 import { useCallback, useEffect, useState } from "react";
 import { Camera, ChevronLeft, ChevronRight, Clock3, MapPin, Maximize2, Sparkles, X } from "lucide-react";
-import { galleryCategories, galleryItems, type GalleryItem } from "@/lib/gallery";
+import { galleryCategories, galleryItems as originalGalleryItems, type GalleryItem } from "@/lib/gallery";
+
 import { Container } from "@/components/ui";
-import { useLanguage } from "@/lib/language";
+
 
 function GalleryPhoto({ item, className = "", contain = false }: { item: GalleryItem; className?: string; contain?: boolean }) {
   const { t } = useLanguage();
@@ -25,7 +28,8 @@ function GalleryPhoto({ item, className = "", contain = false }: { item: Gallery
   );
 }
 
-export function GalleryExperience() {
+function GalleryExperienceContent() {
+  const galleryItems = useCmsCollection<GalleryItem>("galleryItems", originalGalleryItems);
   const { t } = useLanguage();
   const [activeCategory, setActiveCategory] = useState<string>("all");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
@@ -34,7 +38,7 @@ export function GalleryExperience() {
 
   const closeLightbox = useCallback(() => setLightboxIndex(null), []);
   const moveLightbox = useCallback((direction: -1 | 1) => {
-    setLightboxIndex((current) => current === null ? null : (current + direction + filteredItems.length) % filteredItems.length);
+    setLightboxIndex((current) => current === null || !filteredItems.length ? null : (current + direction + filteredItems.length) % filteredItems.length);
   }, [filteredItems.length]);
 
   useEffect(() => {
@@ -146,8 +150,8 @@ export function GalleryExperience() {
         <Container className="text-center">
           <span className="mb-4 inline-flex rounded-full bg-white/[0.05] p-3 text-alarak-gold"><Camera className="h-5 w-5" /></span>
           <h2 className="font-serif text-3xl text-alarak-cream sm:text-4xl">{t("Share your Alarak moments")}</h2>
-          <p className="mx-auto mt-3 max-w-lg font-sans text-sm leading-6 text-alarak-cream/55">{t("Tag us at")} <span className="text-alarak-gold">@alarak.ma</span> {t("on Instagram to be featured in our community gallery.")}</p>
-          <a href="https://www.instagram.com/alarak.ma?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" target="_blank" rel="noreferrer" className="mt-7 inline-flex items-center gap-2 border border-alarak-gold/70 px-6 py-3 font-sans text-[9px] uppercase tracking-[0.2em] text-alarak-gold transition hover:bg-alarak-gold hover:text-alarak-navy-dark">{t("Follow")} @alarak.ma <Camera className="h-3.5 w-3.5" /></a>
+          <p className="mx-auto mt-3 max-w-lg font-sans text-sm leading-6 text-alarak-cream/55">{t("Tag us at")} <span className="text-alarak-gold"><CmsText value={"@alarak.ma"} /></span> {t("on Instagram to be featured in our community gallery.")}</p>
+          <CmsAnchor href="https://www.instagram.com/alarak.ma?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" target="_blank" rel="noreferrer" className="mt-7 inline-flex items-center gap-2 border border-alarak-gold/70 px-6 py-3 font-sans text-[9px] uppercase tracking-[0.2em] text-alarak-gold transition hover:bg-alarak-gold hover:text-alarak-navy-dark">{t("Follow")}<CmsText value={" @alarak.ma "} /><Camera className="h-3.5 w-3.5" /></CmsAnchor>
         </Container>
       </section>
 
@@ -166,3 +170,5 @@ export function GalleryExperience() {
   );
 }
 
+
+export const GalleryExperience = withCmsSection("galleryPage", GalleryExperienceContent);

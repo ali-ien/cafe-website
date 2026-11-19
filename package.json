@@ -10,6 +10,7 @@
     "start": "next start",
     "lint": "eslint",
     "test:hero": "node --test tests/hero.test.cjs",
+    "test:cms": "node --test tests/hero.test.cjs tests/cms.test.cjs tests/contact-cms.test.cjs",
     "check:sanity": "node scripts/check-sanity.cjs"
   },
   "dependencies": {

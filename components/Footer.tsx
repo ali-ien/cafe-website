@@ -1,7 +1,9 @@
 "use client";
 
+import { withCmsSection, CmsText, CmsAnchor, CmsImage as Image, useCmsLanguage as useLanguage, useCmsCollection } from "@/lib/cms";
+
 import React, { useState } from "react";
-import Image from "next/image";
+
 import { motion, useReducedMotion } from "framer-motion";
 import {
   MapPin,
@@ -12,7 +14,9 @@ import {
 } from "lucide-react";
 import { Container } from "@/components/ui";
 import { mediaAssets } from "@/lib/media";
-import { useLanguage } from "@/lib/language";
+
+
+import { useSiteContent } from "@/lib/cms-context";
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -140,6 +144,8 @@ const ColumnHeading: React.FC<{ children: React.ReactNode }> = ({ children }) =>
 // ─── Newsletter Form ──────────────────────────────────────────────────────────
 
 const ContactMessageForm: React.FC = () => {
+  const content = useSiteContent();
+  const contactEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(content.siteSettings?.email || "") ? content.siteSettings!.email! : "bakeryservice@alarak.com";
   const { t } = useLanguage();
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -155,7 +161,7 @@ const ContactMessageForm: React.FC = () => {
     if (process.env.NEXT_PUBLIC_STATIC_EXPORT === "true") {
       // Static hosting cannot run the email API. Open a draft without claiming delivery.
       if (!formData.get("website")) {
-        window.location.href = `mailto:bakeryservice@alarak.com?subject=${encodeURIComponent("Message from the Alarak website")}&body=${encodeURIComponent(`From: ${email}\n\n${message}`)}`;
+        window.location.href = `mailto:${contactEmail}?subject=${encodeURIComponent("Message from the Alarak website")}&body=${encodeURIComponent(`From: ${email}\n\n${message}`)}`;
       }
       setStatus("idle");
       return;
@@ -259,7 +265,9 @@ const BackToTop: React.FC = () => {
 
 // ─── Main Footer ──────────────────────────────────────────────────────────────
 
-export const Footer: React.FC = () => {
+const FooterContent: React.FC = () => {
+  const exploreLinks = useCmsCollection("exploreLinks", EXPLORE_LINKS);
+  const legalLinks = useCmsCollection("legalLinks", LEGAL_LINKS);
   const { t } = useLanguage();
   const logoWeb = mediaAssets.logo.web;
   const shouldReduceMotion = useReducedMotion();
@@ -297,8 +305,8 @@ export const Footer: React.FC = () => {
           {/* ── Col 1: Brand ─────────────────────────────────────────────── */}
           <FooterColumn delay={0.06} className="sm:col-span-2 lg:col-span-1">
             {/* Logo + wordmark */}
-            <a
-              href="#"
+            <CmsAnchor
+              cmsKey="footer-link-0" href="#"
               className="group inline-flex items-center gap-3.5 focus-ring rounded-sm"
               aria-label="Alarak Coffee & Bakery — Back to top"
             >
@@ -321,14 +329,10 @@ export const Footer: React.FC = () => {
                 id="footer-brand-heading"
                 className="flex flex-col justify-center border-l border-alarak-gold/30 pl-3.5"
               >
-                <span className="font-serif text-lg sm:text-xl tracking-[0.22em] text-alarak-cream font-medium leading-none group-hover:text-alarak-gold transition-colors duration-300">
-                  ALARAK
-                </span>
-                <span className="font-sans text-[8px] sm:text-[9.5px] tracking-[0.3em] uppercase text-alarak-gold leading-none mt-1">
-                  Coffee &amp; Bakery
-                </span>
+                <span className="font-serif text-lg sm:text-xl tracking-[0.22em] text-alarak-cream font-medium leading-none group-hover:text-alarak-gold transition-colors duration-300"><CmsText value={"ALARAK"} /></span>
+                <span className="font-sans text-[8px] sm:text-[9.5px] tracking-[0.3em] uppercase text-alarak-gold leading-none mt-1"><CmsText value={"Coffee & Bakery"} /></span>
               </div>
-            </a>
+            </CmsAnchor>
 
             {/* Description */}
             <p className="mt-5 max-w-[260px] font-sans text-[13.5px] text-alarak-cream/50 font-light leading-[1.8]">
@@ -337,7 +341,7 @@ export const Footer: React.FC = () => {
 
             {/* Social icons row */}
             <div className="mt-6 flex items-center gap-2.5" aria-label={t("Social media links")}>
-              <a
+              <CmsAnchor
                 href={INSTAGRAM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -347,9 +351,9 @@ export const Footer: React.FC = () => {
                 <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5">
                   <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
                 </svg>
-              </a>
+              </CmsAnchor>
               {/* Facebook */}
-              <a
+              <CmsAnchor
                 href="https://www.facebook.com/share/1BVvEpkcAk/?mibextid=wwXIfr"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -359,9 +363,9 @@ export const Footer: React.FC = () => {
                 <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5">
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
                 </svg>
-              </a>
+              </CmsAnchor>
               {/* TikTok */}
-              <a
+              <CmsAnchor
                 href="https://www.tiktok.com/@alarakcoffeebakery"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -371,10 +375,10 @@ export const Footer: React.FC = () => {
                 <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5">
                   <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.73a8.27 8.27 0 0 0 4.84 1.55V6.83a4.85 4.85 0 0 1-1.07-.14z" />
                 </svg>
-              </a>
+              </CmsAnchor>
               {/* YouTube */}
-              <a
-                href="#"
+              <CmsAnchor
+                cmsKey="footer-link-1" href="#"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={t("Follow Alarak on YouTube")}
@@ -383,7 +387,7 @@ export const Footer: React.FC = () => {
                 <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5">
                   <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z" />
                 </svg>
-              </a>
+              </CmsAnchor>
             </div>
           </FooterColumn>
 
@@ -392,9 +396,9 @@ export const Footer: React.FC = () => {
             <ColumnHeading>{t("Explore")}</ColumnHeading>
             <nav aria-label={t("Footer navigation")}>
               <ul className="space-y-3.5">
-                {EXPLORE_LINKS.map((link) => (
+                {exploreLinks.map((link) => (
                   <li key={link.name}>
-                    <a
+                    <CmsAnchor
                       href={link.href}
                       className="font-sans text-[13.5px] text-alarak-cream/55 hover:text-alarak-gold transition-colors duration-300 focus-ring rounded-sm relative group inline-block"
                     >
@@ -402,7 +406,7 @@ export const Footer: React.FC = () => {
                         {t(link.name)}
                         <span className="absolute -bottom-px left-0 w-0 h-px bg-alarak-gold/60 group-hover:w-full transition-all duration-300" />
                       </span>
-                    </a>
+                    </CmsAnchor>
                   </li>
                 ))}
               </ul>
@@ -426,25 +430,23 @@ export const Footer: React.FC = () => {
               </div>
               <div className="flex items-start gap-2.5">
                 <Mail className="w-3.5 h-3.5 text-alarak-gold/70 mt-[2px] shrink-0" aria-hidden="true" />
-                <a
+                <CmsAnchor
                   href="mailto:bakeryservice@alarak.com"
                   className="break-all hover:text-alarak-gold transition-colors duration-300 focus-ring rounded-sm"
-                >
-                  bakeryservice@alarak.com
-                </a>
+                ><CmsText value={"bakeryservice@alarak.com"} /></CmsAnchor>
               </div>
               <div className="flex items-start gap-2.5">
                 <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 text-alarak-gold/70 mt-[2px] shrink-0">
                   <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
                 </svg>
-                <a
+                <CmsAnchor
                   href={INSTAGRAM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-alarak-gold transition-colors duration-300 focus-ring rounded-sm"
                 >
                   {t("Reservations via Instagram")}
-                </a>
+                </CmsAnchor>
               </div>
             </address>
           </FooterColumn>
@@ -454,7 +456,7 @@ export const Footer: React.FC = () => {
             <ColumnHeading>{t("Follow")}</ColumnHeading>
             <ul className="space-y-3.5">
               <li>
-                <a
+                <CmsAnchor
                   href={INSTAGRAM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -463,9 +465,9 @@ export const Footer: React.FC = () => {
                   <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 text-alarak-gold/60 group-hover:text-alarak-gold transition-colors duration-300">
                     <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
                   </svg>
-                  <span>Instagram</span>
+                  <span><CmsText value={"Instagram"} /></span>
                   <ArrowRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
-                </a>
+                </CmsAnchor>
               </li>
             </ul>
           </FooterColumn>
@@ -524,19 +526,19 @@ export const Footer: React.FC = () => {
           {/* Right: Legal links + Back to top */}
           <div className="flex items-center gap-4 order-3">
             <nav aria-label={t("Legal links")} className="hidden sm:flex items-center">
-              {LEGAL_LINKS.map((link, i) => (
+              {legalLinks.map((link, i) => (
                 <React.Fragment key={link.name}>
                   {i > 0 && (
                     <span aria-hidden="true" className="mx-3 text-alarak-cream/20 text-[10px]">
                       |
                     </span>
                   )}
-                  <a
+                  <CmsAnchor
                     href={link.href}
                     className="font-sans text-[11px] tracking-[0.06em] text-alarak-cream/40 hover:text-alarak-gold transition-colors duration-300 focus-ring rounded-sm"
                   >
                     {t(link.name)}
-                  </a>
+                  </CmsAnchor>
                 </React.Fragment>
               ))}
             </nav>
@@ -549,17 +551,19 @@ export const Footer: React.FC = () => {
           aria-label={t("Legal links")}
           className="sm:hidden flex flex-wrap justify-center gap-x-4 gap-y-1.5 mt-4"
         >
-          {LEGAL_LINKS.map((link) => (
-            <a
+          {legalLinks.map((link) => (
+            <CmsAnchor
               key={link.name}
               href={link.href}
               className="font-sans text-[11px] tracking-[0.06em] text-alarak-cream/40 hover:text-alarak-gold transition-colors duration-300 focus-ring rounded-sm"
             >
               {t(link.name)}
-            </a>
+            </CmsAnchor>
           ))}
         </nav>
       </Container>
     </footer>
   );
 };
+
+export const Footer = withCmsSection("footer", FooterContent);

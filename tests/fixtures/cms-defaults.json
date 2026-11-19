@@ -1,0 +1,3195 @@
+{
+  "homePage": {
+    "textEntries": [
+      {
+        "_key": "text-0",
+        "_type": "contentText",
+        "source": "Hero Section",
+        "value": {
+          "en": "Hero Section",
+          "es": "Sección principal",
+          "ar": "القسم الرئيسي"
+        }
+      },
+      {
+        "_key": "text-1",
+        "_type": "contentText",
+        "source": "ALARAK COFFEE & BAKERY",
+        "value": {
+          "en": "ALARAK COFFEE & BAKERY",
+          "es": "ALARAK COFFEE & BAKERY",
+          "ar": "ALARAK COFFEE & BAKERY"
+        }
+      },
+      {
+        "_key": "text-2",
+        "_type": "contentText",
+        "source": "OUR STORY · NOTRE HISTOIRE",
+        "value": {
+          "en": "OUR STORY · NOTRE HISTOIRE",
+          "es": "NUESTRA HISTORIA",
+          "ar": "قصتنا"
+        }
+      },
+      {
+        "_key": "text-3",
+        "_type": "contentText",
+        "source": "Inspired by New York,",
+        "value": {
+          "en": "Inspired by New York,",
+          "es": "Inspirados por Nueva York,",
+          "ar": "مستوحى من نيويورك،"
+        }
+      },
+      {
+        "_key": "text-4",
+        "_type": "contentText",
+        "source": "Rooted in Morocco",
+        "value": {
+          "en": "Rooted in Morocco",
+          "es": "con raíces en Marruecos",
+          "ar": "متجذر في المغرب"
+        }
+      },
+      {
+        "_key": "text-5",
+        "_type": "contentText",
+        "source": "A family dream, baked every day.",
+        "value": {
+          "en": "A family dream, baked every day.",
+          "es": "Un sueño familiar, horneado cada día.",
+          "ar": "حلم عائلي نخبزه كل يوم."
+        }
+      },
+      {
+        "_key": "text-6",
+        "_type": "contentText",
+        "source": "Our Story photos",
+        "value": {
+          "en": "Our Story photos",
+          "es": "Fotos de nuestra historia",
+          "ar": "صور من حكايتنا"
+        }
+      },
+      {
+        "_key": "text-7",
+        "_type": "contentText",
+        "source": "Abdellah El Idrissi",
+        "value": {
+          "en": "Abdellah El Idrissi",
+          "es": "Abdellah El Idrissi",
+          "ar": "Abdellah El Idrissi"
+        }
+      },
+      {
+        "_key": "text-8",
+        "_type": "contentText",
+        "source": "Abdellah El Idrissi's pastry and baking arts diploma",
+        "value": {
+          "en": "Abdellah El Idrissi's pastry and baking arts diploma",
+          "es": "Diploma de pastelería y panadería de Abdellah El Idrissi",
+          "ar": "دبلوم عبد الله الإدريسي في فنون الحلويات والخبز"
+        }
+      },
+      {
+        "_key": "text-9",
+        "_type": "contentText",
+        "source": "View more about Abdellah's career",
+        "value": {
+          "en": "View more about Abdellah's career",
+          "es": "Descubre más sobre la trayectoria de Abdellah",
+          "ar": "اكتشف المزيد عن مسيرة عبد الله"
+        }
+      },
+      {
+        "_key": "text-10",
+        "_type": "contentText",
+        "source": "Choose a story photo",
+        "value": {
+          "en": "Choose a story photo",
+          "es": "Elegir una foto de nuestra historia",
+          "ar": "اختاروا صورة من حكايتنا"
+        }
+      },
+      {
+        "_key": "text-11",
+        "_type": "contentText",
+        "source": "Show story photo",
+        "value": {
+          "en": "Show story photo",
+          "es": "Mostrar foto",
+          "ar": "عرض الصورة"
+        }
+      },
+      {
+        "_key": "text-12",
+        "_type": "contentText",
+        "source": "Abdellah El Idrissi in a New York restaurant",
+        "value": {
+          "en": "Abdellah El Idrissi in a New York restaurant",
+          "es": "Abdellah El Idrissi en un restaurante de Nueva York",
+          "ar": "عبد الله الإدريسي في مطعم بنيويورك"
+        }
+      },
+      {
+        "_key": "text-13",
+        "_type": "contentText",
+        "source": "Founder & Pastry Artisan",
+        "value": {
+          "en": "Founder & Pastry Artisan",
+          "es": "Fundador y maestro pastelero",
+          "ar": "المؤسس وحرفي الحلويات"
+        }
+      },
+      {
+        "_key": "text-14",
+        "_type": "contentText",
+        "source": "Abdellah and his daughter outside a New York bakery",
+        "value": {
+          "en": "Abdellah and his daughter outside a New York bakery",
+          "es": "Abdellah y su hija frente a una panadería de Nueva York",
+          "ar": "عبد الله وابنته أمام مخبز في نيويورك"
+        }
+      },
+      {
+        "_key": "text-15",
+        "_type": "contentText",
+        "source": "New York · Where the journey grew",
+        "value": {
+          "en": "New York · Where the journey grew",
+          "es": "Nueva York · Donde comenzó el camino",
+          "ar": "نيويورك · حيث نمت الرحلة"
+        }
+      },
+      {
+        "_key": "text-16",
+        "_type": "contentText",
+        "source": "NYC",
+        "value": {
+          "en": "NYC",
+          "es": "NYC",
+          "ar": "NYC"
+        }
+      },
+      {
+        "_key": "text-17",
+        "_type": "contentText",
+        "source": "MAR",
+        "value": {
+          "en": "MAR",
+          "es": "MAR",
+          "ar": "MAR"
+        }
+      },
+      {
+        "_key": "text-18",
+        "_type": "contentText",
+        "source": "The Beginning",
+        "value": {
+          "en": "The Beginning",
+          "es": "Los comienzos",
+          "ar": "البداية"
+        }
+      },
+      {
+        "_key": "text-19",
+        "_type": "contentText",
+        "source": "My journey into the world of culinary arts and pastry began with a passion for craftsmanship, creativity, and attention to detail.",
+        "value": {
+          "en": "My journey into the world of culinary arts and pastry began with a passion for craftsmanship, creativity, and attention to detail.",
+          "es": "Mi camino en las artes culinarias y la pastelería comenzó con pasión por el oficio, la creatividad y la atención al detalle.",
+          "ar": "بدأت رحلتي في عالم فنون الطهي والحلويات بشغف للحرفية والإبداع والاهتمام بالتفاصيل."
+        }
+      },
+      {
+        "_key": "text-20",
+        "_type": "contentText",
+        "source": "This journey led me to New York, where I earned my diploma from the Institute of Culinary Education in Culinary Arts and Pastry Arts.",
+        "value": {
+          "en": "This journey led me to New York, where I earned my diploma from the Institute of Culinary Education in Culinary Arts and Pastry Arts.",
+          "es": "Este camino me llevó a Nueva York, donde obtuve mis diplomas en Artes Culinarias y Pastelería en el Institute of Culinary Education.",
+          "ar": "قادني هذا الشغف إلى نيويورك، حيث حصلت على دبلوم فنون الطهي والحلويات من معهد Institute of Culinary Education."
+        }
+      },
+      {
+        "_key": "text-21",
+        "_type": "contentText",
+        "source": "From New York, I brought back more than techniques. I brought with me a modern approach to the world of coffee, bakery, and pastry — inspired by the diversity, creativity, and energy of the city.",
+        "value": {
+          "en": "From New York, I brought back more than techniques. I brought with me a modern approach to the world of coffee, bakery, and pastry — inspired by the diversity, creativity, and energy of the city.",
+          "es": "De Nueva York traje mucho más que técnicas. Me llevé una visión moderna del café, la panadería y la pastelería, inspirada en la diversidad, creatividad y energía de la ciudad.",
+          "ar": "عدت من نيويورك بأكثر من مجرد تقنيات؛ جلبت معي رؤية عصرية للقهوة والمخبوزات والحلويات، استلهمتها من تنوع المدينة وإبداعها وحيويتها."
+        }
+      },
+      {
+        "_key": "text-22",
+        "_type": "contentText",
+        "source": "Abdellah baking together with his daughter",
+        "value": {
+          "en": "Abdellah baking together with his daughter",
+          "es": "Abdellah horneando junto a su hija",
+          "ar": "عبد الله يحضّر المخبوزات مع ابنته"
+        }
+      },
+      {
+        "_key": "text-23",
+        "_type": "contentText",
+        "source": "Made together",
+        "value": {
+          "en": "Made together",
+          "es": "Hecho en familia",
+          "ar": "صنعناها معاً"
+        }
+      },
+      {
+        "_key": "text-24",
+        "_type": "contentText",
+        "source": "A New Chapter · Morocco",
+        "value": {
+          "en": "A New Chapter · Morocco",
+          "es": "Una nueva etapa · Marruecos",
+          "ar": "فصل جديد · المغرب"
+        }
+      },
+      {
+        "_key": "text-25",
+        "_type": "contentText",
+        "source": "A dream shaped around family.",
+        "value": {
+          "en": "A dream shaped around family.",
+          "es": "Un sueño creado en familia.",
+          "ar": "حلم صاغته العائلة."
+        }
+      },
+      {
+        "_key": "text-26",
+        "_type": "contentText",
+        "source": "But returning to Morocco marked the beginning of a new chapter.",
+        "value": {
+          "en": "But returning to Morocco marked the beginning of a new chapter.",
+          "es": "Pero volver a Marruecos marcó el comienzo de una nueva etapa.",
+          "ar": "لكن عودتي إلى المغرب كانت بداية فصل جديد."
+        }
+      },
+      {
+        "_key": "text-27",
+        "_type": "contentText",
+        "source": "The dream was to transform this experience into something that reflected who we are: a family project built around passion, craftsmanship, and hospitality.",
+        "value": {
+          "en": "The dream was to transform this experience into something that reflected who we are: a family project built around passion, craftsmanship, and hospitality.",
+          "es": "El sueño era transformar esta experiencia en algo que nos representara: un proyecto familiar basado en la pasión, el oficio y la hospitalidad.",
+          "ar": "كان الحلم أن نحوّل هذه التجربة إلى مشروع يشبهنا: مشروع عائلي يجمعه الشغف والحرفة وحسن الضيافة."
+        }
+      },
+      {
+        "_key": "text-28",
+        "_type": "contentText",
+        "source": "And that dream became",
+        "value": {
+          "en": "And that dream became",
+          "es": "Y ese sueño se convirtió en",
+          "ar": "وهكذا أصبح ذلك الحلم"
+        }
+      },
+      {
+        "_key": "text-29",
+        "_type": "contentText",
+        "source": "Alarak Coffee & Bakery.",
+        "value": {
+          "en": "Alarak Coffee & Bakery.",
+          "es": "Alarak Coffee & Bakery.",
+          "ar": "الأراك للقهوة والمخبوزات."
+        }
+      },
+      {
+        "_key": "text-30",
+        "_type": "contentText",
+        "source": "A place where the spirit of New York meets a Moroccan touch, with Mediterranean influences woven into our coffee, pastries, cakes, and baked creations.",
+        "value": {
+          "en": "A place where the spirit of New York meets a Moroccan touch, with Mediterranean influences woven into our coffee, pastries, cakes, and baked creations.",
+          "es": "Un lugar donde el espíritu de Nueva York se une al toque marroquí, con influencias mediterráneas en nuestros cafés, pasteles y creaciones horneadas.",
+          "ar": "مكان تلتقي فيه روح نيويورك بلمسة مغربية، وتمتزج التأثيرات المتوسطية بقهوة الأراك ومعجناته وكعكاته ومخبوزاته."
+        }
+      },
+      {
+        "_key": "text-31",
+        "_type": "contentText",
+        "source": "The finest things we make begin with the people we make them for.",
+        "value": {
+          "en": "The finest things we make begin with the people we make them for.",
+          "es": "Las mejores cosas que hacemos nacen pensando en quienes las disfrutan.",
+          "ar": "أجمل ما نصنعه يبدأ من الأشخاص الذين نصنعه من أجلهم."
+        }
+      },
+      {
+        "_key": "text-32",
+        "_type": "contentText",
+        "source": "The El Idrissi Family",
+        "value": {
+          "en": "The El Idrissi Family",
+          "es": "La familia El Idrissi",
+          "ar": "عائلة الإدريسي"
+        }
+      },
+      {
+        "_key": "text-33",
+        "_type": "contentText",
+        "source": "Our Coffee",
+        "value": {
+          "en": "Our Coffee",
+          "es": "Nuestro café",
+          "ar": "قهوتنا"
+        }
+      },
+      {
+        "_key": "text-34",
+        "_type": "contentText",
+        "source": "Selected with the same care as everything we bake.",
+        "value": {
+          "en": "Selected with the same care as everything we bake.",
+          "es": "Elegido con el mismo cuidado que todo lo que horneamos.",
+          "ar": "نختارها بعناية ككل ما نخبزه."
+        }
+      },
+      {
+        "_key": "text-35",
+        "_type": "contentText",
+        "source": "Because coffee is at the heart of the coffee & bakery experience, we carefully selected the coffees we serve.",
+        "value": {
+          "en": "Because coffee is at the heart of the coffee & bakery experience, we carefully selected the coffees we serve.",
+          "es": "Como el café es el corazón de nuestra experiencia, seleccionamos cuidadosamente los cafés que servimos.",
+          "ar": "لأن القهوة في قلب تجربة المقهى والمخبوزات، اخترنا بعناية أنواع القهوة التي نقدّمها."
+        }
+      },
+      {
+        "_key": "text-36",
+        "_type": "contentText",
+        "source": "We use Miscela d'Oro Italian coffee, a blend of Arabica and Robusta, alongside illy 100% Arabica, offering different coffee profiles and experiences for our guests.",
+        "value": {
+          "en": "We use Miscela d'Oro Italian coffee, a blend of Arabica and Robusta, alongside illy 100% Arabica, offering different coffee profiles and experiences for our guests.",
+          "es": "Servimos café italiano Miscela d’Oro, una mezcla de arábica y robusta, junto con illy 100 % arábica, para ofrecer distintos perfiles y experiencias.",
+          "ar": "نقدّم قهوة ميسيلادورو الإيطالية، وهي مزيج من أرابيكا وروبوستا، إلى جانب قهوة illy المصنوعة من أرابيكا 100٪، لنمنح ضيوفنا نكهات وتجارب متنوعة."
+        }
+      },
+      {
+        "_key": "text-37",
+        "_type": "contentText",
+        "source": "For us, quality begins with the ingredients — from the coffee we select to the pastries we bake and the way every creation is prepared and presented.",
+        "value": {
+          "en": "For us, quality begins with the ingredients — from the coffee we select to the pastries we bake and the way every creation is prepared and presented.",
+          "es": "Para nosotros, la calidad empieza con los ingredientes: desde el café que elegimos hasta la preparación y presentación de cada creación.",
+          "ar": "تبدأ الجودة عندنا من المكوّنات: من القهوة التي نختارها إلى المخبوزات التي نعدّها، وصولاً إلى طريقة تحضير كل إبداع وتقديمه."
+        }
+      },
+      {
+        "_key": "text-38",
+        "_type": "contentText",
+        "source": "A young family baker presenting a freshly baked pastry",
+        "value": {
+          "en": "A young family baker presenting a freshly baked pastry",
+          "es": "Una joven integrante de la familia presenta un pastel recién horneado",
+          "ar": "شيف صغيرة من العائلة تقدّم مخبوزاً طازجاً"
+        }
+      },
+      {
+        "_key": "text-39",
+        "_type": "contentText",
+        "source": "Craft is passed on",
+        "value": {
+          "en": "Craft is passed on",
+          "es": "El oficio se transmite",
+          "ar": "الحرفة تنتقل"
+        }
+      },
+      {
+        "_key": "text-40",
+        "_type": "contentText",
+        "source": "with joy",
+        "value": {
+          "en": "with joy",
+          "es": "con alegría",
+          "ar": "بفرح"
+        }
+      },
+      {
+        "_key": "text-41",
+        "_type": "contentText",
+        "source": "Alarak is more than a Coffee & Bakery.",
+        "value": {
+          "en": "Alarak is more than a Coffee & Bakery.",
+          "es": "Alarak es mucho más que una cafetería y panadería.",
+          "ar": "الأراك أكثر من مقهى ومخبز."
+        }
+      },
+      {
+        "_key": "text-42",
+        "_type": "contentText",
+        "source": "It is a family dream brought to life.",
+        "value": {
+          "en": "It is a family dream brought to life.",
+          "es": "Es un sueño familiar hecho realidad.",
+          "ar": "إنه حلم عائلي أصبح حقيقة."
+        }
+      },
+      {
+        "_key": "text-43",
+        "_type": "contentText",
+        "source": "Every pastry, every dessert, and every cup of coffee is prepared with care, passion, and a love for the craft.",
+        "value": {
+          "en": "Every pastry, every dessert, and every cup of coffee is prepared with care, passion, and a love for the craft.",
+          "es": "Cada pastel, cada postre y cada taza de café se prepara con cuidado, pasión y amor por el oficio.",
+          "ar": "نحضّر كل معجنّة وكل حلوى وكل فنجان قهوة بعناية وشغف وحبّ للحرفة."
+        }
+      },
+      {
+        "_key": "text-44",
+        "_type": "contentText",
+        "source": "Welcome to Alarak.",
+        "value": {
+          "en": "Welcome to Alarak.",
+          "es": "Te damos la bienvenida a Alarak.",
+          "ar": "مرحباً بكم في الأراك."
+        }
+      },
+      {
+        "_key": "text-45",
+        "_type": "contentText",
+        "source": "A family dream, baked with passion.",
+        "value": {
+          "en": "A family dream, baked with passion.",
+          "es": "Un sueño familiar, horneado con pasión.",
+          "ar": "حلم عائلي نخبزه بشغف."
+        }
+      },
+      {
+        "_key": "text-46",
+        "_type": "contentText",
+        "source": "Explore our",
+        "value": {
+          "en": "Explore our",
+          "es": "Descubre nuestra",
+          "ar": "اكتشف"
+        }
+      },
+      {
+        "_key": "text-47",
+        "_type": "contentText",
+        "source": "Explore",
+        "value": {
+          "en": "Explore",
+          "es": "Descubrir",
+          "ar": "اكتشف"
+        }
+      },
+      {
+        "_key": "text-48",
+        "_type": "contentText",
+        "source": "Signature Selection",
+        "value": {
+          "en": "Signature Selection",
+          "es": "Selección de la casa",
+          "ar": "تشكيلة مميزة"
+        }
+      },
+      {
+        "_key": "text-49",
+        "_type": "contentText",
+        "source": "Our Selection",
+        "value": {
+          "en": "Our Selection",
+          "es": "Nuestra selección",
+          "ar": "تشكيلتنا"
+        }
+      },
+      {
+        "_key": "text-50",
+        "_type": "contentText",
+        "source": "Made to Be",
+        "value": {
+          "en": "Made to Be",
+          "es": "Hecho para",
+          "ar": "صُنع لكي يُستمتع به"
+        }
+      },
+      {
+        "_key": "text-51",
+        "_type": "contentText",
+        "source": "Savored.",
+        "value": {
+          "en": "Savored.",
+          "es": "disfrutar.",
+          "ar": "ويُذاق."
+        }
+      },
+      {
+        "_key": "text-52",
+        "_type": "contentText",
+        "source": "From carefully crafted coffee to freshly baked creations, every detail is made to turn an everyday moment into something memorable.",
+        "value": {
+          "en": "From carefully crafted coffee to freshly baked creations, every detail is made to turn an everyday moment into something memorable.",
+          "es": "Desde el café preparado con esmero hasta cada creación recién horneada, cuidamos cada detalle para convertir un momento cotidiano en algo memorable.",
+          "ar": "من القهوة المحضّرة بعناية إلى المخبوزات الطازجة، صُمّم كل تفصيل ليحوّل لحظاتكم اليومية إلى ذكرى مميزة."
+        }
+      },
+      {
+        "_key": "text-53",
+        "_type": "contentText",
+        "source": "View Full Menu",
+        "value": {
+          "en": "View Full Menu",
+          "es": "Ver todo el menú",
+          "ar": "عرض القائمة كاملة"
+        }
+      },
+      {
+        "_key": "text-54",
+        "_type": "contentText",
+        "source": "Immeuble Alia, 18, Fnideq 93100",
+        "value": {
+          "en": "Immeuble Alia, 18, Fnideq 93100",
+          "es": "Immeuble Alia, 18, Fnideq 93100",
+          "ar": "عمارة علياء، 18، الفنيدق 93100"
+        }
+      },
+      {
+        "_key": "text-55",
+        "_type": "contentText",
+        "source": "Monday – Sunday",
+        "value": {
+          "en": "Monday – Sunday",
+          "es": "Lunes a domingo",
+          "ar": "من الاثنين إلى الأحد"
+        }
+      },
+      {
+        "_key": "text-56",
+        "_type": "contentText",
+        "source": "07:00 AM – 10:00 PM",
+        "value": {
+          "en": "07:00 AM – 10:00 PM",
+          "es": "07:00–22:00",
+          "ar": "07:00 – 22:00"
+        }
+      },
+      {
+        "_key": "text-57",
+        "_type": "contentText",
+        "source": "bakeryservice@alarak.com",
+        "value": {
+          "en": "bakeryservice@alarak.com",
+          "es": "bakeryservice@alarak.com",
+          "ar": "bakeryservice@alarak.com"
+        }
+      },
+      {
+        "_key": "text-58",
+        "_type": "contentText",
+        "source": "Visit our boutique",
+        "value": {
+          "en": "Visit our boutique",
+          "es": "Visita nuestro local",
+          "ar": "زوروا متجرنا"
+        }
+      },
+      {
+        "_key": "text-59",
+        "_type": "contentText",
+        "source": "Experience ALARAK In Person",
+        "value": {
+          "en": "Experience ALARAK In Person",
+          "es": "Vive ALARAK en persona",
+          "ar": "عِش تجربة الأراك بنفسك"
+        }
+      },
+      {
+        "_key": "text-60",
+        "_type": "contentText",
+        "source": "Join us in Fnideq for exceptional coffee, fresh pastries, and an atmosphere designed for relaxation.",
+        "value": {
+          "en": "Join us in Fnideq for exceptional coffee, fresh pastries, and an atmosphere designed for relaxation.",
+          "es": "Te esperamos en Fnideq con café excepcional, pasteles recién hechos y un ambiente pensado para relajarse.",
+          "ar": "زورونا في الفنيدق لتستمتعوا بقهوة مميزة ومخبوزات طازجة وأجواء تدعو للاسترخاء."
+        }
+      },
+      {
+        "_key": "extra-75",
+        "_type": "contentText",
+        "source": "Location",
+        "value": {
+          "en": "Location",
+          "es": "Location",
+          "ar": "Location"
+        }
+      },
+      {
+        "_key": "extra-76",
+        "_type": "contentText",
+        "source": "Opening Hours",
+        "value": {
+          "en": "Opening Hours",
+          "es": "Opening Hours",
+          "ar": "Opening Hours"
+        }
+      },
+      {
+        "_key": "extra-77",
+        "_type": "contentText",
+        "source": "Contact",
+        "value": {
+          "en": "Contact",
+          "es": "Contact",
+          "ar": "Contact"
+        }
+      },
+      {
+        "_key": "phone-78",
+        "_type": "contentText",
+        "source": "+212 663 46 41 74",
+        "value": {
+          "en": "+212 663 46 41 74",
+          "es": "+212 663 46 41 74",
+          "ar": "+212 663 46 41 74"
+        }
+      }
+    ],
+    "media": [
+      {
+        "_key": "image-3",
+        "_type": "contentMedia",
+        "source": "/media/our-story/ice-diploma.jpeg",
+        "label": "ice diploma"
+      },
+      {
+        "_key": "image-4",
+        "_type": "contentMedia",
+        "source": "/media/our-story/family-baking.jpg",
+        "label": "family baking"
+      },
+      {
+        "_key": "image-5",
+        "_type": "contentMedia",
+        "source": "/media/our-story/family-creation.jpg",
+        "label": "family creation"
+      }
+    ],
+    "links": [
+      {
+        "_key": "link-0",
+        "_type": "contentLink",
+        "source": "/our-story#career"
+      },
+      {
+        "_key": "link-1",
+        "_type": "contentLink",
+        "source": "/menu"
+      },
+      {
+        "_key": "link-2",
+        "_type": "contentLink",
+        "source": "https://maps.app.goo.gl/qEttWmKuwJgqPrZL9"
+      },
+      {
+        "_key": "link-3",
+        "_type": "contentLink",
+        "source": "tel:+212663464174"
+      },
+      {
+        "_key": "link-4",
+        "_type": "contentLink",
+        "source": "mailto:bakeryservice@alarak.com"
+      }
+    ],
+    "signatureCards": [
+      {
+        "_key": "item-0",
+        "number": "01",
+        "category": {
+          "en": "Bakery",
+          "es": "Panadería",
+          "ar": "مخبوزات"
+        },
+        "title": {
+          "en": "Freshly Baked",
+          "es": "Recién horneado",
+          "ar": "مخبوزات طازجة"
+        },
+        "description": {
+          "en": "Golden layers and flaky pastries, baked fresh in-house every morning.",
+          "es": "Hojaldres dorados y crujientes, recién horneados cada mañana.",
+          "ar": "طبقات ذهبية ومعجنات هشة تُخبز طازجة كل صباح في المخبز."
+        },
+        "alt": {
+          "en": "Alarak Freshly Baked Pastry",
+          "es": "Pastelería recién horneada de Alarak",
+          "ar": "مخبوزات طازجة من الأراك"
+        },
+        "href": "/menu",
+        "fallbackImage": "/media/cakes/signature-bakery.jpg",
+        "_type": "featureCard",
+        "fallbackIndex": 0
+      },
+      {
+        "_key": "item-1",
+        "number": "02",
+        "category": {
+          "en": "Pastry",
+          "es": "Pastelería",
+          "ar": "حلويات"
+        },
+        "title": {
+          "en": "Signature Pastries",
+          "es": "Pasteles de la casa",
+          "ar": "حلوياتنا المميزة"
+        },
+        "description": {
+          "en": "Made slowly. Finished with intention. An elegant touch to your day.",
+          "es": "Preparados con calma y terminados con esmero. Un toque especial para tu día.",
+          "ar": "تُحضّر على مهل وتُقدّم بعناية لتضيف لمسة أنيقة إلى يومك."
+        },
+        "alt": {
+          "en": "Alarak Signature Pastry",
+          "es": "Pastelería emblemática de Alarak",
+          "ar": "حلوى الأراك المميزة"
+        },
+        "href": "/menu",
+        "fallbackImage": "/media/cakes/signature-pastry.jpg",
+        "_type": "featureCard",
+        "fallbackIndex": 1
+      },
+      {
+        "_key": "item-2",
+        "number": "03",
+        "category": {
+          "en": "Desserts",
+          "es": "Postres",
+          "ar": "حلويات"
+        },
+        "title": {
+          "en": "Fine Desserts",
+          "es": "Postres delicados",
+          "ar": "حلويات راقية"
+        },
+        "description": {
+          "en": "A final touch worth staying for — beautiful, seasonal, made with care.",
+          "es": "Un último capricho para disfrutar sin prisa: bonito, de temporada y hecho con cuidado.",
+          "ar": "لمسة أخيرة تستحق البقاء؛ جميلة وموسمية ومُحضّرة بعناية."
+        },
+        "alt": {
+          "en": "Alarak Fine Dessert",
+          "es": "Postre refinado de Alarak",
+          "ar": "حلوى راقية من الأراك"
+        },
+        "href": "/menu",
+        "fallbackImage": "/media/cakes/signature-dessert.jpg",
+        "_type": "featureCard",
+        "fallbackIndex": 2
+      }
+    ],
+    "storyPhotos": [
+      {
+        "_key": "founder",
+        "id": "founder",
+        "alt": {
+          "en": "Abdellah El Idrissi in a New York restaurant",
+          "es": "Abdellah El Idrissi en un restaurante de Nueva York",
+          "ar": "عبد الله الإدريسي في مطعم بنيويورك"
+        },
+        "caption": {
+          "en": "Founder & Pastry Artisan",
+          "es": "Fundador y maestro pastelero",
+          "ar": "المؤسس وحرفي الحلويات"
+        },
+        "fallbackImage": "/media/brand/owner (2).png",
+        "_type": "storyPhoto",
+        "fallbackIndex": 0
+      },
+      {
+        "_key": "new-york",
+        "id": "new-york",
+        "alt": {
+          "en": "Abdellah and his daughter outside a New York bakery",
+          "es": "Abdellah y su hija frente a una panadería de Nueva York",
+          "ar": "عبد الله وابنته أمام مخبز في نيويورك"
+        },
+        "caption": {
+          "en": "New York · Where the journey grew",
+          "es": "Nueva York · Donde comenzó el camino",
+          "ar": "نيويورك · حيث نمت الرحلة"
+        },
+        "fallbackImage": "/media/our-story/family-new-york.jpg",
+        "_type": "storyPhoto",
+        "fallbackIndex": 1
+      },
+      {
+        "_key": "craft",
+        "id": "craft",
+        "alt": {
+          "en": "Abdellah preparing pastries in the Alarak kitchen",
+          "es": "Abdellah prepara pasteles en la cocina de Alarak",
+          "ar": "عبد الله يحضّر الحلويات في مطبخ الأراك"
+        },
+        "caption": {
+          "en": "The craft, made by hand",
+          "es": "El oficio, hecho a mano",
+          "ar": "حرفة تُصنع باليد"
+        },
+        "fallbackImage": "/media/cakes/Gemini_Generated_Image_srxds4srxds4srxd.jfif",
+        "_type": "storyPhoto",
+        "fallbackIndex": 2
+      }
+    ],
+    "heroTitle": {
+      "firstLine": {
+        "en": "Where",
+        "es": "Where",
+        "ar": "Where"
+      },
+      "highlight": {
+        "en": "Elegance",
+        "es": "Elegance",
+        "ar": "Elegance"
+      },
+      "secondLine": {
+        "en": "Meets Flavor",
+        "es": "Meets Flavor",
+        "ar": "Meets Flavor"
+      }
+    },
+    "heroDescription": {
+      "en": "Artisan pastries, specialty coffee, and moments worth savoring.",
+      "es": "Artisan pastries, specialty coffee, and moments worth savoring.",
+      "ar": "Artisan pastries, specialty coffee, and moments worth savoring."
+    },
+    "primaryButton": {
+      "label": {
+        "en": "Discover Our Menu",
+        "es": "Discover Our Menu",
+        "ar": "Discover Our Menu"
+      },
+      "href": "/media/menu/alarak-menu.pdf",
+      "newTab": true
+    },
+    "secondaryButton": {
+      "label": {
+        "en": "Visit Us",
+        "es": "Visit Us",
+        "ar": "Visit Us"
+      },
+      "href": "#story",
+      "newTab": false
+    }
+  },
+  "menuPage": {
+    "textEntries": [
+      {
+        "_key": "text-0",
+        "_type": "contentText",
+        "source": "Menu categories",
+        "value": {
+          "en": "Menu categories",
+          "es": "Categorías del menú",
+          "ar": "أقسام القائمة"
+        }
+      },
+      {
+        "_key": "text-1",
+        "_type": "contentText",
+        "source": "Coffee at Alarak",
+        "value": {
+          "en": "Coffee at Alarak",
+          "es": "El café en Alarak",
+          "ar": "القهوة في الأراك"
+        }
+      },
+      {
+        "_key": "text-2",
+        "_type": "contentText",
+        "source": "Our Coffee Selection",
+        "value": {
+          "en": "Our Coffee Selection",
+          "es": "Nuestra selección de café",
+          "ar": "تشكيلة القهوة لدينا"
+        }
+      },
+      {
+        "_key": "text-3",
+        "_type": "contentText",
+        "source": "Coffee is at the heart of our coffee and bakery experience. We carefully select every bean we serve.",
+        "value": {
+          "en": "Coffee is at the heart of our coffee and bakery experience. We carefully select every bean we serve.",
+          "es": "El café es el corazón de nuestra experiencia. Seleccionamos cuidadosamente cada grano que servimos.",
+          "ar": "القهوة في قلب تجربة المقهى والمخبوزات لدينا. نختار بعناية كل حبة قهوة نقدمها."
+        }
+      },
+      {
+        "_key": "text-4",
+        "_type": "contentText",
+        "source": "illy coffee bean selection with six varieties",
+        "value": {
+          "en": "illy coffee bean selection with six varieties",
+          "es": "Selección de granos de café illy con seis variedades",
+          "ar": "تشكيلة حبوب قهوة illy بستة أنواع"
+        }
+      },
+      {
+        "_key": "text-5",
+        "_type": "contentText",
+        "source": "01 · illy",
+        "value": {
+          "en": "01 · illy",
+          "es": "01 · illy",
+          "ar": "01 · illy"
+        }
+      },
+      {
+        "_key": "text-6",
+        "_type": "contentText",
+        "source": "100% Arabica",
+        "value": {
+          "en": "100% Arabica",
+          "es": "100% Arabica",
+          "ar": "100% Arabica"
+        }
+      },
+      {
+        "_key": "text-7",
+        "_type": "contentText",
+        "source": "Six origins, six experiences",
+        "value": {
+          "en": "Six origins, six experiences",
+          "es": "Seis orígenes, seis experiencias",
+          "ar": "ستة أنواع، ست تجارب"
+        }
+      },
+      {
+        "_key": "text-8",
+        "_type": "contentText",
+        "source": "Explore six illy coffee varieties: Classico, Intenso, Decaffeinato, Brasile, Guatemala, and Ethiopia.",
+        "value": {
+          "en": "Explore six illy coffee varieties: Classico, Intenso, Decaffeinato, Brasile, Guatemala, and Ethiopia.",
+          "es": "Descubre seis variedades de café illy: Classico, Intenso, Decaffeinato, Brasile, Guatemala y Ethiopia.",
+          "ar": "اكتشفوا ستة أنواع من قهوة illy: Classico وIntenso وDecaffeinato وBrasile وGuatemala وEthiopia."
+        }
+      },
+      {
+        "_key": "text-9",
+        "_type": "contentText",
+        "source": "illy coffee varieties",
+        "value": {
+          "en": "illy coffee varieties",
+          "es": "Variedades de café illy",
+          "ar": "أنواع قهوة illy"
+        }
+      },
+      {
+        "_key": "text-10",
+        "_type": "contentText",
+        "source": "Miscela d’Oro Espresso Gusto Classico coffee bag by the sea",
+        "value": {
+          "en": "Miscela d’Oro Espresso Gusto Classico coffee bag by the sea",
+          "es": "Paquete de café Miscela d’Oro Espresso Gusto Classico junto al mar",
+          "ar": "كيس قهوة Miscela d’Oro Espresso Gusto Classico بجانب البحر"
+        }
+      },
+      {
+        "_key": "text-11",
+        "_type": "contentText",
+        "source": "02 · Miscela d’Oro",
+        "value": {
+          "en": "02 · Miscela d’Oro",
+          "es": "02 · Miscela d’Oro",
+          "ar": "02 · Miscela d’Oro"
+        }
+      },
+      {
+        "_key": "text-12",
+        "_type": "contentText",
+        "source": "500 g",
+        "value": {
+          "en": "500 g",
+          "es": "500 g",
+          "ar": "500 g"
+        }
+      },
+      {
+        "_key": "text-13",
+        "_type": "contentText",
+        "source": "Italian coffee",
+        "value": {
+          "en": "Italian coffee",
+          "es": "Café italiano",
+          "ar": "قهوة إيطالية"
+        }
+      },
+      {
+        "_key": "text-14",
+        "_type": "contentText",
+        "source": "Espresso Gusto Classico",
+        "value": {
+          "en": "Espresso Gusto Classico",
+          "es": "Espresso Gusto Classico",
+          "ar": "Espresso Gusto Classico"
+        }
+      },
+      {
+        "_key": "text-15",
+        "_type": "contentText",
+        "source": "An Italian Arabica and Robusta blend, selected for its full espresso character and velvety crema.",
+        "value": {
+          "en": "An Italian Arabica and Robusta blend, selected for its full espresso character and velvety crema.",
+          "es": "Una mezcla italiana de arábica y robusta, elegida por su espresso intenso y su crema aterciopelada.",
+          "ar": "مزيج إيطالي من أرابيكا وروبوستا، اخترناه لمذاق إسبريسو غني وكريمة ناعمة."
+        }
+      },
+      {
+        "_key": "text-16",
+        "_type": "contentText",
+        "source": "Something sweet awaits",
+        "value": {
+          "en": "Something sweet awaits",
+          "es": "Te espera algo dulce",
+          "ar": "حلوى لذيذة بانتظارك"
+        }
+      },
+      {
+        "_key": "text-17",
+        "_type": "contentText",
+        "source": "Come taste it for yourself.",
+        "value": {
+          "en": "Come taste it for yourself.",
+          "es": "Ven a probarlo.",
+          "ar": "تعالوا لتتذوقوا بأنفسكم."
+        }
+      },
+      {
+        "_key": "text-18",
+        "_type": "contentText",
+        "source": "Visit Alarak →",
+        "value": {
+          "en": "Visit Alarak →",
+          "es": "Visita Alarak →",
+          "ar": "زوروا الأراك ←"
+        }
+      },
+      {
+        "_key": "text-19",
+        "_type": "contentText",
+        "source": "Our Menu",
+        "value": {
+          "en": "Our Menu",
+          "es": "Nuestra carta",
+          "ar": "قائمتنا"
+        }
+      },
+      {
+        "_key": "text-20",
+        "_type": "contentText",
+        "source": "Desserts Menu",
+        "value": {
+          "en": "Desserts Menu",
+          "es": "Carta de postres",
+          "ar": "قائمة الحلويات"
+        }
+      },
+      {
+        "_key": "text-21",
+        "_type": "contentText",
+        "source": "A sweeter side of AlArak",
+        "value": {
+          "en": "A sweeter side of AlArak",
+          "es": "El lado más dulce de Alarak",
+          "ar": "الجانب الأكثر حلاوة من الأراك"
+        }
+      },
+      {
+        "_key": "text-22",
+        "_type": "contentText",
+        "source": "Pistachio vanilla cake on a ceramic plate",
+        "value": {
+          "en": "Pistachio vanilla cake on a ceramic plate",
+          "es": "Tarta de pistacho y vainilla en un plato de cerámica",
+          "ar": "كعكة بالفستق والفانيليا على طبق خزفي"
+        }
+      },
+      {
+        "_key": "text-23",
+        "_type": "contentText",
+        "source": "Lemon cheesecake slice",
+        "value": {
+          "en": "Lemon cheesecake slice",
+          "es": "Porción de tarta de queso y limón",
+          "ar": "قطعة تشيز كيك بالليمون"
+        }
+      },
+      {
+        "_key": "extra-49",
+        "_type": "contentText",
+        "source": "Coffee",
+        "value": {
+          "en": "Coffee",
+          "es": "Coffee",
+          "ar": "Coffee"
+        }
+      }
+    ],
+    "media": [
+      {
+        "_key": "image-0",
+        "_type": "contentMedia",
+        "source": "/media/menu/coffee-illy-selection.jpeg",
+        "label": "coffee illy selection"
+      },
+      {
+        "_key": "image-1",
+        "_type": "contentMedia",
+        "source": "/media/menu/coffee-miscela-espresso.jpeg",
+        "label": "coffee miscela espresso"
+      },
+      {
+        "_key": "image-2",
+        "_type": "contentMedia",
+        "source": "/media/menu/menu-hero-pistachio.jpg",
+        "label": "menu hero pistachio"
+      },
+      {
+        "_key": "image-3",
+        "_type": "contentMedia",
+        "source": "/media/menu/menu-cta-lemon-cheesecake.jpg",
+        "label": "menu cta lemon cheesecake"
+      }
+    ],
+    "links": [
+      {
+        "_key": "link-0",
+        "_type": "contentLink",
+        "source": "/#visit"
+      }
+    ],
+    "menuCategories": [
+      {
+        "_key": "cakes-pastries",
+        "id": "cakes-pastries",
+        "label": {
+          "en": "Cakes & Pastries",
+          "es": "Tartas y pasteles",
+          "ar": "كعك ومعجنات"
+        },
+        "layout": "image-left",
+        "fallbackImage": "/media/menu/menu-cakes-chocolate.jpg",
+        "imageAlt": {
+          "en": "Chocolate mousse cake slice",
+          "es": "Porción de tarta de mousse de chocolate",
+          "ar": "قطعة كعكة موس الشوكولاتة"
+        },
+        "items": [
+          {
+            "_key": "item-0",
+            "name": {
+              "en": "Chocolate Mousse Cake",
+              "es": "Tarta de mousse de chocolate",
+              "ar": "كعكة موس الشوكولاتة"
+            },
+            "_type": "menuProduct",
+            "fallbackIndex": 0
+          },
+          {
+            "_key": "item-1",
+            "name": {
+              "en": "Carrot Cake",
+              "es": "Tarta de zanahoria",
+              "ar": "كعكة الجزر"
+            },
+            "_type": "menuProduct",
+            "fallbackIndex": 1
+          },
+          {
+            "_key": "item-2",
+            "name": {
+              "en": "Tiramisu",
+              "es": "Tiramisú",
+              "ar": "تيراميسو"
+            },
+            "_type": "menuProduct",
+            "fallbackIndex": 2
+          },
+          {
+            "_key": "item-3",
+            "name": {
+              "en": "Opera Cake",
+              "es": "Tarta Ópera",
+              "ar": "كعكة أوبرا"
+            },
+            "_type": "menuProduct",
+            "fallbackIndex": 3
+          },
+          {
+            "_key": "item-4",
+            "name": {
+              "en": "Sacher Cake",
+              "es": "Tarta Sacher",
+              "ar": "كعكة زاخَر"
+            },
+            "_type": "menuProduct",
+            "fallbackIndex": 4
+          },
+          {
+            "_key": "item-5",
+            "name": {
+              "en": "Pistachio Vanilla Cake",
+              "es": "Tarta de pistacho y vainilla",
+              "ar": "كعكة الفستق والفانيليا"
+            },
+            "_type": "menuProduct",
+            "fallbackIndex": 5
+          },
+          {
+            "_key": "item-6",
+            "name": {
+              "en": "Rocher Cake",
+              "es": "Tarta Rocher",
+              "ar": "كعكة روشيه"
+            },
+            "_type": "menuProduct",
+            "fallbackIndex": 6
+          },
+          {
+            "_key": "item-7",
+            "name": {
+              "en": "Almond Cake",
+              "es": "Tarta de almendra",
+              "ar": "كعكة اللوز"
+            },
+            "_type": "menuProduct",
+            "fallbackIndex": 7
+          },
+          {
+            "_key": "item-8",
+            "name": {
+              "en": "Lemon Cheesecake",
+              "es": "Tarta de queso y limón",
+              "ar": "تشيز كيك بالليمون"
+            },
+            "_type": "menuProduct",
+            "fallbackIndex": 8
+          },
+          {
+            "_key": "item-9",
+            "name": {
+              "en": "Profiteroles",
+              "es": "Profiteroles",
+              "ar": "بروفيتيرول"
+            },
+            "_type": "menuProduct",
+            "fallbackIndex": 9
+          }
+        ],
+        "_type": "menuCategory",
+        "fallbackIndex": 0
+      },
+      {
+        "_key": "trompe-loeil",
+        "id": "trompe-loeil",
+        "label": {
+          "en": "Trompe L'Œil Desserts",
+          "es": "Postres trompe-l’œil",
+          "ar": "حلويات بتصميم يخدع العين"
+        },
+        "layout": "image-right",
+        "fallbackImage": "/media/menu/menu-trompe-loeil.jpg",
+        "imageAlt": {
+          "en": "Coffee bean, mango, and strawberry trompe l'œil desserts",
+          "es": "Postres con forma de grano de café, mango y fresa",
+          "ar": "حلويات بتصميم يخدع العين على شكل حبة قهوة ومانجو وفراولة"
+        },
+        "items": [
+          {
+            "_key": "item-0",
+            "name": {
+              "en": "Coffee Bean Trompe L'Œil",
+              "es": "Postre con forma de grano de café",
+              "ar": "حلوى بشكل حبة قهوة"
+            },
+            "_type": "menuProduct",
+            "fallbackIndex": 0
+          },
+          {
+            "_key": "item-1",
+            "name": {
+              "en": "Mango Trompe L'Œil",
+              "es": "Postre con forma de mango",
+              "ar": "حلوى بشكل مانجو"
+            },
+            "_type": "menuProduct",
+            "fallbackIndex": 1
+          },
+          {
+            "_key": "item-2",
+            "name": {
+              "en": "Strawberry Trompe L'Œil",
+              "es": "Postre con forma de fresa",
+              "ar": "حلوى بشكل فراولة"
+            },
+            "_type": "menuProduct",
+            "fallbackIndex": 2
+          }
+        ],
+        "_type": "menuCategory",
+        "fallbackIndex": 1
+      },
+      {
+        "_key": "cookies",
+        "id": "cookies",
+        "label": {
+          "en": "Cookies",
+          "es": "Galletas",
+          "ar": "بسكويت"
+        },
+        "layout": "image-left",
+        "fallbackImage": "/media/menu/menu-cookies.jpg",
+        "imageAlt": {
+          "en": "Artisan chocolate chip cookies",
+          "es": "Galletas artesanales con pepitas de chocolate",
+          "ar": "بسكويت حرفي برقائق الشوكولاتة"
+        },
+        "items": [
+          {
+            "_key": "item-0",
+            "name": {
+              "en": "Chocolate Chip Cookie",
+              "es": "Galleta con pepitas de chocolate",
+              "ar": "كوكيز برقائق الشوكولاتة"
+            },
+            "_type": "menuProduct",
+            "fallbackIndex": 0
+          },
+          {
+            "_key": "item-1",
+            "name": {
+              "en": "Oat Cookies",
+              "es": "Galletas de avena",
+              "ar": "بسكويت الشوفان"
+            },
+            "_type": "menuProduct",
+            "fallbackIndex": 1
+          },
+          {
+            "_key": "item-2",
+            "name": {
+              "en": "Coconut Cookies",
+              "es": "Galletas de coco",
+              "ar": "بسكويت جوز الهند"
+            },
+            "_type": "menuProduct",
+            "fallbackIndex": 2
+          },
+          {
+            "_key": "item-3",
+            "name": {
+              "en": "Cantucci",
+              "es": "Cantucci",
+              "ar": "كانتو تشيني"
+            },
+            "_type": "menuProduct",
+            "fallbackIndex": 3
+          },
+          {
+            "_key": "item-4",
+            "name": {
+              "en": "Matcha Cookies",
+              "es": "Galletas de matcha",
+              "ar": "بسكويت الماتشا"
+            },
+            "_type": "menuProduct",
+            "fallbackIndex": 4
+          },
+          {
+            "_key": "item-5",
+            "name": {
+              "en": "Dark Chocolate Cookies",
+              "es": "Galletas de chocolate negro",
+              "ar": "بسكويت الشوكولاتة الداكنة"
+            },
+            "_type": "menuProduct",
+            "fallbackIndex": 5
+          }
+        ],
+        "_type": "menuCategory",
+        "fallbackIndex": 2
+      }
+    ],
+    "coffeeVariants": [
+      "Classico",
+      "Intenso",
+      "Decaffeinato",
+      "Brasile",
+      "Guatemala",
+      "Ethiopia"
+    ]
+  },
+  "storyPage": {
+    "textEntries": [
+      {
+        "_key": "text-0",
+        "_type": "contentText",
+        "source": "Our Story",
+        "value": {
+          "en": "Our Story",
+          "es": "Nuestra historia",
+          "ar": "قصتنا"
+        }
+      },
+      {
+        "_key": "text-1",
+        "_type": "contentText",
+        "source": "Crafting Moments of Pure Warmth &",
+        "value": {
+          "en": "Crafting Moments of Pure Warmth &",
+          "es": "Creamos momentos de calidez y",
+          "ar": "نصنع لحظات من الدفء و"
+        }
+      },
+      {
+        "_key": "text-2",
+        "_type": "contentText",
+        "source": "Artisan Mastery in Fnideq",
+        "value": {
+          "en": "Artisan Mastery in Fnideq",
+          "es": "Maestría artesanal en Fnideq",
+          "ar": "حرفية متقنة في الفنيدق"
+        }
+      },
+      {
+        "_key": "text-3",
+        "_type": "contentText",
+        "source": "Specialty coffee and artisan pastry, made slowly in Fnideq — a warm place to pause, savor, and return to.",
+        "value": {
+          "en": "Specialty coffee and artisan pastry, made slowly in Fnideq — a warm place to pause, savor, and return to.",
+          "es": "Café de especialidad y pastelería artesanal, elaborados con calma en Fnideq: un lugar acogedor para hacer una pausa, disfrutar y volver.",
+          "ar": "قهوة مختصة وحلويات يدوية تُحضّر بعناية في الفنيدق، في مكان دافئ للاستراحة والتذوق والعودة إليه."
+        }
+      },
+      {
+        "_key": "text-4",
+        "_type": "contentText",
+        "source": "Filter credentials",
+        "value": {
+          "en": "Filter credentials",
+          "es": "Filtrar diplomas y certificados",
+          "ar": "تصفية المؤهلات"
+        }
+      },
+      {
+        "_key": "text-5",
+        "_type": "contentText",
+        "source": "Institute of Culinary Education",
+        "value": {
+          "en": "Institute of Culinary Education",
+          "es": "Institute of Culinary Education",
+          "ar": "معهد Institute of Culinary Education"
+        }
+      },
+      {
+        "_key": "text-6",
+        "_type": "contentText",
+        "source": "Hours of training",
+        "value": {
+          "en": "Hours of training",
+          "es": "Horas de formación",
+          "ar": "ساعة تدريب"
+        }
+      },
+      {
+        "_key": "extra-26",
+        "_type": "contentText",
+        "source": "All",
+        "value": {
+          "en": "All",
+          "es": "All",
+          "ar": "All"
+        }
+      },
+      {
+        "_key": "extra-27",
+        "_type": "contentText",
+        "source": "Diplomas",
+        "value": {
+          "en": "Diplomas",
+          "es": "Diplomas",
+          "ar": "Diplomas"
+        }
+      },
+      {
+        "_key": "extra-28",
+        "_type": "contentText",
+        "source": "Certificates",
+        "value": {
+          "en": "Certificates",
+          "es": "Certificates",
+          "ar": "Certificates"
+        }
+      }
+    ],
+    "media": [
+      {
+        "_key": "image-3",
+        "_type": "contentMedia",
+        "source": "/media/our-story/owner (2).png",
+        "label": "owner (2)"
+      }
+    ],
+    "links": [],
+    "credentials": [
+      {
+        "_key": "item-0",
+        "type": "diploma",
+        "imageAlt": {
+          "en": "Abdellah El Idrissi's Culinary Arts diploma",
+          "es": "Abdellah El Idrissi's Culinary Arts diploma",
+          "ar": "Abdellah El Idrissi's Culinary Arts diploma"
+        },
+        "number": "01",
+        "title": {
+          "en": "Culinary Arts Diploma",
+          "es": "Diploma en Artes Culinarias",
+          "ar": "دبلوم فنون الطهي"
+        },
+        "year": "2016",
+        "hours": "720",
+        "honor": {
+          "en": "Graduated with Highest Honors",
+          "es": "Graduado con máximos honores",
+          "ar": "تخرج بمرتبة الشرف العليا"
+        },
+        "description": {
+          "en": "Intensive training in cooking, nutrition, food preparation, and culinary techniques at the Institute of Culinary Education in New York. Graduated with Highest Honors.",
+          "es": "Formación intensiva en cocina, nutrición, preparación de alimentos y técnicas culinarias en el Institute of Culinary Education de Nueva York. Graduado con máximos honores.",
+          "ar": "تدريب مكثف في الطهي والتغذية وتحضير الطعام وتقنيات فنون الطهي في معهد Institute of Culinary Education بنيويورك. تخرج بمرتبة الشرف العليا."
+        },
+        "caption": {
+          "en": "Culinary Arts · 2016",
+          "es": "Artes Culinarias · 2016",
+          "ar": "فنون الطهي · 2016"
+        },
+        "fallbackImage": "/media/our-story/ice-culinary-diploma.jpeg",
+        "_type": "storyCredential",
+        "fallbackIndex": 0
+      },
+      {
+        "_key": "item-1",
+        "type": "diploma",
+        "imageAlt": {
+          "en": "Abdellah El Idrissi's Pastry and Baking Arts diploma",
+          "es": "Abdellah El Idrissi's Pastry and Baking Arts diploma",
+          "ar": "Abdellah El Idrissi's Pastry and Baking Arts diploma"
+        },
+        "number": "02",
+        "title": {
+          "en": "Pastry & Baking Arts Diploma",
+          "es": "Diploma en Pastelería y Panadería",
+          "ar": "دبلوم فنون الحلويات والخبز"
+        },
+        "year": "2018",
+        "hours": "600",
+        "honor": {
+          "en": "Graduated with Highest Honors",
+          "es": "Graduado con máximos honores",
+          "ar": "تخرج بمرتبة الشرف العليا"
+        },
+        "description": {
+          "en": "Intensive training in pastry, baking, dessert production, and confectionery arts at the Institute of Culinary Education in New York. Graduated with Highest Honors.",
+          "es": "Formación intensiva en pastelería, panadería, elaboración de postres y confitería en el Institute of Culinary Education de Nueva York. Graduado con máximos honores.",
+          "ar": "تدريب مكثف في الحلويات والخبز وإعداد الحلويات وفنون السكر في معهد Institute of Culinary Education بنيويورك. تخرج بمرتبة الشرف العليا."
+        },
+        "caption": {
+          "en": "Pastry & Baking Arts · 2018",
+          "es": "Pastelería y Panadería · 2018",
+          "ar": "فنون الحلويات والخبز · 2018"
+        },
+        "fallbackImage": "/media/our-story/ice-diploma.jpeg",
+        "_type": "storyCredential",
+        "fallbackIndex": 1
+      },
+      {
+        "_key": "item-2",
+        "type": "certificate",
+        "imageAlt": {
+          "en": "Abdellah El Idrissi's New York City Department of Health and Mental Hygiene food protection certificate",
+          "es": "Abdellah El Idrissi's New York City Department of Health and Mental Hygiene food protection certificate",
+          "ar": "Abdellah El Idrissi's New York City Department of Health and Mental Hygiene food protection certificate"
+        },
+        "number": "03",
+        "title": {
+          "en": "Food Protection Certificate",
+          "es": "Certificado de seguridad alimentaria",
+          "ar": "شهادة سلامة الأغذية"
+        },
+        "year": "2018",
+        "hours": "Food Safety",
+        "honor": {
+          "en": "Issued by NYC Health",
+          "es": "Emitido por NYC Health",
+          "ar": "صادرة عن إدارة الصحة في نيويورك"
+        },
+        "description": {
+          "en": "Qualified under the New York City Department of Health and Mental Hygiene in food protection standards and safe food handling practices, strengthening his commitment to trusted, high-standard preparation.",
+          "es": "Qualified under the New York City Department of Health and Mental Hygiene in food protection standards and safe food handling practices, strengthening his commitment to trusted, high-standard preparation.",
+          "ar": "Qualified under the New York City Department of Health and Mental Hygiene in food protection standards and safe food handling practices, strengthening his commitment to trusted, high-standard preparation."
+        },
+        "caption": {
+          "en": "Food Protection · 2018",
+          "es": "Seguridad alimentaria · 2018",
+          "ar": "سلامة الأغذية · 2018"
+        },
+        "fallbackImage": "/media/our-story/carte_sticker_originale (6).png",
+        "_type": "storyCredential",
+        "fallbackIndex": 2
+      }
+    ]
+  },
+  "galleryPage": {
+    "textEntries": [
+      {
+        "_key": "text-0",
+        "_type": "contentText",
+        "source": "Photo coming soon",
+        "value": {
+          "en": "Photo coming soon",
+          "es": "Foto próximamente",
+          "ar": "الصورة قريباً"
+        }
+      },
+      {
+        "_key": "text-1",
+        "_type": "contentText",
+        "source": "Atmosphere & moments",
+        "value": {
+          "en": "Atmosphere & moments",
+          "es": "Ambiente y momentos",
+          "ar": "أجواء ولحظات"
+        }
+      },
+      {
+        "_key": "text-2",
+        "_type": "contentText",
+        "source": "Our Gallery",
+        "value": {
+          "en": "Our Gallery",
+          "es": "Nuestra galería",
+          "ar": "معرضنا"
+        }
+      },
+      {
+        "_key": "text-3",
+        "_type": "contentText",
+        "source": "A visual journey through artisanal craft, warm ambience, and specialty coffee in Fnideq. Every corner is made for slowing down and savoring the moment.",
+        "value": {
+          "en": "A visual journey through artisanal craft, warm ambience, and specialty coffee in Fnideq. Every corner is made for slowing down and savoring the moment.",
+          "es": "Un recorrido visual por la artesanía, el ambiente acogedor y el café de especialidad en Fnideq. Cada rincón invita a bajar el ritmo y disfrutar del momento.",
+          "ar": "رحلة بصرية بين الحرفة الأصيلة والأجواء الدافئة والقهوة المختصة في الفنيدق."
+        }
+      },
+      {
+        "_key": "text-4",
+        "_type": "contentText",
+        "source": "Gallery photos",
+        "value": {
+          "en": "Gallery photos",
+          "es": "Fotos de la galería",
+          "ar": "صور المعرض"
+        }
+      },
+      {
+        "_key": "text-5",
+        "_type": "contentText",
+        "source": "View photo",
+        "value": {
+          "en": "View photo",
+          "es": "Ver foto",
+          "ar": "عرض الصورة"
+        }
+      },
+      {
+        "_key": "text-6",
+        "_type": "contentText",
+        "source": "Close photo viewer",
+        "value": {
+          "en": "Close photo viewer",
+          "es": "Cerrar visor de fotos",
+          "ar": "إغلاق الصورة"
+        }
+      },
+      {
+        "_key": "text-7",
+        "_type": "contentText",
+        "source": "Previous photo",
+        "value": {
+          "en": "Previous photo",
+          "es": "Foto anterior",
+          "ar": "الصورة السابقة"
+        }
+      },
+      {
+        "_key": "text-8",
+        "_type": "contentText",
+        "source": "Next photo",
+        "value": {
+          "en": "Next photo",
+          "es": "Foto siguiente",
+          "ar": "الصورة التالية"
+        }
+      },
+      {
+        "_key": "text-9",
+        "_type": "contentText",
+        "source": "The craft story",
+        "value": {
+          "en": "The craft story",
+          "es": "La historia del oficio",
+          "ar": "قصة الحرفة"
+        }
+      },
+      {
+        "_key": "text-10",
+        "_type": "contentText",
+        "source": "Close viewer",
+        "value": {
+          "en": "Close viewer",
+          "es": "Cerrar visor",
+          "ar": "إغلاق"
+        }
+      },
+      {
+        "_key": "text-11",
+        "_type": "contentText",
+        "source": "Share your Alarak moments",
+        "value": {
+          "en": "Share your Alarak moments",
+          "es": "Comparte tus momentos Alarak",
+          "ar": "شاركوا لحظاتكم مع الأراك"
+        }
+      },
+      {
+        "_key": "text-12",
+        "_type": "contentText",
+        "source": "Tag us at",
+        "value": {
+          "en": "Tag us at",
+          "es": "Etiquétanos en",
+          "ar": "أشيروا إلينا على"
+        }
+      },
+      {
+        "_key": "text-13",
+        "_type": "contentText",
+        "source": "@alarak.ma",
+        "value": {
+          "en": "@alarak.ma",
+          "es": "@alarak.ma",
+          "ar": "@alarak.ma"
+        }
+      },
+      {
+        "_key": "text-14",
+        "_type": "contentText",
+        "source": "on Instagram to be featured in our community gallery.",
+        "value": {
+          "en": "on Instagram to be featured in our community gallery.",
+          "es": "en Instagram para aparecer en nuestra galería comunitaria.",
+          "ar": "على إنستغرام لتظهروا في معرض مجتمعنا."
+        }
+      },
+      {
+        "_key": "text-15",
+        "_type": "contentText",
+        "source": "Follow",
+        "value": {
+          "en": "Follow",
+          "es": "Síguenos",
+          "ar": "تابعونا"
+        }
+      },
+      {
+        "_key": "text-16",
+        "_type": "contentText",
+        "source": " @alarak.ma ",
+        "value": {
+          "en": " @alarak.ma ",
+          "es": " @alarak.ma ",
+          "ar": " @alarak.ma "
+        }
+      },
+      {
+        "_key": "text-17",
+        "_type": "contentText",
+        "source": "Visit & taste",
+        "value": {
+          "en": "Visit & taste",
+          "es": "Visítanos y disfruta",
+          "ar": "زوروا وتذوقوا"
+        }
+      },
+      {
+        "_key": "text-18",
+        "_type": "contentText",
+        "source": "Experience Alarak in person",
+        "value": {
+          "en": "Experience Alarak in person",
+          "es": "Vive la experiencia Alarak",
+          "ar": "عِش تجربة الأراك"
+        }
+      },
+      {
+        "_key": "text-19",
+        "_type": "contentText",
+        "source": "Find us in Fnideq for specialty coffee, freshly baked pastries, and a warm place to pause.",
+        "value": {
+          "en": "Find us in Fnideq for specialty coffee, freshly baked pastries, and a warm place to pause.",
+          "es": "Visítanos en Fnideq para disfrutar de café de especialidad, pasteles recién hechos y un lugar acogedor.",
+          "ar": "تفضلوا بزيارتنا في الفنيدق للاستمتاع بالقهوة المختصة والمعجنات الطازجة في أجواء دافئة."
+        }
+      },
+      {
+        "_key": "text-20",
+        "_type": "contentText",
+        "source": "Immeuble Alia, 18, Fnideq 93100",
+        "value": {
+          "en": "Immeuble Alia, 18, Fnideq 93100",
+          "es": "Immeuble Alia, 18, Fnideq 93100",
+          "ar": "عمارة علياء، 18، الفنيدق 93100"
+        }
+      },
+      {
+        "_key": "text-21",
+        "_type": "contentText",
+        "source": "Daily",
+        "value": {
+          "en": "Daily",
+          "es": "Todos los días",
+          "ar": "يومياً"
+        }
+      },
+      {
+        "_key": "text-22",
+        "_type": "contentText",
+        "source": "07:00 – 22:00",
+        "value": {
+          "en": "07:00 – 22:00",
+          "es": "07:00–22:00",
+          "ar": "07:00 – 22:00"
+        }
+      },
+      {
+        "_key": "text-24",
+        "_type": "contentText",
+        "source": "Artisan Coffee",
+        "value": {
+          "en": "Artisan Coffee",
+          "es": "Café artesanal",
+          "ar": "قهوة حرفية"
+        }
+      },
+      {
+        "_key": "text-28",
+        "_type": "contentText",
+        "source": "Fresh Bakery",
+        "value": {
+          "en": "Fresh Bakery",
+          "es": "Panadería recién hecha",
+          "ar": "مخبوزات طازجة"
+        }
+      },
+      {
+        "_key": "text-32",
+        "_type": "contentText",
+        "source": "Interior & Vibe",
+        "value": {
+          "en": "Interior & Vibe",
+          "es": "Interior y ambiente",
+          "ar": "المكان والأجواء"
+        }
+      },
+      {
+        "_key": "text-36",
+        "_type": "contentText",
+        "source": "Barista Craft",
+        "value": {
+          "en": "Barista Craft",
+          "es": "El oficio del barista",
+          "ar": "إبداع الباريستا"
+        }
+      },
+      {
+        "_key": "extra-54",
+        "_type": "contentText",
+        "source": "All",
+        "value": {
+          "en": "All",
+          "es": "All",
+          "ar": "All"
+        }
+      }
+    ],
+    "media": [],
+    "links": [
+      {
+        "_key": "link-0",
+        "_type": "contentLink",
+        "source": "https://www.instagram.com/alarak.ma?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw=="
+      }
+    ],
+    "galleryItems": [
+      {
+        "_key": "1",
+        "id": "1",
+        "title": {
+          "en": "Signature Pour-Over Precision",
+          "es": "Precisión en nuestro café de filtro",
+          "ar": "دقة تحضير القهوة المقطّرة المميزة"
+        },
+        "category": {
+          "en": "Artisan Coffee",
+          "es": "Café artesanal",
+          "ar": "قهوة حرفية"
+        },
+        "categorySlug": "coffee",
+        "caption": {
+          "en": "Handcrafted single-origin pour-over coffee brewed with meticulous attention to temperature and grind precision.",
+          "es": "Café de filtro artesanal de origen único, preparado con atención meticulosa a la temperatura y la molienda.",
+          "ar": "قهوة مقطرة يدوياً من مصدر واحد، تُحضّر بعناية لضبط الحرارة ودرجة الطحن."
+        },
+        "story": {
+          "en": "Sourced directly from high-altitude Ethiopian farms, our bloom time is timed to the second to unlock delicate floral and bergamot notes.",
+          "es": "Procedente directamente de fincas etíopes de altura, controlamos el tiempo de preinfusión al segundo para revelar delicadas notas florales y de bergamota.",
+          "ar": "نختار حبوبنا من مزارع إثيوبية مرتفعة، ونضبط وقت التخمير بدقة لإبراز نكهات الأزهار والبرغموت."
+        },
+        "fallbackImage": "/media/gallery/Gemini_Generated_Image_20nyk020nyk020ny.jfif",
+        "_type": "galleryPhoto",
+        "fallbackIndex": 0
+      },
+      {
+        "_key": "2",
+        "id": "2",
+        "title": {
+          "en": "Golden Flake Croissant",
+          "es": "Cruasán dorado y hojaldrado",
+          "ar": "كرواسون ذهبي مورّق"
+        },
+        "category": {
+          "en": "Fresh Bakery",
+          "es": "Panadería recién hecha",
+          "ar": "مخبوزات طازجة"
+        },
+        "categorySlug": "bakery",
+        "caption": {
+          "en": "Freshly baked daily using Normandy butter for 72-hour fermented laminated perfection.",
+          "es": "Horneado cada día con mantequilla de Normandía y una fermentación de 72 horas para lograr un hojaldre perfecto.",
+          "ar": "يُخبز يومياً بزبدة نورماندي وعجين مورّق مُخمّر لمدة 72 ساعة."
+        },
+        "story": {
+          "en": "Our master baker begins at 4:00 AM every morning ensuring that classic, shattered-glass crunch on the first bite.",
+          "es": "Nuestro maestro panadero empieza cada día a las 4:00 para lograr ese crujido ligero y perfecto desde el primer bocado.",
+          "ar": "يبدأ خبازنا المحترف عمله يومياً عند الرابعة صباحاً ليمنحكم قرمشة مورّقة من أول لقمة."
+        },
+        "fallbackImage": "/media/gallery/Gemini_Generated_Image_2p8i952p8i952p8i.jfif",
+        "_type": "galleryPhoto",
+        "fallbackIndex": 1
+      },
+      {
+        "_key": "3",
+        "id": "3",
+        "title": {
+          "en": "Sanctuary of Warmth & Quiet",
+          "es": "Un refugio cálido y tranquilo",
+          "ar": "مساحة للدفء والهدوء"
+        },
+        "category": {
+          "en": "Interior & Vibe",
+          "es": "Interior y ambiente",
+          "ar": "المكان والأجواء"
+        },
+        "categorySlug": "interior",
+        "caption": {
+          "en": "Thoughtfully designed space blending modern Moroccan architecture with warm brass and oak accents.",
+          "es": "Un espacio diseñado con esmero que combina arquitectura marroquí contemporánea con cálidos detalles de latón y roble.",
+          "ar": "مساحة مصممة بعناية تجمع العمارة المغربية العصرية بلمسات من النحاس الدافئ وخشب البلوط."
+        },
+        "story": {
+          "en": "Architecturally crafted to evoke a sense of calm in the heart of Fnideq, offering cozy alcoves and natural sunlight.",
+          "es": "Diseñado para transmitir serenidad en el corazón de Fnideq, con rincones acogedores y luz natural.",
+          "ar": "في قلب الفنيدق، تمنح الزوايا المريحة والضوء الطبيعي المكان أجواءً هادئة."
+        },
+        "fallbackImage": "/media/gallery/Gemini_Generated_Image_47x2nf47x2nf47x2.jfif",
+        "_type": "galleryPhoto",
+        "fallbackIndex": 2
+      },
+      {
+        "_key": "4",
+        "id": "4",
+        "title": {
+          "en": "Velvet Espresso & Latte Art",
+          "es": "Espresso aterciopelado y arte latte",
+          "ar": "إسبريسو مخملي وفن اللاتيه"
+        },
+        "category": {
+          "en": "Barista Craft",
+          "es": "El oficio del barista",
+          "ar": "إبداع الباريستا"
+        },
+        "categorySlug": "craft",
+        "caption": {
+          "en": "Silky microfoam etched with precision over our dark chocolate & hazelnut house espresso blend.",
+          "es": "Microespuma sedosa dibujada con precisión sobre nuestro espresso de la casa con chocolate negro y avellana.",
+          "ar": "رغوة حليب ناعمة مرسومة بإتقان فوق إسبريسو الدار بنكهة الشوكولاتة الداكنة والبندق."
+        },
+        "story": {
+          "en": "Every cup is poured with artistic pride by our senior baristas who train in sensory calibration weekly.",
+          "es": "Nuestros baristas expertos sirven cada taza con orgullo artístico y perfeccionan semanalmente su calibración sensorial.",
+          "ar": "يُحضّر خبراء القهوة كل فنجان بإبداع، ويطوّرون حاسة التذوق لديهم أسبوعياً."
+        },
+        "fallbackImage": "/media/gallery/Gemini_Generated_Image_7z15m27z15m27z15.jfif",
+        "_type": "galleryPhoto",
+        "fallbackIndex": 3
+      },
+      {
+        "_key": "5",
+        "id": "5",
+        "title": {
+          "en": "Artisan Sourdough & Pastry Display",
+          "es": "Exposición de masa madre y pasteles artesanales",
+          "ar": "خبز العجين المخمّر وتشكيلة المخبوزات"
+        },
+        "category": {
+          "en": "Fresh Bakery",
+          "es": "Panadería recién hecha",
+          "ar": "مخبوزات طازجة"
+        },
+        "categorySlug": "bakery",
+        "caption": {
+          "en": "A daily selection of rustic sourdough loaves, cardamom knots, and seasonal tartlets.",
+          "es": "Una selección diaria de panes rústicos de masa madre, nudos de cardamomo y tartaletas de temporada.",
+          "ar": "تشكيلة يومية من خبز العجين المخمّر ولفائف الهيل وتارتات الموسم."
+        },
+        "story": {
+          "en": "Made with wild sourdough starter nurtured in Fnideq since Alarak opened its doors.",
+          "es": "Elaborados con masa madre natural cuidada en Fnideq desde que Alarak abrió sus puertas.",
+          "ar": "نعتني بخميرة العجين الطبيعية في الفنيدق منذ افتتاح الأراك."
+        },
+        "fallbackImage": "/media/gallery/Gemini_Generated_Image_87htao87htao87ht.jfif",
+        "_type": "galleryPhoto",
+        "fallbackIndex": 4
+      },
+      {
+        "_key": "6",
+        "id": "6",
+        "title": {
+          "en": "Evening Glow at Alarak",
+          "es": "El cálido ambiente nocturno de Alarak",
+          "ar": "أجواء الأراك المسائية"
+        },
+        "category": {
+          "en": "Interior & Vibe",
+          "es": "Interior y ambiente",
+          "ar": "المكان والأجواء"
+        },
+        "categorySlug": "interior",
+        "caption": {
+          "en": "As dusk falls, ambient warm lighting transforms the cafe into an intimate evening retreat.",
+          "es": "Al caer la tarde, la iluminación cálida convierte la cafetería en un refugio íntimo.",
+          "ar": "مع حلول المساء، تحوّل الإضاءة الدافئة المقهى إلى مساحة هادئة وحميمة."
+        },
+        "story": {
+          "en": "Custom dimmable lighting and curated lounge acoustics create the perfect ambiance for evening conversations.",
+          "es": "La iluminación regulable y una acústica cuidada crean el ambiente perfecto para conversar por la noche.",
+          "ar": "تمنح الإضاءة القابلة للتعديل والأجواء الصوتية الهادئة أمسياتكم طابعاً مثالياً للحديث."
+        },
+        "fallbackImage": "/media/gallery/Gemini_Generated_Image_vy6r50vy6r50vy6r.jfif",
+        "_type": "galleryPhoto",
+        "fallbackIndex": 5
+      },
+      {
+        "_key": "7",
+        "id": "7",
+        "title": {
+          "en": "Cold Brew Infusion Tower",
+          "es": "Torre de infusión de café en frío",
+          "ar": "برج استخلاص القهوة الباردة"
+        },
+        "category": {
+          "en": "Artisan Coffee",
+          "es": "Café artesanal",
+          "ar": "قهوة حرفية"
+        },
+        "categorySlug": "coffee",
+        "caption": {
+          "en": "Slow 18-hour Dutch cold drip extraction producing smooth, low-acidity elixir with notes of plum.",
+          "es": "Extracción lenta por goteo en frío durante 18 horas para obtener un café suave, de baja acidez y con notas de ciruela.",
+          "ar": "استخلاص بارد هولندي بطيء لمدة 18 ساعة، بمذاق ناعم وحموضة خفيفة ونفحات البرقوق."
+        },
+        "story": {
+          "en": "Extracted drop-by-drop over 18 hours to preserve volatile aromatic compounds without bitterness.",
+          "es": "Extraído gota a gota durante 18 horas para conservar sus aromas sin amargor.",
+          "ar": "يُستخلص قطرة قطرة على مدى 18 ساعة للحفاظ على عبيره دون مرارة."
+        },
+        "fallbackImage": "/media/gallery/Gemini_Generated_Image_h625j2h625j2h625.jfif",
+        "_type": "galleryPhoto",
+        "fallbackIndex": 6
+      },
+      {
+        "_key": "8",
+        "id": "8",
+        "title": {
+          "en": "Pistachio Paris-Brest",
+          "es": "Paris-Brest de pistacho",
+          "ar": "باريس بريست بالفستق"
+        },
+        "category": {
+          "en": "Fresh Bakery",
+          "es": "Panadería recién hecha",
+          "ar": "مخبوزات طازجة"
+        },
+        "categorySlug": "bakery",
+        "caption": {
+          "en": "Choux pastry ring filled with roasted Sicilian pistachio praline cream and dusted with icing sugar.",
+          "es": "Corona de pasta choux rellena de crema de praliné de pistacho siciliano tostado y espolvoreada con azúcar glas.",
+          "ar": "حلقة من عجينة الشو محشوة بكريمة برالين الفستق الصقلي ومزيّنة بالسكر الناعم."
+        },
+        "story": {
+          "en": "Our signature homage to classical French patisserie elevated with premium Mediterranean ingredients.",
+          "es": "Nuestro homenaje a la pastelería clásica francesa, realzado con ingredientes mediterráneos de primera calidad.",
+          "ar": "تحية من الأراك للحلويات الفرنسية التقليدية، بمكونات متوسطية فاخرة."
+        },
+        "fallbackImage": "/media/gallery/Gemini_Generated_Image_kcypslkcypslkcyp.jfif",
+        "_type": "galleryPhoto",
+        "fallbackIndex": 7
+      },
+      {
+        "_key": "9",
+        "id": "9",
+        "title": {
+          "en": "Barista Grind Calibration",
+          "es": "Ajuste de molienda del barista",
+          "ar": "ضبط طحن القهوة باحتراف"
+        },
+        "category": {
+          "en": "Barista Craft",
+          "es": "El oficio del barista",
+          "ar": "إبداع الباريستا"
+        },
+        "categorySlug": "craft",
+        "caption": {
+          "en": "Dialing in the espresso grind multiple times a day to adapt to humidity and temperature changes.",
+          "es": "Ajustamos varias veces al día la molienda del espresso para adaptarnos a los cambios de humedad y temperatura.",
+          "ar": "نضبط درجة طحن الإسبريسو مرات عدة يومياً وفق تغيرات الرطوبة والحرارة."
+        },
+        "story": {
+          "en": "Consistency is our obsessive standard. Humidity in Fnideq shifts daily, and our grind size adjusts in microns.",
+          "es": "La constancia es nuestro estándar. Como la humedad en Fnideq cambia cada día, ajustamos la molienda con precisión micrométrica.",
+          "ar": "الثبات معيارنا الدقيق؛ تتغير الرطوبة في الفنيدق يومياً، لذلك نعدّل الطحن بأجزاء دقيقة."
+        },
+        "fallbackImage": "/media/gallery/Gemini_Generated_Image_ktg882ktg882ktg8.jfif",
+        "_type": "galleryPhoto",
+        "fallbackIndex": 8
+      }
+    ]
+  },
+  "visitPage": {
+    "textEntries": [
+      {
+        "_key": "text-0",
+        "_type": "contentText",
+        "source": "Alarak Coffee & Bakery – Coming Soon",
+        "value": {
+          "en": "Alarak Coffee & Bakery – Coming Soon",
+          "es": "Alarak Coffee & Bakery – Próximamente",
+          "ar": "الأراك للقهوة والمخبوزات — قريباً"
+        }
+      },
+      {
+        "_key": "text-1",
+        "_type": "contentText",
+        "source": "Our Location",
+        "value": {
+          "en": "Our Location",
+          "es": "Nuestra ubicación",
+          "ar": "موقعنا"
+        }
+      },
+      {
+        "_key": "text-2",
+        "_type": "contentText",
+        "source": "Coming Soon",
+        "value": {
+          "en": "Coming Soon",
+          "es": "Próximamente",
+          "ar": "قريباً"
+        }
+      },
+      {
+        "_key": "text-3",
+        "_type": "contentText",
+        "source": "Visit Us",
+        "value": {
+          "en": "Visit Us",
+          "es": "Visítanos",
+          "ar": "زورونا"
+        }
+      },
+      {
+        "_key": "text-4",
+        "_type": "contentText",
+        "source": "Come by,",
+        "value": {
+          "en": "Come by,",
+          "es": "Ven a visitarnos,",
+          "ar": "زورونا،"
+        }
+      },
+      {
+        "_key": "text-5",
+        "_type": "contentText",
+        "source": "stay awhile.",
+        "value": {
+          "en": "stay awhile.",
+          "es": "quédate un rato.",
+          "ar": "وأمضوا وقتاً جميلاً."
+        }
+      },
+      {
+        "_key": "text-6",
+        "_type": "contentText",
+        "source": "We'd love to welcome you to Alarak. Enjoy our coffee, fresh pastries and handcrafted cakes in a warm and relaxed atmosphere.",
+        "value": {
+          "en": "We'd love to welcome you to Alarak. Enjoy our coffee, fresh pastries and handcrafted cakes in a warm and relaxed atmosphere.",
+          "es": "Nos encantará recibirte en Alarak. Disfruta de nuestro café, pasteles recién hechos y tartas artesanales en un ambiente cálido y relajado.",
+          "ar": "يسعدنا استقبالكم في الأراك. استمتعوا بقهوتنا ومعجناتنا الطازجة وكعكاتنا المصنوعة يدوياً في أجواء دافئة ومريحة."
+        }
+      },
+      {
+        "_key": "text-7",
+        "_type": "contentText",
+        "source": "Immeuble Alia, 18, Fnideq 93100",
+        "value": {
+          "en": "Immeuble Alia, 18, Fnideq 93100",
+          "es": "Immeuble Alia, 18, Fnideq 93100",
+          "ar": "عمارة علياء، 18، الفنيدق 93100"
+        }
+      },
+      {
+        "_key": "text-8",
+        "_type": "contentText",
+        "source": "Daily",
+        "value": {
+          "en": "Daily",
+          "es": "Todos los días",
+          "ar": "يومياً"
+        }
+      },
+      {
+        "_key": "text-9",
+        "_type": "contentText",
+        "source": "07:00 – 22:00",
+        "value": {
+          "en": "07:00 – 22:00",
+          "es": "07:00–22:00",
+          "ar": "07:00 – 22:00"
+        }
+      },
+      {
+        "_key": "text-10",
+        "_type": "contentText",
+        "source": "bakeryservice@alarak.com",
+        "value": {
+          "en": "bakeryservice@alarak.com",
+          "es": "bakeryservice@alarak.com",
+          "ar": "bakeryservice@alarak.com"
+        }
+      },
+      {
+        "_key": "text-11",
+        "_type": "contentText",
+        "source": "Get Directions",
+        "value": {
+          "en": "Get Directions",
+          "es": "Cómo llegar",
+          "ar": "الاتجاهات"
+        }
+      },
+      {
+        "_key": "text-12",
+        "_type": "contentText",
+        "source": "Contact Us",
+        "value": {
+          "en": "Contact Us",
+          "es": "Contáctanos",
+          "ar": "تواصلوا معنا"
+        }
+      },
+      {
+        "_key": "extra-13",
+        "_type": "contentText",
+        "source": "Opening Hours",
+        "value": {
+          "en": "Opening Hours",
+          "es": "Opening Hours",
+          "ar": "Opening Hours"
+        }
+      },
+      {
+        "_key": "extra-14",
+        "_type": "contentText",
+        "source": "Phone",
+        "value": {
+          "en": "Phone",
+          "es": "Phone",
+          "ar": "Phone"
+        }
+      },
+      {
+        "_key": "extra-15",
+        "_type": "contentText",
+        "source": "Email",
+        "value": {
+          "en": "Email",
+          "es": "Email",
+          "ar": "Email"
+        }
+      },
+      {
+        "_key": "phone-16",
+        "_type": "contentText",
+        "source": "+212 663 46 41 74",
+        "value": {
+          "en": "+212 663 46 41 74",
+          "es": "+212 663 46 41 74",
+          "ar": "+212 663 46 41 74"
+        }
+      }
+    ],
+    "media": [
+      {
+        "_key": "image-0",
+        "_type": "contentMedia",
+        "source": "/media/cafe-coming-soon.jpg",
+        "label": "cafe coming soon"
+      }
+    ],
+    "links": [
+      {
+        "_key": "link-0",
+        "_type": "contentLink",
+        "source": "tel:+212663464174"
+      },
+      {
+        "_key": "link-1",
+        "_type": "contentLink",
+        "source": "mailto:bakeryservice@alarak.com"
+      },
+      {
+        "_key": "link-2",
+        "_type": "contentLink",
+        "source": "https://maps.app.goo.gl/qEttWmKuwJgqPrZL9"
+      },
+      {
+        "_key": "link-3",
+        "_type": "contentLink",
+        "source": "/#visit"
+      }
+    ]
+  },
+  "navbar": {
+    "textEntries": [
+      {
+        "_key": "text-0",
+        "_type": "contentText",
+        "source": "Main Navigation",
+        "value": {
+          "en": "Main Navigation",
+          "es": "Navegación principal",
+          "ar": "التنقل الرئيسي"
+        }
+      },
+      {
+        "_key": "text-1",
+        "_type": "contentText",
+        "source": "ALARAK",
+        "value": {
+          "en": "ALARAK",
+          "es": "ALARAK",
+          "ar": "ALARAK"
+        }
+      },
+      {
+        "_key": "text-2",
+        "_type": "contentText",
+        "source": "Coffee & Bakery",
+        "value": {
+          "en": "Coffee & Bakery",
+          "es": "Coffee & Bakery",
+          "ar": "Coffee & Bakery"
+        }
+      },
+      {
+        "_key": "text-3",
+        "_type": "contentText",
+        "source": "View the menu PDF in a new tab",
+        "value": {
+          "en": "View the menu PDF in a new tab",
+          "es": "Abrir el menú PDF en una pestaña nueva",
+          "ar": "عرض قائمة الطعام بصيغة PDF في علامة تبويب جديدة"
+        }
+      },
+      {
+        "_key": "text-4",
+        "_type": "contentText",
+        "source": "View Menu",
+        "value": {
+          "en": "View Menu",
+          "es": "Ver menú",
+          "ar": "عرض القائمة"
+        }
+      },
+      {
+        "_key": "text-5",
+        "_type": "contentText",
+        "source": "Close navigation menu",
+        "value": {
+          "en": "Close navigation menu",
+          "es": "Cerrar menú de navegación",
+          "ar": "إغلاق قائمة التنقل"
+        }
+      },
+      {
+        "_key": "text-6",
+        "_type": "contentText",
+        "source": "Open navigation menu",
+        "value": {
+          "en": "Open navigation menu",
+          "es": "Abrir menú de navegación",
+          "ar": "فتح قائمة التنقل"
+        }
+      },
+      {
+        "_key": "text-7",
+        "_type": "contentText",
+        "source": "Moroccan Specialty Coffee & Bakery",
+        "value": {
+          "en": "Moroccan Specialty Coffee & Bakery",
+          "es": "Café de especialidad y panadería marroquí",
+          "ar": "قهوة مختصة ومخبوزات مغربية"
+        }
+      },
+      {
+        "_key": "text-8",
+        "_type": "contentText",
+        "source": "Discover Our Menu",
+        "value": {
+          "en": "Discover Our Menu",
+          "es": "Descubre nuestro menú",
+          "ar": "اكتشف قائمتنا"
+        }
+      },
+      {
+        "_key": "text-9",
+        "_type": "contentText",
+        "source": "Fnideq, Morocco",
+        "value": {
+          "en": "Fnideq, Morocco",
+          "es": "Fnideq, Marruecos",
+          "ar": "الفنيدق، المغرب"
+        }
+      },
+      {
+        "_key": "extra-15",
+        "_type": "contentText",
+        "source": "Alarak Coffee & Bakery Home",
+        "value": {
+          "en": "Alarak Coffee & Bakery Home",
+          "es": "Alarak Coffee & Bakery Home",
+          "ar": "Alarak Coffee & Bakery Home"
+        }
+      }
+    ],
+    "media": [],
+    "links": [
+      {
+        "_key": "link-0",
+        "_type": "contentLink",
+        "source": "/"
+      },
+      {
+        "_key": "link-1",
+        "_type": "contentLink",
+        "source": "/media/menu/alarak-menu.pdf"
+      },
+      {
+        "_key": "link-2",
+        "_type": "contentLink",
+        "source": "/menu"
+      },
+      {
+        "_key": "link-3",
+        "_type": "contentLink",
+        "source": "/our-story"
+      },
+      {
+        "_key": "link-4",
+        "_type": "contentLink",
+        "source": "/gallery"
+      },
+      {
+        "_key": "link-5",
+        "_type": "contentLink",
+        "source": "/visit"
+      }
+    ],
+    "navigationLinks": [
+      {
+        "_key": "item-0",
+        "name": {
+          "en": "Home",
+          "es": "Inicio",
+          "ar": "الرئيسية"
+        },
+        "href": "/",
+        "_type": "navigationItem",
+        "fallbackIndex": 0
+      },
+      {
+        "_key": "item-1",
+        "name": {
+          "en": "Menu",
+          "es": "Menú",
+          "ar": "القائمة"
+        },
+        "href": "/menu",
+        "_type": "navigationItem",
+        "fallbackIndex": 1
+      },
+      {
+        "_key": "item-2",
+        "name": {
+          "en": "Our Story",
+          "es": "Nuestra historia",
+          "ar": "قصتنا"
+        },
+        "href": "/our-story",
+        "_type": "navigationItem",
+        "fallbackIndex": 2
+      },
+      {
+        "_key": "item-3",
+        "name": {
+          "en": "Gallery",
+          "es": "Galería",
+          "ar": "معرض الصور"
+        },
+        "href": "/gallery",
+        "_type": "navigationItem",
+        "fallbackIndex": 3
+      },
+      {
+        "_key": "item-4",
+        "name": {
+          "en": "Visit Us",
+          "es": "Visítanos",
+          "ar": "زورونا"
+        },
+        "href": "/visit",
+        "_type": "navigationItem",
+        "fallbackIndex": 4
+      }
+    ]
+  },
+  "footer": {
+    "textEntries": [
+      {
+        "_key": "text-0",
+        "_type": "contentText",
+        "source": "We could not send your message. Please try again.",
+        "value": {
+          "en": "We could not send your message. Please try again.",
+          "es": "No pudimos enviar tu mensaje. Inténtalo de nuevo.",
+          "ar": "تعذّر إرسال رسالتك. يُرجى المحاولة مجدداً."
+        }
+      },
+      {
+        "_key": "text-1",
+        "_type": "contentText",
+        "source": "Send a message",
+        "value": {
+          "en": "Send a message",
+          "es": "Envíanos un mensaje",
+          "ar": "أرسل رسالة"
+        }
+      },
+      {
+        "_key": "text-2",
+        "_type": "contentText",
+        "source": "Leave this field empty",
+        "value": {
+          "en": "Leave this field empty",
+          "es": "Deja este campo vacío",
+          "ar": "اترك هذا الحقل فارغاً"
+        }
+      },
+      {
+        "_key": "text-3",
+        "_type": "contentText",
+        "source": "Your email address",
+        "value": {
+          "en": "Your email address",
+          "es": "Tu correo electrónico",
+          "ar": "بريدك الإلكتروني"
+        }
+      },
+      {
+        "_key": "text-4",
+        "_type": "contentText",
+        "source": "Your message",
+        "value": {
+          "en": "Your message",
+          "es": "Tu mensaje",
+          "ar": "رسالتك"
+        }
+      },
+      {
+        "_key": "text-5",
+        "_type": "contentText",
+        "source": "Write your message...",
+        "value": {
+          "en": "Write your message...",
+          "es": "Escribe tu mensaje...",
+          "ar": "اكتب رسالتك..."
+        }
+      },
+      {
+        "_key": "text-6",
+        "_type": "contentText",
+        "source": "Sending...",
+        "value": {
+          "en": "Sending...",
+          "es": "Enviando...",
+          "ar": "جارٍ الإرسال…"
+        }
+      },
+      {
+        "_key": "text-7",
+        "_type": "contentText",
+        "source": "Send message",
+        "value": {
+          "en": "Send message",
+          "es": "Enviar mensaje",
+          "ar": "إرسال الرسالة"
+        }
+      },
+      {
+        "_key": "text-8",
+        "_type": "contentText",
+        "source": "Your message has been sent. Thank you!",
+        "value": {
+          "en": "Your message has been sent. Thank you!",
+          "es": "Tu mensaje se ha enviado. ¡Gracias!",
+          "ar": "تم إرسال رسالتك بنجاح، شكراً لك!"
+        }
+      },
+      {
+        "_key": "text-9",
+        "_type": "contentText",
+        "source": "Your email app will open with the message ready to send.",
+        "value": {
+          "en": "Your email app will open with the message ready to send.",
+          "es": "Tu aplicación de correo se abrirá con el mensaje listo para enviar.",
+          "ar": "سيفتح تطبيق البريد الإلكتروني والرسالة جاهزة للإرسال."
+        }
+      },
+      {
+        "_key": "text-10",
+        "_type": "contentText",
+        "source": "Your message will be sent directly to our team.",
+        "value": {
+          "en": "Your message will be sent directly to our team.",
+          "es": "Tu mensaje se enviará directamente a nuestro equipo.",
+          "ar": "ستُرسل رسالتك مباشرة إلى فريقنا."
+        }
+      },
+      {
+        "_key": "text-11",
+        "_type": "contentText",
+        "source": "Back to top",
+        "value": {
+          "en": "Back to top",
+          "es": "Volver arriba",
+          "ar": "العودة إلى الأعلى"
+        }
+      },
+      {
+        "_key": "text-12",
+        "_type": "contentText",
+        "source": "ALARAK",
+        "value": {
+          "en": "ALARAK",
+          "es": "ALARAK",
+          "ar": "ALARAK"
+        }
+      },
+      {
+        "_key": "text-13",
+        "_type": "contentText",
+        "source": "Coffee & Bakery",
+        "value": {
+          "en": "Coffee & Bakery",
+          "es": "Coffee & Bakery",
+          "ar": "Coffee & Bakery"
+        }
+      },
+      {
+        "_key": "text-14",
+        "_type": "contentText",
+        "source": "Specialty coffee and artisan pastry, made slowly in Fnideq — a warm place to pause, savor, and return to.",
+        "value": {
+          "en": "Specialty coffee and artisan pastry, made slowly in Fnideq — a warm place to pause, savor, and return to.",
+          "es": "Café de especialidad y pastelería artesanal, elaborados con calma en Fnideq: un lugar acogedor para hacer una pausa, disfrutar y volver.",
+          "ar": "قهوة مختصة وحلويات يدوية تُحضّر بعناية في الفنيدق، في مكان دافئ للاستراحة والتذوق والعودة إليه."
+        }
+      },
+      {
+        "_key": "text-15",
+        "_type": "contentText",
+        "source": "Social media links",
+        "value": {
+          "en": "Social media links",
+          "es": "Enlaces a redes sociales",
+          "ar": "روابط التواصل الاجتماعي"
+        }
+      },
+      {
+        "_key": "text-16",
+        "_type": "contentText",
+        "source": "Follow Alarak on Instagram",
+        "value": {
+          "en": "Follow Alarak on Instagram",
+          "es": "Sigue a Alarak en Instagram",
+          "ar": "تابعوا الأراك على إنستغرام"
+        }
+      },
+      {
+        "_key": "text-17",
+        "_type": "contentText",
+        "source": "Follow Alarak on Facebook",
+        "value": {
+          "en": "Follow Alarak on Facebook",
+          "es": "Sigue a Alarak en Facebook",
+          "ar": "تابعوا الأراك على فيسبوك"
+        }
+      },
+      {
+        "_key": "text-18",
+        "_type": "contentText",
+        "source": "Follow Alarak on TikTok",
+        "value": {
+          "en": "Follow Alarak on TikTok",
+          "es": "Sigue a Alarak en TikTok",
+          "ar": "تابعوا الأراك على تيك توك"
+        }
+      },
+      {
+        "_key": "text-19",
+        "_type": "contentText",
+        "source": "Follow Alarak on YouTube",
+        "value": {
+          "en": "Follow Alarak on YouTube",
+          "es": "Sigue a Alarak en YouTube",
+          "ar": "تابعوا الأراك على يوتيوب"
+        }
+      },
+      {
+        "_key": "text-20",
+        "_type": "contentText",
+        "source": "Explore",
+        "value": {
+          "en": "Explore",
+          "es": "Descubrir",
+          "ar": "اكتشف"
+        }
+      },
+      {
+        "_key": "text-21",
+        "_type": "contentText",
+        "source": "Footer navigation",
+        "value": {
+          "en": "Footer navigation",
+          "es": "Navegación del pie de página",
+          "ar": "روابط أسفل الصفحة"
+        }
+      },
+      {
+        "_key": "text-22",
+        "_type": "contentText",
+        "source": "Visit Us",
+        "value": {
+          "en": "Visit Us",
+          "es": "Visítanos",
+          "ar": "زورونا"
+        }
+      },
+      {
+        "_key": "text-23",
+        "_type": "contentText",
+        "source": "Immeuble Alia, 18, Fnideq 93100",
+        "value": {
+          "en": "Immeuble Alia, 18, Fnideq 93100",
+          "es": "Immeuble Alia, 18, Fnideq 93100",
+          "ar": "عمارة علياء، 18، الفنيدق 93100"
+        }
+      },
+      {
+        "_key": "text-24",
+        "_type": "contentText",
+        "source": "Daily",
+        "value": {
+          "en": "Daily",
+          "es": "Todos los días",
+          "ar": "يومياً"
+        }
+      },
+      {
+        "_key": "text-25",
+        "_type": "contentText",
+        "source": "07:00 – 22:00",
+        "value": {
+          "en": "07:00 – 22:00",
+          "es": "07:00–22:00",
+          "ar": "07:00 – 22:00"
+        }
+      },
+      {
+        "_key": "text-26",
+        "_type": "contentText",
+        "source": "bakeryservice@alarak.com",
+        "value": {
+          "en": "bakeryservice@alarak.com",
+          "es": "bakeryservice@alarak.com",
+          "ar": "bakeryservice@alarak.com"
+        }
+      },
+      {
+        "_key": "text-27",
+        "_type": "contentText",
+        "source": "Reservations via Instagram",
+        "value": {
+          "en": "Reservations via Instagram",
+          "es": "Reservas por Instagram",
+          "ar": "الحجوزات عبر إنستغرام"
+        }
+      },
+      {
+        "_key": "text-28",
+        "_type": "contentText",
+        "source": "Follow",
+        "value": {
+          "en": "Follow",
+          "es": "Síguenos",
+          "ar": "تابعونا"
+        }
+      },
+      {
+        "_key": "text-29",
+        "_type": "contentText",
+        "source": "Instagram",
+        "value": {
+          "en": "Instagram",
+          "es": "Instagram",
+          "ar": "Instagram"
+        }
+      },
+      {
+        "_key": "text-30",
+        "_type": "contentText",
+        "source": "Have a question? Send us a note and we'll get back to you.",
+        "value": {
+          "en": "Have a question? Send us a note and we'll get back to you.",
+          "es": "¿Tienes alguna pregunta? Escríbenos y te responderemos.",
+          "ar": "لديك سؤال؟ أرسل لنا رسالة وسنعاود التواصل معك."
+        }
+      },
+      {
+        "_key": "text-31",
+        "_type": "contentText",
+        "source": "© 2026 Alarak Coffee & Bakery",
+        "value": {
+          "en": "© 2026 Alarak Coffee & Bakery",
+          "es": "© 2026 Alarak Coffee & Bakery",
+          "ar": "© 2026 الأراك للقهوة والمخبوزات"
+        }
+      },
+      {
+        "_key": "text-32",
+        "_type": "contentText",
+        "source": "All rights reserved.",
+        "value": {
+          "en": "All rights reserved.",
+          "es": "Todos los derechos reservados.",
+          "ar": "جميع الحقوق محفوظة."
+        }
+      },
+      {
+        "_key": "text-33",
+        "_type": "contentText",
+        "source": "Good Coffee • Great Moments",
+        "value": {
+          "en": "Good Coffee • Great Moments",
+          "es": "Buen café • Grandes momentos",
+          "ar": "قهوة طيبة • لحظات جميلة"
+        }
+      },
+      {
+        "_key": "text-34",
+        "_type": "contentText",
+        "source": "Legal links",
+        "value": {
+          "en": "Legal links",
+          "es": "Enlaces legales",
+          "ar": "روابط قانونية"
+        }
+      },
+      {
+        "_key": "extra-43",
+        "_type": "contentText",
+        "source": "Alarak Coffee & Bakery — Back to top",
+        "value": {
+          "en": "Alarak Coffee & Bakery — Back to top",
+          "es": "Alarak Coffee & Bakery — Back to top",
+          "ar": "Alarak Coffee & Bakery — Back to top"
+        }
+      }
+    ],
+    "media": [],
+    "links": [
+      {
+        "_key": "link-0",
+        "_type": "contentLink",
+        "source": "https://www.instagram.com/alarak.ma?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw=="
+      },
+      {
+        "_key": "link-2",
+        "_type": "contentLink",
+        "source": "https://www.facebook.com/share/1BVvEpkcAk/?mibextid=wwXIfr"
+      },
+      {
+        "_key": "link-3",
+        "_type": "contentLink",
+        "source": "https://www.tiktok.com/@alarakcoffeebakery"
+      },
+      {
+        "_key": "link-4",
+        "_type": "contentLink",
+        "source": "mailto:bakeryservice@alarak.com"
+      },
+      {
+        "_key": "link-5",
+        "_type": "contentLink",
+        "source": "/"
+      },
+      {
+        "_key": "link-6",
+        "_type": "contentLink",
+        "source": "/our-story"
+      },
+      {
+        "_key": "link-7",
+        "_type": "contentLink",
+        "source": "/menu"
+      },
+      {
+        "_key": "link-8",
+        "_type": "contentLink",
+        "source": "/visit"
+      },
+      {
+        "_key": "link-9",
+        "_type": "contentLink",
+        "source": "#ar"
+      },
+      {
+        "_key": "link-10",
+        "_type": "contentLink",
+        "source": "#en"
+      },
+      {
+        "_key": "link-11",
+        "_type": "contentLink",
+        "source": "#privacy"
+      },
+      {
+        "_key": "link-12",
+        "_type": "contentLink",
+        "source": "#terms"
+      },
+      {
+        "_key": "footer-slot-0",
+        "_type": "contentLink",
+        "source": "#",
+        "slotId": "footer-link-0",
+        "label": "Logo / back to top"
+      },
+      {
+        "_key": "footer-slot-1",
+        "_type": "contentLink",
+        "source": "#",
+        "slotId": "footer-link-1",
+        "label": "Additional social link"
+      }
+    ],
+    "exploreLinks": [
+      {
+        "_key": "item-0",
+        "name": {
+          "en": "Home",
+          "es": "Inicio",
+          "ar": "الرئيسية"
+        },
+        "href": "/",
+        "_type": "navigationItem",
+        "fallbackIndex": 0
+      },
+      {
+        "_key": "item-1",
+        "name": {
+          "en": "Our Story",
+          "es": "Nuestra historia",
+          "ar": "قصتنا"
+        },
+        "href": "/our-story",
+        "_type": "navigationItem",
+        "fallbackIndex": 1
+      },
+      {
+        "_key": "item-2",
+        "name": {
+          "en": "Menu",
+          "es": "Menú",
+          "ar": "القائمة"
+        },
+        "href": "/menu",
+        "_type": "navigationItem",
+        "fallbackIndex": 2
+      },
+      {
+        "_key": "item-3",
+        "name": {
+          "en": "Contact",
+          "es": "Contacto",
+          "ar": "اتصلوا بنا"
+        },
+        "href": "/visit",
+        "_type": "navigationItem",
+        "fallbackIndex": 3
+      }
+    ],
+    "legalLinks": [
+      {
+        "_key": "item-0",
+        "name": {
+          "en": "العربية",
+          "es": "العربية",
+          "ar": "العربية"
+        },
+        "href": "#ar",
+        "_type": "navigationItem",
+        "fallbackIndex": 0
+      },
+      {
+        "_key": "item-1",
+        "name": {
+          "en": "English",
+          "es": "English",
+          "ar": "English"
+        },
+        "href": "#en",
+        "_type": "navigationItem",
+        "fallbackIndex": 1
+      },
+      {
+        "_key": "item-2",
+        "name": {
+          "en": "Privacy",
+          "es": "Privacidad",
+          "ar": "الخصوصية"
+        },
+        "href": "#privacy",
+        "_type": "navigationItem",
+        "fallbackIndex": 2
+      },
+      {
+        "_key": "item-3",
+        "name": {
+          "en": "Terms",
+          "es": "Condiciones",
+          "ar": "الشروط والأحكام"
+        },
+        "href": "#terms",
+        "_type": "navigationItem",
+        "fallbackIndex": 3
+      }
+    ]
+  },
+  "siteSettings": {
+    "textEntries": [
+      {
+        "_key": "text-0",
+        "_type": "contentText",
+        "source": "Chat with us on WhatsApp",
+        "value": {
+          "en": "Chat with us on WhatsApp",
+          "es": "Escríbenos por WhatsApp",
+          "ar": "تواصلوا معنا عبر واتساب"
+        }
+      },
+      {
+        "_key": "text-1",
+        "_type": "contentText",
+        "source": "Open Alarak Coffee & Bakery on Google Maps",
+        "value": {
+          "en": "Open Alarak Coffee & Bakery on Google Maps",
+          "es": "Abrir Alarak Coffee & Bakery en Google Maps",
+          "ar": "افتحوا موقع الأراك للقهوة والمخبوزات على خرائط جوجل"
+        }
+      },
+      {
+        "_key": "text-2",
+        "_type": "contentText",
+        "source": "View on Maps",
+        "value": {
+          "en": "View on Maps",
+          "es": "Ver en el mapa",
+          "ar": "عرض على الخريطة"
+        }
+      }
+    ],
+    "media": [
+      {
+        "_key": "image-0",
+        "_type": "contentMedia",
+        "source": "/media/logo/alarak-logo-web.png",
+        "label": "alarak logo web"
+      }
+    ],
+    "links": [
+      {
+        "_key": "link-0",
+        "_type": "contentLink",
+        "source": "https://wa.me/212663464174"
+      },
+      {
+        "_key": "link-1",
+        "_type": "contentLink",
+        "source": "https://maps.google.com/maps?q=35.8555556%2C-5.3558889&z=17&output=embed"
+      },
+      {
+        "_key": "link-2",
+        "_type": "contentLink",
+        "source": "https://maps.app.goo.gl/qEttWmKuwJgqPrZL9"
+      }
+    ]
+  }
+}

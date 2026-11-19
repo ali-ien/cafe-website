@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Plus_Jakarta_Sans, Tajawal } from "next/font/google";
 import { LanguageProvider } from "@/lib/language";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { SiteContentProvider } from "@/lib/site-provider";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -58,8 +59,10 @@ export default function RootLayout({
     >
       <body className="min-h-screen bg-alarak-navy-dark text-alarak-cream selection:bg-alarak-gold selection:text-alarak-navy-dark">
         <LanguageProvider>
+          <SiteContentProvider>
           {children}
           <WhatsAppButton />
+          </SiteContentProvider>
         </LanguageProvider>
       </body>
     </html>

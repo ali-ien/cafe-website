@@ -1,8 +1,10 @@
 "use client";
 
-import Link from "next/link";
+import { withCmsSection, CmsText, CmsAnchor, CmsLink as Link, useCmsLanguage as useLanguage } from "@/lib/cms";
+
+
 import { Container } from "@/components/ui";
-import { useLanguage } from "@/lib/language";
+
 import { LocationMap } from "@/components/LocationMap";
 
 function LocationIcon() {
@@ -60,18 +62,14 @@ const boutiqueInfo = [
     icon: ContactIcon,
     content: (
       <div className="flex flex-col items-start">
-        <a href="tel:+212663464174" className="text-alarak-navy-dark/60 transition-colors hover:text-alarak-gold">
-          +212 663 46 41 74
-        </a>
-        <a href="mailto:bakeryservice@alarak.com" className="text-alarak-navy-dark/60 transition-colors hover:text-alarak-gold">
-          bakeryservice@alarak.com
-        </a>
+        <CmsAnchor href="tel:+212663464174" className="text-alarak-navy-dark/60 transition-colors hover:text-alarak-gold"><CmsText value={"+212 663 46 41 74"} /></CmsAnchor>
+        <CmsAnchor href="mailto:bakeryservice@alarak.com" className="text-alarak-navy-dark/60 transition-colors hover:text-alarak-gold"><CmsText value={"bakeryservice@alarak.com"} /></CmsAnchor>
       </div>
     ),
   },
 ];
 
-export function HomeVisitSection() {
+function HomeVisitSectionContent() {
   const { t } = useLanguage();
   return (
     <section className="bg-[#F4EFE8] px-4 py-12 text-alarak-navy-dark sm:px-6 sm:py-16 lg:py-20">
@@ -112,3 +110,5 @@ export function HomeVisitSection() {
     </section>
   );
 }
+
+export const HomeVisitSection = withCmsSection("homePage", HomeVisitSectionContent);

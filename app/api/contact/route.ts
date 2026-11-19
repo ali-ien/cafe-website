@@ -1,4 +1,5 @@
 const recipient = "bakeryservice@alarak.com";
+import { client } from "@/lib/sanity";
 
 export async function POST(request: Request) {
   let payload: { email?: unknown; message?: unknown; website?: unknown };
@@ -32,6 +33,14 @@ export async function POST(request: Request) {
   }
 
   try {
+    let destination = recipient;
+    try {
+      const settings = await client.fetch<{email?: string} | null>(
+        'coalesce(*[_type == "siteSettings" && _id == "siteSettings"][0], *[_type == "siteSettings"] | order(_updatedAt desc)[0]){email}',
+        {}, {cache: "no-store"},
+      );
+      if (settings?.email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(settings.email)) destination = settings.email;
+    } catch { /* Preserve existing delivery when the public CMS cannot be reached. */ }
     const response = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
@@ -40,7 +49,7 @@ export async function POST(request: Request) {
       },
       body: JSON.stringify({
         from: sender,
-        to: [recipient],
+        to: [destination],
         reply_to: email,
         subject: "New message from the Alarak website",
         text: `From: ${email}\n\n${message}`,

@@ -1,12 +1,12 @@
 "use client";
 
+import { withCmsSection, CmsImage as Image, CmsLink as Link, useCmsLanguage as useLanguage, useCmsCollection } from "@/lib/cms";
+
 import React from "react";
-import Image from "next/image";
-import Link from "next/link";
+
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Container, GoldAccent, EditorialReveal } from "@/components/ui";
-import { useLanguage } from "@/lib/language";
 
 // ── Types ────────────────────────────────────────────────────────────────────
 interface Chapter {
@@ -125,7 +125,8 @@ const ChapterCard: React.FC<{ chapter: Chapter; delay: number }> = ({ chapter, d
 };
 
 // ── Main Section ──────────────────────────────────────────────────────────────
-export const SignatureSelection: React.FC = () => {
+const SignatureSelectionContent: React.FC = () => {
+  const chapters = useCmsCollection("signatureCards", CHAPTERS);
   const { t } = useLanguage();
   return (
     <section
@@ -162,8 +163,8 @@ export const SignatureSelection: React.FC = () => {
 
         {/* 3 Equal Columns Layout */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-y-12 gap-x-6 lg:gap-x-10">
-          {CHAPTERS.map((chapter, i) => (
-            <ChapterCard key={chapter.number} chapter={chapter} delay={0.06 * i} />
+          {chapters.map((chapter, i) => (
+            <ChapterCard key={`${chapter.number || "card"}-${i}`} chapter={chapter} delay={0.06 * i} />
           ))}
         </div>
 
@@ -182,3 +183,5 @@ export const SignatureSelection: React.FC = () => {
     </section>
   );
 };
+
+export const SignatureSelection = withCmsSection("homePage", SignatureSelectionContent);
