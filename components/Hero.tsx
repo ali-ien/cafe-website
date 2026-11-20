@@ -124,7 +124,7 @@ const HeroContent: React.FC = () => {
       {/* ====================================================================
           LAYER 1 — IMAGE CAROUSEL (absolute stacking, pure crossfade)
       ==================================================================== */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
+      <div className="home-hero__gallery absolute inset-0 z-0 pointer-events-none">
         {slides.map((slide, idx) => {
           const isCurrent = idx === visibleIndex;
           const isPrev = idx === prevSlideIndex;
@@ -133,7 +133,7 @@ const HeroContent: React.FC = () => {
           return (
             <div
               key={slide.id}
-              className="absolute inset-0 w-full h-full"
+              className="home-hero__slide absolute inset-0 w-full h-full"
               style={{
                 zIndex: isCurrent ? 2 : isPrev ? 1 : 0,
                 visibility: isVisible ? "visible" : "hidden",
@@ -188,12 +188,12 @@ const HeroContent: React.FC = () => {
       {/* ====================================================================
           LAYER 2 — STATIC FOREGROUND CONTENT
       ==================================================================== */}
-      <div className="relative z-10 flex flex-col h-full">
+      <div className="home-hero__foreground relative z-10 flex flex-col h-full">
         <Container
           size="wide"
-          className="flex flex-col justify-center flex-1 pt-28 sm:pt-32 lg:pt-36 pb-16 sm:pb-20"
+          className="home-hero__copy flex flex-col justify-center flex-1 pt-28 sm:pt-32 lg:pt-36 pb-16 sm:pb-20"
         >
-          <div className="max-w-[560px] lg:max-w-[620px] space-y-5 sm:space-y-6">
+          <div className="home-hero__copy-inner max-w-[560px] lg:max-w-[620px] space-y-5 sm:space-y-6">
 
             {/* Eyebrow row: brand name + Arabic chapter (Arabic fades per slide) */}
             <motion.div
@@ -226,7 +226,7 @@ const HeroContent: React.FC = () => {
                 initial={{ opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                className="font-serif text-[44px] sm:text-[64px] md:text-[76px] lg:text-[86px] font-normal tracking-tight leading-[1.05] text-alarak-cream drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)]"
+                className="home-hero__title font-serif text-[44px] sm:text-[64px] md:text-[76px] lg:text-[86px] font-normal tracking-tight leading-[1.05] text-alarak-cream drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)]"
               >
                 {content.firstLine}{" "}
                 <span className="text-alarak-gold italic font-light">
@@ -237,7 +237,7 @@ const HeroContent: React.FC = () => {
                 initial={{ opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.56, ease: [0.16, 1, 0.3, 1] }}
-                className="font-serif text-[44px] sm:text-[64px] md:text-[76px] lg:text-[86px] font-normal tracking-tight leading-[1.05] text-alarak-cream drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)]"
+                className="home-hero__title font-serif text-[44px] sm:text-[64px] md:text-[76px] lg:text-[86px] font-normal tracking-tight leading-[1.05] text-alarak-cream drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)]"
               >
                 {content.secondLine}
               </motion.h1>
@@ -300,7 +300,7 @@ const HeroContent: React.FC = () => {
         </Container>
 
         {/* Slide dot navigation — bottom center */}
-        <div className="absolute bottom-7 sm:bottom-8 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2.5">
+        <div className="home-hero__controls absolute bottom-7 sm:bottom-8 z-20 flex items-center gap-2.5">
           {slides.map((slide, idx) => (
             <SlideDot
               key={slide.id}
