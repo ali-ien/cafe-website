@@ -184,7 +184,7 @@ const NavbarContent: React.FC = () => {
                 </div>
                 <span className="font-serif text-2xl tracking-[0.22em] text-alarak-cream font-medium"><CmsText value={"ALARAK"} /></span>
                 <span className="font-sans text-[10px] tracking-[0.32em] uppercase text-alarak-gold mt-1">
-                  {t("Moroccan Specialty Coffee & Bakery")}
+                  {t("American Specialty Coffee & Bakery")}
                 </span>
               </div>
 
