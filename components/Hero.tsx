@@ -118,7 +118,7 @@ const HeroContent: React.FC = () => {
 
   return (
     <section
-      className="relative w-full h-screen min-h-[600px] max-h-[1000px] overflow-hidden flex flex-col"
+      className="home-hero relative w-full h-screen min-h-[680px] max-h-[1000px] overflow-hidden flex flex-col"
       aria-label={t("Hero Section")}
     >
       {/* ====================================================================

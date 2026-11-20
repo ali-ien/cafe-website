@@ -6,7 +6,7 @@ import { HomeVisitSection } from "@/components/HomeVisitSection";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-alarak-navy-dark text-alarak-cream selection:bg-alarak-gold selection:text-alarak-navy-dark">
+    <div className="home-editorial min-h-screen bg-alarak-navy-dark text-alarak-cream selection:bg-alarak-gold selection:text-alarak-navy-dark">
       {/* 1. Responsive Navbar */}
       <Navbar />
 

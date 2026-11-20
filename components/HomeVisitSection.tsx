@@ -72,7 +72,7 @@ const boutiqueInfo = [
 function HomeVisitSectionContent() {
   const { t } = useLanguage();
   return (
-    <section className="bg-[#F4EFE8] px-4 py-12 text-alarak-navy-dark sm:px-6 sm:py-16 lg:py-20">
+    <section className="home-visit bg-[#F4EFE8] px-4 py-12 text-alarak-navy-dark sm:px-6 sm:py-16 lg:py-20">
       <Container className="text-center">
         <p className="font-sans text-[10px] font-semibold uppercase tracking-[0.3em] text-alarak-gold sm:text-xs">
           {t("Visit our boutique")}

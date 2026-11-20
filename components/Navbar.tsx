@@ -62,7 +62,7 @@ const NavbarContent: React.FC = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+          "site-header fixed top-0 left-0 right-0 z-50 transition-all duration-500",
           // On /visit page: always solid. Elsewhere: solid when scrolled, transparent gradient when not.
           isScrolled || pathname?.startsWith("/visit")
             ? "bg-alarak-navy-dark/95 backdrop-blur-md border-b border-alarak-gold/20 py-3 shadow-2xl"

@@ -43,7 +43,7 @@ function FamilyStorySectionContent() {
       id="story"
       dir={language === "ar" ? "rtl" : "ltr"}
       aria-labelledby="family-story-heading"
-      className="relative isolate overflow-hidden bg-[#0b1423] text-alarak-cream"
+      className="home-story relative isolate overflow-hidden bg-[#0b1423] text-alarak-cream"
     >
       <div aria-hidden="true" className="pointer-events-none absolute -end-40 -top-40 h-[30rem] w-[30rem] rounded-full border border-alarak-gold/10 sm:h-[42rem] sm:w-[42rem]" />
       <div aria-hidden="true" className="pointer-events-none absolute -start-48 top-[42rem] h-[30rem] w-[30rem] rounded-full border border-alarak-gold/10" />

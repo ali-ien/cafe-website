@@ -131,7 +131,7 @@ const SignatureSelectionContent: React.FC = () => {
   return (
     <section
       id="signature"
-      className="relative w-full bg-[#FAF6F0]"
+      className="home-selection relative w-full bg-[#FAF6F0]"
       aria-labelledby="signature-heading"
     >
       <Container size="wide" className="pt-6 sm:pt-8 pb-12 sm:pb-16 lg:pb-24">
